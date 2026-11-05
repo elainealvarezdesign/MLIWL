@@ -1,0 +1,286 @@
+/* =============================================================================
+   MLIWL components
+   Every class works two ways:
+   1. Plain HTML:  <a class="mliwl-btn mliwl-btn-primary" href="…">Watch free</a>
+   2. Elementor:   put the class in Advanced › CSS Classes of the widget. The
+      rules below reach Elementor's inner markup (.elementor-button, form fields…).
+   Values come from tokens.css only. Do not hard-code colors or sizes here.
+   ========================================================================== */
+
+/* ---------- Base ---------------------------------------------------------- */
+/* Hello Elementor already uses border-box; this keeps plain-HTML use identical. */
+:where([class*="mliwl-"], [class*="mliwl-"] *, [class*="mliwl-"]::before, [class*="mliwl-"]::after) {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--font-family-base);
+	color: var(--color-text-primary);
+	background: var(--color-bg-page);
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+	outline: none;
+	box-shadow: var(--focus-ring);
+	border-radius: var(--radius-sm);
+}
+
+.mliwl-skip-link {
+	position: absolute;
+	left: var(--space-16);
+	top: -100px;
+	z-index: 1000;
+	padding: var(--space-12) var(--space-16);
+	border-radius: var(--radius-sm);
+	background: var(--color-bg-inverse);
+	color: var(--color-text-inverse);
+}
+.mliwl-skip-link:focus { top: var(--space-16); }
+
+.mliwl-container {
+	width: 100%;
+	max-width: calc(var(--layout-container-max) + 2 * var(--layout-gutter));
+	margin-inline: auto;
+	padding-inline: var(--layout-gutter);
+}
+.mliwl-section { padding-block: var(--layout-section-y); }
+
+/* ---------- Button ---------------------------------------------------------
+   Styles: primary · accent · outline · outline-inverse   Size: add mliwl-btn-sm
+   ------------------------------------------------------------------------- */
+.mliwl-btn,
+[class*="mliwl-btn-"] .elementor-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-8);
+	min-height: 56px;
+	padding: calc(var(--space-16) - 2px) calc(var(--space-24) - 2px); /* Figma strokes sit inside: 2px border + 14px = 16px */
+	border: 2px solid transparent;
+	border-radius: var(--radius-full);
+	font-family: var(--font-family-base);
+	font-weight: var(--font-weight-extrabold);
+	font-size: var(--font-size-button);
+	line-height: var(--line-height-button);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.mliwl-btn-sm:is(.mliwl-btn),
+.mliwl-btn-sm .elementor-button {
+	min-height: 48px;
+	padding: calc(var(--space-12) - 2px) calc(var(--space-16) - 2px);
+	font-size: var(--font-size-button-sm);
+	line-height: var(--line-height-button-sm);
+}
+.mliwl-btn svg, [class*="mliwl-btn-"] .elementor-button svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* Primary */
+.mliwl-btn-primary:is(.mliwl-btn), .mliwl-btn-primary .elementor-button { background: var(--color-action-primary-bg); color: var(--color-action-primary-text); }
+.mliwl-btn-primary:is(.mliwl-btn):hover, .mliwl-btn-primary .elementor-button:hover { background: var(--color-action-primary-bg-hover); color: var(--color-action-primary-text); }
+.mliwl-btn-primary:is(.mliwl-btn):active, .mliwl-btn-primary .elementor-button:active { background: var(--color-action-primary-bg-pressed); }
+.mliwl-btn-primary:is(.mliwl-btn)[aria-current], .mliwl-btn-primary:is(.mliwl-btn)[aria-pressed="true"] { background: var(--color-action-selected-bg); }
+
+/* Accent (gold) */
+.mliwl-btn-accent:is(.mliwl-btn), .mliwl-btn-accent .elementor-button { background: var(--color-action-accent-bg); color: var(--color-action-accent-text); }
+.mliwl-btn-accent:is(.mliwl-btn):hover, .mliwl-btn-accent .elementor-button:hover { background: var(--color-action-accent-bg-hover); color: var(--color-action-accent-text); }
+.mliwl-btn-accent:is(.mliwl-btn):active, .mliwl-btn-accent .elementor-button:active { background: var(--color-action-accent-bg-pressed); }
+
+/* Outline (on light) */
+.mliwl-btn-outline:is(.mliwl-btn), .mliwl-btn-outline .elementor-button { background: transparent; color: var(--color-text-primary); border-color: var(--color-border-strong); }
+.mliwl-btn-outline:is(.mliwl-btn):hover, .mliwl-btn-outline .elementor-button:hover { background: var(--color-action-outline-bg-hover); color: var(--color-text-primary); }
+.mliwl-btn-outline:is(.mliwl-btn):active, .mliwl-btn-outline .elementor-button:active { background: var(--color-action-outline-bg-pressed); }
+
+/* Outline inverse (on dark, hero, help) */
+.mliwl-btn-outline-inverse:is(.mliwl-btn), .mliwl-btn-outline-inverse .elementor-button { background: transparent; color: var(--color-text-inverse); border-color: var(--color-border-inverse); }
+.mliwl-btn-outline-inverse:is(.mliwl-btn):hover, .mliwl-btn-outline-inverse .elementor-button:hover { background: var(--color-action-inverse-bg-hover); color: var(--color-text-primary); }
+.mliwl-btn-outline-inverse:is(.mliwl-btn):active, .mliwl-btn-outline-inverse .elementor-button:active { background: var(--color-action-inverse-bg-pressed); border-color: var(--color-action-inverse-bg-pressed); color: var(--color-text-primary); }
+
+/* Disabled (never the only cue) */
+.mliwl-btn:is(:disabled, [aria-disabled="true"]) {
+	background: var(--color-action-disabled-bg);
+	border-color: transparent;
+	color: var(--color-action-disabled-text);
+	cursor: not-allowed;
+}
+.mliwl-btn-outline:is(.mliwl-btn):is(:disabled, [aria-disabled="true"]) { background: transparent; border-color: var(--color-action-disabled-border); }
+
+/* ---------- Tag (static label) -------------------------------------------- */
+.mliwl-tag {
+	display: inline-flex;
+	width: fit-content;
+	white-space: nowrap;
+	align-items: center;
+	height: 24px;
+	padding-inline: var(--space-8);
+	border-radius: var(--radius-xs);
+	font-weight: var(--font-weight-extrabold);
+	font-size: var(--font-size-tag);
+	line-height: var(--line-height-tag);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	background: var(--color-bg-muted);
+	color: var(--color-text-primary);
+}
+.mliwl-tag-on-image { background: var(--color-bg-surface); box-shadow: var(--shadow-tag); }
+.mliwl-tag-inverse { background: var(--color-bg-inverse); color: var(--color-text-inverse); }
+.mliwl-tag-highlight { background: var(--color-bg-highlight); color: var(--color-action-accent-text); }
+
+/* ---------- Chip (filter toggle: <button aria-pressed>) ------------------- */
+.mliwl-chip {
+	display: inline-flex;
+	flex: none;
+	white-space: nowrap;
+	align-items: center;
+	gap: var(--space-8);
+	min-height: 48px;
+	padding-inline: var(--space-16);
+	border: 2px solid var(--color-border-strong);
+	border-radius: var(--radius-full);
+	background: var(--color-bg-surface);
+	color: var(--color-text-primary);
+	font: inherit;
+	font-weight: var(--font-weight-extrabold);
+	font-size: var(--font-size-button-sm);
+	line-height: var(--line-height-button-sm);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.mliwl-chip:hover { background: var(--color-action-outline-bg-hover); }
+.mliwl-chip[aria-pressed="true"] { background: var(--color-action-primary-bg); color: var(--color-action-primary-text); }
+.mliwl-chip[aria-pressed="true"]:hover { background: var(--color-action-primary-bg-hover); border-color: var(--color-action-primary-bg-hover); }
+.mliwl-chip-group { display: flex; flex-wrap: wrap; gap: var(--space-8); }
+@media (max-width: 767px) {
+	.mliwl-chip-group { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+}
+
+/* ---------- Form fields ----------------------------------------------------
+   Plain HTML: .mliwl-field > label + input|textarea|select + .mliwl-field-help
+   Elementor Pro Form widget: add "mliwl-form" to the widget's CSS Classes.
+   ------------------------------------------------------------------------- */
+.mliwl-field { display: flex; flex-direction: column; gap: var(--space-8); }
+.mliwl-field > label,
+.mliwl-form .elementor-field-label {
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-body-strong);
+	line-height: var(--line-height-body-strong);
+	color: var(--color-text-primary);
+}
+.mliwl-field :is(input, select, textarea),
+.mliwl-form .elementor-field-group .elementor-field:not(.elementor-select-wrapper),
+.mliwl-form .elementor-field-group select {
+	width: 100%;
+	height: 48px;
+	padding: 0 var(--space-16);
+	border: 1px solid var(--color-border-input);
+	border-radius: var(--radius-md);
+	background: var(--color-bg-surface);
+	color: var(--color-text-primary);
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-body);
+	line-height: var(--line-height-body);
+}
+.mliwl-field textarea, .mliwl-form textarea.elementor-field { height: auto; min-height: 128px; padding-block: var(--space-12); resize: vertical; }
+.mliwl-field :is(input, select, textarea)::placeholder,
+.mliwl-form .elementor-field::placeholder { color: var(--color-text-secondary); opacity: 1; }
+.mliwl-field :is(input, select, textarea):hover,
+.mliwl-form .elementor-field:hover { border-color: var(--color-border-strong); }
+.mliwl-field :is(input, select, textarea):focus-visible,
+.mliwl-form .elementor-field:focus-visible {
+	border: 2px solid var(--color-border-strong);
+	box-shadow: 0 0 0 3px var(--color-focus-ring);
+	outline: none;
+}
+.mliwl-field :is(input, select, textarea)[aria-invalid="true"],
+.mliwl-form .elementor-field[aria-invalid="true"] { border: 2px solid var(--color-border-brand); }
+.mliwl-field :is(input, select, textarea):disabled {
+	background: var(--color-action-disabled-bg);
+	border-color: var(--color-action-disabled-border);
+	color: var(--color-action-disabled-text);
+}
+.mliwl-field-help { margin: 0; font-size: var(--font-size-body-sm); line-height: var(--line-height-body-sm); color: var(--color-text-secondary); }
+.mliwl-field-help.is-error,
+.mliwl-form .elementor-message-danger { color: var(--color-text-brand); }
+
+/* Native select keeps the OS menu; only the closed control is styled. */
+.mliwl-field select {
+	appearance: none;
+	padding-right: var(--space-48);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6' fill='none' stroke='%23181a1d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right var(--space-16) center;
+}
+
+/* Checkbox and radio: native inputs in a 48px row */
+.mliwl-choice { display: flex; align-items: center; gap: var(--space-12); min-height: 48px; cursor: pointer; font-size: var(--font-size-body); line-height: var(--line-height-body); }
+.mliwl-choice input {
+	appearance: none;
+	flex: none;
+	display: grid;
+	place-content: center;
+	width: 24px;
+	height: 24px;
+	margin: 0;
+	border: 2px solid var(--color-border-input);
+	border-radius: 6px;
+	background: var(--color-bg-surface);
+}
+.mliwl-choice input[type="radio"] { border-radius: var(--radius-full); }
+.mliwl-choice input:checked { background: var(--color-bg-inverse); border-color: var(--color-bg-inverse); }
+.mliwl-choice input[type="checkbox"]:checked::after {
+	content: "";
+	width: 12px;
+	height: 7px;
+	border: solid var(--color-text-inverse);
+	border-width: 0 0 2.5px 2.5px;
+	transform: translateY(-1px) rotate(-45deg);
+}
+.mliwl-choice input[type="radio"]:checked::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--color-text-inverse); }
+.mliwl-choice input:focus-visible { box-shadow: var(--focus-ring); border-radius: 6px; }
+.mliwl-choice input[type="radio"]:focus-visible { border-radius: 50%; }
+.mliwl-choice input:disabled { background: var(--color-action-disabled-bg); border-color: var(--color-action-disabled-border); }
+.mliwl-choice:has(input:disabled) { color: var(--color-action-disabled-text); cursor: not-allowed; }
+fieldset.mliwl-fieldset { border: 0; padding: 0; margin: 0; }
+fieldset.mliwl-fieldset legend { padding: 0; margin-bottom: var(--space-8); font-weight: var(--font-weight-bold); }
+
+/* ---------- Card shell (story, lesson, person, partner, article) ---------- */
+.mliwl-card {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-16);
+	padding: var(--space-24);
+	border: 1px solid var(--color-border-default);
+	border-radius: var(--radius-xl);
+	background: var(--color-bg-surface);
+	color: var(--color-text-primary);
+	transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.mliwl-card:hover, .mliwl-card:focus-within { border-color: var(--color-border-strong); box-shadow: var(--shadow-hover); }
+.mliwl-card-media { margin: calc(-1 * var(--space-24)) calc(-1 * var(--space-24)) 0; border-radius: var(--radius-xl) var(--radius-xl) 0 0; overflow: hidden; }
+.mliwl-card-link { color: inherit; text-decoration: none; }
+.mliwl-card-link::after { content: ""; position: absolute; inset: 0; } /* whole card clickable; parent needs position: relative */
+.mliwl-card:has(.mliwl-card-link) { position: relative; }
+
+/* ---------- Crisis bar & strip ------------------------------------------- */
+.mliwl-crisis-bar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: var(--space-8) var(--space-24);
+	min-height: 56px;
+	padding: var(--space-8) var(--layout-gutter);
+	background: var(--color-bg-inverse);
+	color: var(--color-text-inverse);
+	font-weight: var(--font-weight-bold);
+	font-size: var(--font-size-body-sm);
+}
+.mliwl-crisis-bar a { color: inherit; text-underline-offset: 3px; }
+.mliwl-crisis-strip { background: var(--color-bg-highlight); color: var(--color-text-primary); }
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

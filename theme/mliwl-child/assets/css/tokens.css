@@ -1,0 +1,226 @@
+/* My Life Is Worth Living — design tokens
+ * Generated from Figma (file pji462RDmAcvludSloZL2w). Do not edit by hand: change Figma, re-export, rebuild.
+ * Mobile-first: base values are Mobile; Tablet from 768px; Desktop from 1024px. */
+
+:root {
+  --font-family-base: 'Montserrat', 'Noto Sans JP', 'Noto Sans SC', system-ui, sans-serif;
+  --font-weight-black: 900;
+  --font-weight-extrabold: 800;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Primitives */
+  --color-red-500: #e70000;
+  --color-red-600: #c40000;
+  --color-ink-900: #181a1d;
+  --color-gray-700: #3a3c40;
+  --color-gray-600: #55575c;
+  --color-gray-500: #77797e;
+  --color-gray-300: #bdbdbd;
+  --color-gray-200: #dddddd;
+  --color-gray-100: #eeeeee;
+  --color-cream-50: #f7f5f0;
+  --color-white: #ffffff;
+  --color-dante-500: #65276d;
+  --color-dante-700: #4e1e55;
+  --color-amie-500: #40a070;
+  --color-amie-700: #2d7a52;
+  --color-emily-500: #61579c;
+  --color-kyle-500: #406c96;
+  --color-kyle-700: #2b5d8a;
+  --color-danny-500: #902d16;
+  --color-gold-500: #cfac38;
+  --color-kaia-500: #37998a;
+  --color-kaia-700: #26786c;
+  --color-vince-500: #2b6d99;
+  --color-green-700: #2b6b49;
+  --color-gold-600: #b8962a;
+  --color-gold-700: #9c7f22;
+
+  /* Color */
+  --color-bg-page: var(--color-white); /* Default page background. */
+  --color-bg-subtle: var(--color-cream-50); /* Warm alternate section (Start here). */
+  --color-bg-muted: var(--color-gray-100); /* Muted section (Stories). */
+  --color-bg-surface: var(--color-white); /* Cards on any background. */
+  --color-bg-inverse: var(--color-ink-900); /* Crisis bar, footer, primary buttons. */
+  --color-bg-brand: var(--color-red-500); /* Brand red fills. */
+  --color-bg-hero: var(--color-dante-500); /* Hero section. */
+  --color-bg-help: var(--color-kyle-500); /* Get help section. */
+  --color-bg-featured: var(--color-kyle-700); /* Featured story panel. */
+  --color-bg-highlight: var(--color-gold-500); /* Awards band, badges. */
+  --color-text-primary: var(--color-ink-900); /* Headings and body. */
+  --color-text-secondary: var(--color-gray-600); /* Supporting text. */
+  --color-text-inverse: var(--color-white); /* Text on dark, hero, help and character colors. */
+  --color-text-brand: var(--color-red-600); /* Eyebrows and links on light backgrounds. */
+  --color-text-accent-on-dark: var(--color-gold-500); /* Eyebrow on the purple hero. */
+  --color-text-success: var(--color-green-700); /* Success status text. */
+  --color-border-default: var(--color-gray-200); /* Card and section dividers. */
+  --color-border-quiet: var(--color-gray-300); /* Chips and secondary outlines. */
+  --color-border-input: var(--color-gray-500); /* Form inputs (3:1+). */
+  --color-border-strong: var(--color-ink-900); /* Outlined buttons and active chips. */
+  --color-border-inverse: var(--color-white); /* Outlined buttons on dark. */
+  --color-action-primary-bg: var(--color-ink-900); /* Primary button fill (black CTA). */
+  --color-action-primary-text: var(--color-white); /* Primary button label. */
+  --color-action-accent-bg: var(--color-gold-500); /* Hero CTA fill (Watch free). */
+  --color-action-accent-text: var(--color-ink-900); /* Label on gold CTA. */
+  --color-action-link: var(--color-red-600); /* Inline links. */
+  --color-focus-ring: var(--color-gold-500); /* Keyboard focus outline (paired with black halo). */
+  --color-character-dante: var(--color-dante-500); /* Dante story color. */
+  --color-character-amie: var(--color-amie-500); /* Amie story color. */
+  --color-character-emily: var(--color-emily-500); /* Emily story color. */
+  --color-character-kyle: var(--color-kyle-500); /* Kyle story color. */
+  --color-character-danny: var(--color-danny-500); /* Danny story color. */
+  --color-character-group: var(--color-gold-500); /* Group / Are You OK? color. */
+  --color-character-kaia: var(--color-kaia-500); /* Kaia story color. */
+  --color-character-vince: var(--color-vince-500); /* Vince story color. */
+  --color-action-primary-bg-hover: var(--color-gray-700); /* Primary button hover. */
+  --color-action-accent-bg-hover: var(--color-gold-600); /* Gold button hover. */
+  --color-action-outline-bg-hover: var(--color-gray-100); /* Outline button hover on light backgrounds. */
+  --color-action-inverse-bg-hover: var(--color-white); /* Outline-on-dark hover: fills white, label turns ink. */
+  --color-action-primary-bg-pressed: var(--color-gray-600); /* Primary button pressed. */
+  --color-action-accent-bg-pressed: var(--color-gold-700); /* Gold button pressed. */
+  --color-action-outline-bg-pressed: var(--color-gray-200); /* Outline button pressed. */
+  --color-action-inverse-bg-pressed: var(--color-gray-200); /* Outline-on-dark pressed (label ink). */
+  --color-action-selected-bg: var(--color-dante-500); /* Selected / current state of Primary (white label, 10.2:1). */
+  --color-action-disabled-bg: var(--color-gray-200); /* Disabled fill. */
+  --color-action-disabled-text: var(--color-gray-500); /* Disabled label (exempt from contrast; never the only cue). */
+  --color-action-disabled-border: var(--color-gray-300); /* Disabled outline. */
+  --color-text-inverse-secondary: var(--color-gray-200); /* Secondary text on ink (12.8:1). */
+  --color-border-brand: var(--color-red-500); /* Brand red underline for nav hover/current. */
+  --color-action-selected-bg-hover: var(--color-dante-700); /* Language select / selected hover. */
+
+  /* Spacing */
+  --space-0: 0;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-80: 80px;
+  --space-96: 96px;
+
+  /* Radius */
+  --radius-none: 0;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-ml: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+  --radius-3xl: 32px;
+  --radius-full: 999px;
+
+  /* Layout */
+  --layout-section-y: var(--space-48);
+  --layout-gutter: var(--space-16);
+  --layout-card-padding: var(--space-24);
+  --layout-grid-gap: var(--space-16);
+  --layout-container-max: 1200px;
+  --layout-touch-target: 48px;
+
+  /* Typography */
+  --font-size-display: 40px;
+  --line-height-display: 40px;
+  --font-size-h1: 34px;
+  --line-height-h1: 36px;
+  --font-size-h2: 30px;
+  --line-height-h2: 32px;
+  --font-size-h3: 20px;
+  --line-height-h3: 24px;
+  --font-size-h4: 18px;
+  --line-height-h4: 24px;
+  --font-size-body-lg: 18px;
+  --line-height-body-lg: 28px;
+  --font-size-body: 16px;
+  --line-height-body: 24px;
+  --font-size-body-strong: 16px;
+  --line-height-body-strong: 24px;
+  --font-size-body-sm: 15px;
+  --line-height-body-sm: 24px;
+  --font-size-caption: 13px;
+  --line-height-caption: 20px;
+  --font-size-eyebrow: 12px;
+  --line-height-eyebrow: 16px;
+  --font-size-button: 15px;
+  --line-height-button: 24px;
+  --font-size-button-sm: 13px;
+  --line-height-button-sm: 16px;
+  --font-size-nav: 13px;
+  --line-height-nav: 16px;
+  --font-size-tag: 11px;
+  --line-height-tag: 16px;
+
+  /* Elevation */
+  --shadow-raised: 0px 12px 40px 0px #181a1d2e;
+  --shadow-hover: 0px 18px 40px 0px #181a1d1f;
+  --shadow-tag: 0px 2px 8px 0px #181a1d33;
+  --focus-ring: 0 0 0 3px var(--color-focus-ring), 0 0 0 5px var(--color-ink-900);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --layout-section-y: var(--space-64);
+    --layout-gutter: var(--space-32);
+    --layout-grid-gap: var(--space-24);
+    --layout-container-max: 704px;
+    --font-size-display: 52px;
+    --line-height-display: 56px;
+    --font-size-h1: 40px;
+    --line-height-h1: 44px;
+    --font-size-h2: 34px;
+    --line-height-h2: 40px;
+    --font-size-h3: 22px;
+    --line-height-h3: 28px;
+    --font-size-h4: 19px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --layout-section-y: var(--space-72);
+    --layout-gutter: var(--space-24);
+    --layout-card-padding: var(--space-32);
+    --layout-container-max: 1200px;
+    --font-size-display: 66px;
+    --line-height-display: 64px;
+    --font-size-h1: 48px;
+    --line-height-h1: 50px;
+    --font-size-h2: 40px;
+    --line-height-h2: 42px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-body-lg: 19px;
+    --line-height-body-lg: 30px;
+    --font-size-body: 17px;
+    --line-height-body: 28px;
+    --font-size-body-strong: 17px;
+    --line-height-body-strong: 28px;
+    --font-size-eyebrow: 13px;
+  }
+}
+
+/* Text styles (match Figma text styles 1:1) */
+.text-display { font-family: var(--font-family-base); font-weight: var(--font-weight-black); font-size: var(--font-size-display); line-height: var(--line-height-display); letter-spacing: -0.01em; text-transform: uppercase; }
+.text-heading-h1 { font-family: var(--font-family-base); font-weight: var(--font-weight-black); font-size: var(--font-size-h1); line-height: var(--line-height-h1); letter-spacing: 0; text-transform: uppercase; }
+.text-heading-h2 { font-family: var(--font-family-base); font-weight: var(--font-weight-black); font-size: var(--font-size-h2); line-height: var(--line-height-h2); letter-spacing: 0; text-transform: uppercase; }
+.text-heading-h3 { font-family: var(--font-family-base); font-weight: var(--font-weight-black); font-size: var(--font-size-h3); line-height: var(--line-height-h3); letter-spacing: 0; text-transform: uppercase; }
+.text-heading-h4 { font-family: var(--font-family-base); font-weight: var(--font-weight-black); font-size: var(--font-size-h4); line-height: var(--line-height-h4); letter-spacing: 0; text-transform: uppercase; }
+.text-body-large { font-family: var(--font-family-base); font-weight: var(--font-weight-regular); font-size: var(--font-size-body-lg); line-height: var(--line-height-body-lg); letter-spacing: 0; }
+.text-body-default { font-family: var(--font-family-base); font-weight: var(--font-weight-regular); font-size: var(--font-size-body); line-height: var(--line-height-body); letter-spacing: 0; }
+.text-body-strong { font-family: var(--font-family-base); font-weight: var(--font-weight-bold); font-size: var(--font-size-body-strong); line-height: var(--line-height-body-strong); letter-spacing: 0; }
+.text-body-small { font-family: var(--font-family-base); font-weight: var(--font-weight-regular); font-size: var(--font-size-body-sm); line-height: var(--line-height-body-sm); letter-spacing: 0; }
+.text-caption { font-family: var(--font-family-base); font-weight: var(--font-weight-medium); font-size: var(--font-size-caption); line-height: var(--line-height-caption); letter-spacing: 0; }
+.text-eyebrow { font-family: var(--font-family-base); font-weight: var(--font-weight-extrabold); font-size: var(--font-size-eyebrow); line-height: var(--line-height-eyebrow); letter-spacing: 0.16em; text-transform: uppercase; }
+.text-label-button { font-family: var(--font-family-base); font-weight: var(--font-weight-extrabold); font-size: var(--font-size-button); line-height: var(--line-height-button); letter-spacing: 0.06em; text-transform: uppercase; }
+.text-label-button-small { font-family: var(--font-family-base); font-weight: var(--font-weight-extrabold); font-size: var(--font-size-button-sm); line-height: var(--line-height-button-sm); letter-spacing: 0.06em; text-transform: uppercase; }
+.text-label-nav { font-family: var(--font-family-base); font-weight: var(--font-weight-extrabold); font-size: var(--font-size-nav); line-height: var(--line-height-nav); letter-spacing: 0.1em; text-transform: uppercase; }
+.text-label-tag { font-family: var(--font-family-base); font-weight: var(--font-weight-extrabold); font-size: var(--font-size-tag); line-height: var(--line-height-tag); letter-spacing: 0.1em; text-transform: uppercase; }
