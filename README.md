@@ -10,11 +10,14 @@ Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). 
 |---|---|
 | `tokens/figma-export.json` | Variables, text styles and shadows exported from Figma |
 | `tokens/build.py` | Builds `tokens/dist/tokens.css` (CSS variables) and `tokens/dist/mliwl.tokens.json` (W3C format) |
-| `theme/mliwl-child/` | Hello Elementor child theme: loads Montserrat, `tokens.css` and `components.css` on the site and in the editor |
+| `theme/mliwl-child/` | Hello Elementor child theme: loads Montserrat, `tokens.css`, `components.css` and the mobile-menu script |
 | `theme/mliwl-child/assets/css/components.css` | Component classes (`mliwl-btn-primary`, `mliwl-tag`, `mliwl-chip`, `mliwl-form`, `mliwl-card`…) to use from Elementor's CSS Classes field |
 | `DESIGN.md` | Design rules: principles, pages, layout, color, type, components, content and accessibility |
 | `docs/elementor-setup.md` | Elementor breakpoints, Global Colors, Global Fonts and the Figma → Elementor component map |
+| `elementor/templates/` + `build_templates.py` | Elementor Pro templates: header, footer and mobile menu popup |
+| `docs/elementor-templates.md` | How to import and publish those templates |
 | `catalog/index.html` | Static page with every component, to review in a browser |
+| `catalog/header-footer.html` | Static preview of the header, footer and mobile menu styles |
 
 ## Update tokens after a Figma change
 

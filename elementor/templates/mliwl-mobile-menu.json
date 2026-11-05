@@ -1,0 +1,237 @@
+{
+  "content": [
+    {
+      "id": "17c486d",
+      "elType": "container",
+      "settings": {
+        "_title": "Mobile menu",
+        "content_width": "full",
+        "flex_direction": "column",
+        "css_classes": "mliwl-mobile-menu",
+        "flex_gap": {
+          "unit": "px",
+          "size": 24,
+          "column": "24",
+          "row": "24",
+          "isLinked": true
+        },
+        "padding": {
+          "unit": "px",
+          "top": "24",
+          "right": "16",
+          "bottom": "32",
+          "left": "16",
+          "isLinked": false
+        }
+      },
+      "elements": [
+        {
+          "id": "b78fd49",
+          "elType": "widget",
+          "widgetType": "nav-menu",
+          "settings": {
+            "menu": "main",
+            "layout": "vertical",
+            "pointer": "none",
+            "dropdown": "none",
+            "submenu_icon": {
+              "value": "",
+              "library": ""
+            },
+            "_title": "Menu links",
+            "_css_classes": "mliwl-menu-items"
+          },
+          "elements": []
+        },
+        {
+          "id": "3efc923",
+          "elType": "container",
+          "settings": {
+            "_title": "Video language",
+            "content_width": "full",
+            "flex_direction": "column",
+            "flex_gap": {
+              "unit": "px",
+              "size": 8,
+              "column": "8",
+              "row": "8",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": false
+            }
+          },
+          "elements": [
+            {
+              "id": "d414241",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p class=\"mliwl-footer-label\">Video language</p>",
+                "_title": "Language label"
+              },
+              "elements": []
+            },
+            {
+              "id": "2e6c86e",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<label class=\"mliwl-lang\">\n  <span class=\"screen-reader-text\">Video language</span>\n  <select onchange=\"if(this.value){window.location.href=this.value}\">\n    <option value=\"/stories\" selected>English</option>\n    <option value=\"/stories?lang=es\" lang=\"es\">Español</option>\n    <option value=\"/stories?lang=pt\" lang=\"pt\">Português</option>\n    <option value=\"/stories?lang=ja\" lang=\"ja\">日本語</option>\n    <option value=\"/stories?lang=zh\" lang=\"zh\">中文</option>\n  </select>\n</label>",
+                "_title": "Language select"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": true
+        },
+        {
+          "id": "7d5d8ab",
+          "elType": "container",
+          "settings": {
+            "_title": "Crisis help",
+            "content_width": "full",
+            "flex_direction": "column",
+            "css_classes": "mliwl-menu-crisis",
+            "flex_gap": {
+              "unit": "px",
+              "size": 16,
+              "column": "16",
+              "row": "16",
+              "isLinked": true
+            }
+          },
+          "elements": [
+            {
+              "id": "606ec90",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Struggling right now?",
+                "header_size": "h2",
+                "_title": "Crisis heading"
+              },
+              "elements": []
+            },
+            {
+              "id": "319b184",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>You are not alone. Free and confidential, 24/7 in the U.S.</p>",
+                "_title": "Crisis text"
+              },
+              "elements": []
+            },
+            {
+              "id": "f09a771",
+              "elType": "container",
+              "settings": {
+                "_title": "Crisis buttons",
+                "content_width": "full",
+                "flex_direction": "row",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 8,
+                  "column": "8",
+                  "row": "8",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": false
+                }
+              },
+              "elements": [
+                {
+                  "id": "520c3e4",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Call 988",
+                    "link": {
+                      "url": "tel:988",
+                      "is_external": "",
+                      "nofollow": "",
+                      "custom_attributes": ""
+                    },
+                    "_title": "Call 988",
+                    "_css_classes": "mliwl-btn-accent mliwl-btn-sm"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "cc1d694",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Text 988",
+                    "link": {
+                      "url": "sms:988",
+                      "is_external": "",
+                      "nofollow": "",
+                      "custom_attributes": ""
+                    },
+                    "_title": "Text 988",
+                    "_css_classes": "mliwl-btn-outline-inverse mliwl-btn-sm"
+                  },
+                  "elements": []
+                }
+              ],
+              "isInner": true
+            },
+            {
+              "id": "5353c6f",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p><a href=\"https://findahelpline.com\" target=\"_blank\" rel=\"noopener\">Outside the U.S.? Find a helpline</a></p>",
+                "_title": "Outside the U.S."
+              },
+              "elements": []
+            }
+          ],
+          "isInner": true
+        }
+      ],
+      "isInner": false
+    }
+  ],
+  "page_settings": {
+    "width": {
+      "unit": "vw",
+      "size": 100,
+      "sizes": []
+    },
+    "height_type": "fit_to_screen",
+    "horizontal_position": "center",
+    "vertical_position": "top",
+    "close_button_position": "inside",
+    "close_button_vertical": {
+      "unit": "px",
+      "size": 24,
+      "sizes": []
+    },
+    "close_button_horizontal": {
+      "unit": "px",
+      "size": 16,
+      "sizes": []
+    },
+    "prevent_close_on_esc_key": "",
+    "avoid_multiple_popups": "yes",
+    "entrance_animation": "",
+    "exit_animation": ""
+  },
+  "version": "0.4",
+  "title": "MLIWL Mobile Menu",
+  "type": "popup"
+}
