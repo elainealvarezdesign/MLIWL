@@ -16,6 +16,7 @@ Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). 
 | `docs/elementor-setup.md` | Elementor breakpoints, Global Colors, Global Fonts and the Figma → Elementor component map |
 | `elementor/templates/` + `build_templates.py` | Elementor Pro templates: header, footer and mobile menu popup |
 | `docs/elementor-templates.md` | How to import and publish those templates |
+| `docs/staging-install.md` | Step-by-step install and test on a staging copy |
 | `catalog/index.html` | Static page with every component, to review in a browser |
 | `catalog/header-footer.html` | Static preview of the header, footer and mobile menu styles |
 
@@ -29,6 +30,8 @@ cp tokens/dist/tokens.css theme/mliwl-child/assets/css/tokens.css
 Then update Elementor's Global Colors and Global Fonts if those values changed (see `docs/elementor-setup.md`).
 
 ## Install on WordPress
+
+Full steps: [docs/staging-install.md](docs/staging-install.md). Note: the live site uses Astra today, so this is a theme switch.
 
 1. Install and keep **Hello Elementor** as the parent theme.
 2. Zip `theme/mliwl-child/` and upload it in Appearance › Themes › Add New › Upload. Activate it on staging first.
