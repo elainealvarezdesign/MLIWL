@@ -1,4 +1,4 @@
-/* Page behavior (Home, Watch, For parents, For educators) for the static build. On WordPress the same behaviors come
+/* Page behavior (Home, Watch, For parents, For educators, Meet the team) for the static build. On WordPress the same behaviors come
    from Elementor (Loop Grid / taxonomy filter, Popup, Form). */
 (function () {
 	'use strict';
@@ -123,6 +123,23 @@
 		menu.querySelector('.site-menu-close').addEventListener('click', function () { menu.close(); });
 		menu.addEventListener('close', function () { openBtn.setAttribute('aria-expanded', 'false'); openBtn.focus(); });
 		menu.querySelectorAll('a[href^="#"]').forEach(function (a) { a.addEventListener('click', function () { menu.close(); }); });
+	}
+
+	// ---- Bio dialog (Meet the team). Focus returns to the button that opened it. ----
+	var bio = document.getElementById('bio-dialog');
+	if (bio && bio.showModal) {
+		var opener = null;
+		document.querySelectorAll('[data-bio-name]').forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				opener = btn;
+				document.getElementById('bio-name').textContent = btn.getAttribute('data-bio-name');
+				document.getElementById('bio-role').textContent = btn.getAttribute('data-bio-role');
+				bio.showModal();
+			});
+		});
+		bio.querySelector('.mliwl-dialog-close').addEventListener('click', function () { bio.close(); });
+		bio.addEventListener('click', function (e) { if (e.target === bio) bio.close(); });
+		bio.addEventListener('close', function () { if (opener) opener.focus(); });
 	}
 
 	// ---- Newsletter: audience chips (one selected), validation, success state ----

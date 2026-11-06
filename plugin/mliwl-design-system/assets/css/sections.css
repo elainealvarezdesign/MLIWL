@@ -324,3 +324,40 @@ a.mliwl-caps-link { min-height: 24px; }
 	.mliwl-facts dl > div { flex-direction: column; align-items: flex-start; gap: var(--space-8); }
 	.mliwl-people { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------- Meet the team page --------------------------------------------- */
+/* Inner page header: breadcrumb, H1, intro, jump links */
+.mliwl-page-head { padding-block: var(--space-32) var(--space-48); }
+.mliwl-page-head > .mliwl-inner { gap: var(--space-24); }
+.mliwl-band-tight-top { padding-top: var(--space-48); }
+.mliwl-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-8); font-size: var(--font-size-body-sm); line-height: var(--line-height-body-sm); }
+.mliwl-breadcrumb li + li::before { content: "/"; margin-right: var(--space-8); color: var(--color-text-secondary); }
+.mliwl-breadcrumb a { color: var(--color-text-secondary); text-decoration: none; }
+.mliwl-breadcrumb a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.mliwl-breadcrumb [aria-current] { font-weight: var(--font-weight-bold); }
+.mliwl-jump-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-8); }
+.mliwl-jump-links > span { margin-right: var(--space-8); }
+a.mliwl-chip { text-decoration: none; }
+a.mliwl-chip:hover { background: var(--color-bg-muted); }
+/* Founder card */
+.mliwl-founder { display: flex; align-items: flex-start; gap: var(--space-24); padding: var(--space-32); border-radius: var(--radius-xl); background: var(--color-bg-muted); }
+.mliwl-founder-body { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-8); min-width: 0; }
+.mliwl-founder-body .mliwl-btn { margin-top: var(--space-8); }
+.mliwl-person-photo-lg { flex: none; width: 160px; height: 160px; margin-bottom: 0; font-size: var(--font-size-h2); }
+.mliwl-brand-text { color: var(--color-text-brand); }
+/* "Read bio" is a button that looks like the caps link */
+button.mliwl-caps-link { min-height: 24px; padding: 0; border: 0; background: none; font-family: inherit; cursor: pointer; }
+button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* Dialog (Figma: Dialog) */
+.mliwl-dialog { width: min(640px, calc(100% - 32px)); max-height: calc(100% - 32px); padding: var(--space-32); border: 0; border-radius: var(--radius-xl); background: var(--color-bg-surface); color: var(--color-text-primary); box-shadow: var(--shadow-raised); }
+.mliwl-dialog::backdrop { background: rgb(24 26 29 / 0.6); }
+.mliwl-dialog-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-16); margin-bottom: var(--space-24); }
+.mliwl-dialog-head h2, .mliwl-dialog-head p, .mliwl-dialog > p { margin: 0; }
+.mliwl-dialog-close { display: grid; place-items: center; flex: none; width: 48px; height: 48px; padding: 0; border: 0; border-radius: var(--radius-full); background: var(--color-bg-muted); color: var(--color-text-primary); cursor: pointer; }
+.mliwl-dialog-close:hover { background: var(--color-border-default); }
+.mliwl-dialog-close svg { width: 24px; height: 24px; }
+@media (max-width: 767px) {
+	.mliwl-founder { flex-direction: column; padding: var(--space-24); }
+	.mliwl-person-photo-lg { width: 96px; height: 96px; font-size: var(--font-size-h3); }
+	.mliwl-dialog { padding: var(--space-24); }
+}
