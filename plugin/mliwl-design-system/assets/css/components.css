@@ -53,6 +53,7 @@ body {
 .mliwl-btn,
 body [class*="mliwl-btn-"] .elementor-button{
 	display: inline-flex;
+	white-space: nowrap;
 	align-items: center;
 	justify-content: center;
 	gap: var(--space-8);
@@ -245,7 +246,7 @@ body .mliwl-form .elementor-message-danger{ color: var(--color-text-brand); }
 .mliwl-choice input[type="radio"]:focus-visible { border-radius: 50%; }
 .mliwl-choice input:disabled { background: var(--color-action-disabled-bg); border-color: var(--color-action-disabled-border); }
 .mliwl-choice:has(input:disabled) { color: var(--color-action-disabled-text); cursor: not-allowed; }
-fieldset.mliwl-fieldset { border: 0; padding: 0; margin: 0; }
+fieldset.mliwl-fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 fieldset.mliwl-fieldset legend { padding: 0; margin-bottom: var(--space-8); font-weight: var(--font-weight-bold); }
 
 /* ---------- Card shell (story, lesson, person, partner, article) ---------- */

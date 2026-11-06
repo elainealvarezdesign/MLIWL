@@ -14,6 +14,8 @@ Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). 
 | `plugin/mliwl-design-system/assets/css/components.css` | Component classes (`mliwl-btn-primary`, `mliwl-tag`, `mliwl-chip`, `mliwl-form`, `mliwl-card`…) to use from Elementor's CSS Classes field |
 | `DESIGN.md` | Design rules: principles, pages, layout, color, type, components, content and accessibility |
 | `docs/elementor-setup.md` | Elementor breakpoints, Global Colors, Global Fonts and the Figma → Elementor component map |
+| `site/` | The website pages built from Figma, as static HTML using the plugin CSS (start with `site/index.html`, the Home) |
+| `plugin/mliwl-design-system/assets/css/sections.css` | Page section styles (hero, featured story, audience cards, stories, newsletter, about, get help) |
 | `elementor/templates/` + `build_templates.py` | Elementor Pro templates: header, footer and mobile menu popup |
 | `docs/elementor-templates.md` | How to import and publish those templates |
 | `docs/staging-install.md` | Step-by-step install and test on a staging copy |

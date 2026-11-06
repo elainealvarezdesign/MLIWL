@@ -3,7 +3,7 @@
  * Plugin Name:       MLIWL Design System
  * Plugin URI:        https://mylifeisworthliving.org
  * Description:       Design tokens, component classes and the mobile-menu script for My Life Is Worth Living. Works with any theme (Astra, Hello Elementor…) and Elementor Pro.
- * Version:           0.2.0
+ * Version:           0.3.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            MLIWL design team
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'MLIWL_DS_VERSION', '0.2.0' );
+define( 'MLIWL_DS_VERSION', '0.3.0' );
 define( 'MLIWL_DS_URL', plugin_dir_url( __FILE__ ) );
 
 /**
@@ -42,6 +42,7 @@ function mliwl_ds_enqueue_styles() {
 	);
 	wp_enqueue_style( 'mliwl-tokens', MLIWL_DS_URL . 'assets/css/tokens.css', $after, MLIWL_DS_VERSION );
 	wp_enqueue_style( 'mliwl-components', MLIWL_DS_URL . 'assets/css/components.css', array( 'mliwl-tokens', 'mliwl-font' ), MLIWL_DS_VERSION );
+	wp_enqueue_style( 'mliwl-sections', MLIWL_DS_URL . 'assets/css/sections.css', array( 'mliwl-components' ), MLIWL_DS_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'mliwl_ds_enqueue_styles', 999 );
 
