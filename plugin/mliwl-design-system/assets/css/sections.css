@@ -124,7 +124,9 @@
 	.mliwl-carousel-controls { display: flex; align-items: center; justify-content: space-between; gap: var(--space-16); }
 	.mliwl-carousel-controls .mliwl-btn { width: 48px; padding: 0; }
 }
-.mliwl-languages { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-16); padding: var(--space-24); border-radius: var(--radius-lg); background: var(--color-bg-surface); }
+.mliwl-languages { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-16); padding: var(--space-24); border-radius: var(--radius-lg); background: var(--color-bg-highlight); color: var(--color-text-primary); }
+/* Gold accent panel: caption in full ink for contrast; buttons stay ink outline */
+.mliwl-languages .mliwl-muted-text { color: var(--color-text-primary); }
 .mliwl-languages .label { display: flex; flex-direction: column; margin-right: auto; }
 
 /* ---------- Newsletter --------------------------------------------------- */

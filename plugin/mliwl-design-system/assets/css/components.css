@@ -100,10 +100,6 @@ body .mliwl-btn-sm .elementor-button{
 .mliwl-btn-outline-inverse:is(.mliwl-btn), body .mliwl-btn-outline-inverse .elementor-button{ background: transparent; color: var(--color-text-inverse); border-color: var(--color-border-inverse); }
 .mliwl-btn-outline-inverse:is(.mliwl-btn):hover, body .mliwl-btn-outline-inverse .elementor-button:hover{ background: var(--color-action-inverse-bg-hover); color: var(--color-text-primary); }
 .mliwl-btn-outline-inverse:is(.mliwl-btn):active, body .mliwl-btn-outline-inverse .elementor-button:active{ background: var(--color-action-inverse-bg-pressed); border-color: var(--color-action-inverse-bg-pressed); color: var(--color-text-primary); }
-/* Outline Accent: gold outline on dark bands (e.g. Watch hero "Videos in other languages") */
-.mliwl-btn-outline-accent:is(.mliwl-btn), body .mliwl-btn-outline-accent .elementor-button{ background: transparent; color: var(--color-text-accent-on-dark); border-color: var(--color-action-accent-bg); }
-.mliwl-btn-outline-accent:is(.mliwl-btn):hover, body .mliwl-btn-outline-accent .elementor-button:hover{ background: var(--color-action-accent-bg); color: var(--color-action-accent-text); }
-.mliwl-btn-outline-accent:is(.mliwl-btn):active, body .mliwl-btn-outline-accent .elementor-button:active{ background: var(--color-action-accent-bg-pressed); border-color: var(--color-action-accent-bg-pressed); color: var(--color-action-accent-text); }
 
 /* Disabled (never the only cue) */
 .mliwl-btn:is(:disabled, [aria-disabled="true"]) {
