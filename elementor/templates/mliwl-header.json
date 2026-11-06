@@ -1,0 +1,224 @@
+{
+  "content": [
+    {
+      "id": "d705063",
+      "elType": "container",
+      "settings": {
+        "_title": "Crisis bar",
+        "content_width": "full",
+        "flex_direction": "row",
+        "css_classes": "mliwl-crisis-bar",
+        "flex_justify_content": "center",
+        "flex_align_items": "center",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": false
+        },
+        "html_tag": "aside",
+        "_element_id": "crisis-bar"
+      },
+      "elements": [
+        {
+          "id": "f343027",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p><strong>Struggling right now? You are not alone.</strong> <a href=\"tel:988\">Call 988</a> <a href=\"sms:988\">Text 988</a> <span class=\"mliwl-crisis-note\">Free and confidential, 24/7 in the U.S.</span> <a href=\"https://findahelpline.com\" target=\"_blank\" rel=\"noopener\">Outside the U.S.? Find a helpline<span class=\"screen-reader-text\"> (opens in a new tab)</span></a></p>",
+            "_title": "Crisis message (desktop, tablet)",
+            "hide_mobile": "hidden-mobile"
+          },
+          "elements": []
+        },
+        {
+          "id": "171f0f5",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p><strong>Need help now?</strong> <a href=\"tel:988\">Call 988</a> <a href=\"sms:988\">Text 988</a></p>",
+            "_title": "Crisis message (mobile)",
+            "hide_desktop": "hidden-desktop",
+            "hide_tablet": "hidden-tablet"
+          },
+          "elements": []
+        }
+      ],
+      "isInner": false
+    },
+    {
+      "id": "76d226c",
+      "elType": "container",
+      "settings": {
+        "_title": "Header",
+        "content_width": "boxed",
+        "flex_direction": "row",
+        "css_classes": "mliwl-header",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+          "unit": "px",
+          "size": 24,
+          "column": "24",
+          "row": "24",
+          "isLinked": true
+        },
+        "html_tag": "header"
+      },
+      "elements": [
+        {
+          "id": "a47e555",
+          "elType": "widget",
+          "widgetType": "theme-site-logo",
+          "settings": {
+            "link_to": "custom",
+            "link": {
+              "url": "/",
+              "is_external": "",
+              "nofollow": "",
+              "custom_attributes": ""
+            },
+            "_title": "Logo",
+            "_css_classes": "mliwl-logo"
+          },
+          "elements": []
+        },
+        {
+          "id": "a931899",
+          "elType": "container",
+          "settings": {
+            "_title": "Header actions",
+            "content_width": "full",
+            "flex_direction": "row",
+            "css_classes": "mliwl-header-actions",
+            "flex_justify_content": "flex-end",
+            "flex_align_items": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 24,
+              "column": "24",
+              "row": "24",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": false
+            },
+            "flex_gap_mobile": {
+              "unit": "px",
+              "size": 12,
+              "column": "12",
+              "row": "12",
+              "isLinked": true
+            }
+          },
+          "elements": [
+            {
+              "id": "9f47aa2",
+              "elType": "widget",
+              "widgetType": "nav-menu",
+              "settings": {
+                "menu": "main",
+                "layout": "horizontal",
+                "pointer": "none",
+                "dropdown": "none",
+                "submenu_icon": {
+                  "value": "",
+                  "library": ""
+                },
+                "_title": "Main navigation",
+                "_css_classes": "mliwl-nav",
+                "hide_tablet": "hidden-tablet",
+                "hide_mobile": "hidden-mobile"
+              },
+              "elements": []
+            },
+            {
+              "id": "c4efdf9",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Get help now",
+                "link": {
+                  "url": "/get-help",
+                  "is_external": "",
+                  "nofollow": "",
+                  "custom_attributes": ""
+                },
+                "_title": "Get help now (desktop, tablet)",
+                "_css_classes": "mliwl-btn-primary mliwl-btn-sm",
+                "hide_mobile": "hidden-mobile"
+              },
+              "elements": []
+            },
+            {
+              "id": "0e0e053",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Get help",
+                "link": {
+                  "url": "/get-help",
+                  "is_external": "",
+                  "nofollow": "",
+                  "custom_attributes": ""
+                },
+                "_title": "Get help (mobile)",
+                "_css_classes": "mliwl-btn-primary mliwl-btn-sm",
+                "hide_desktop": "hidden-desktop",
+                "hide_tablet": "hidden-tablet"
+              },
+              "elements": []
+            },
+            {
+              "id": "7471dd7",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<label class=\"mliwl-lang\">\n  <span class=\"screen-reader-text\">Video language</span>\n  <select onchange=\"if(this.value){window.location.href=this.value}\">\n    <option value=\"/stories\" selected>English</option>\n    <option value=\"/stories?lang=es\" lang=\"es\">Español</option>\n    <option value=\"/stories?lang=pt\" lang=\"pt\">Português</option>\n    <option value=\"/stories?lang=ja\" lang=\"ja\">日本語</option>\n    <option value=\"/stories?lang=zh\" lang=\"zh\">中文</option>\n  </select>\n</label>",
+                "_title": "Video language",
+                "hide_tablet": "hidden-tablet",
+                "hide_mobile": "hidden-mobile"
+              },
+              "elements": []
+            },
+            {
+              "id": "e494d8a",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "",
+                "link": {
+                  "url": "#mliwl-open-menu",
+                  "is_external": "",
+                  "nofollow": "",
+                  "custom_attributes": "aria-label|Open menu"
+                },
+                "selected_icon": {
+                  "value": "fas fa-bars",
+                  "library": "fa-solid"
+                },
+                "_title": "Menu button",
+                "_css_classes": "mliwl-menu-button",
+                "hide_desktop": "hidden-desktop"
+              },
+              "elements": []
+            }
+          ],
+          "isInner": true
+        }
+      ],
+      "isInner": false
+    }
+  ],
+  "page_settings": [],
+  "version": "0.4",
+  "title": "MLIWL Header",
+  "type": "header"
+}

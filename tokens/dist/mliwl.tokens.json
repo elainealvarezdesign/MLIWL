@@ -1,0 +1,1712 @@
+{
+  "$description": "My Life Is Worth Living design tokens. Generated from Figma file pji462RDmAcvludSloZL2w. Do not edit by hand.",
+  "primitive": {
+    "red": {
+      "500": {
+        "$type": "color",
+        "$value": "#e70000",
+        "$description": "Brand primary red (style guide). 4.8:1 on white: OK for text on white; use red/600 for small text on tinted backgrounds."
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#c40000",
+        "$description": "Accessible red for small text and links (6.3:1 on white, 5.4:1 on gray/100)."
+      }
+    },
+    "ink": {
+      "900": {
+        "$type": "color",
+        "$value": "#181a1d",
+        "$description": "Brand primary black (style guide)."
+      }
+    },
+    "gray": {
+      "700": {
+        "$type": "color",
+        "$value": "#3a3c40",
+        "$description": "Dividers on dark, strong body text."
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#55575c",
+        "$description": "Secondary text on white (7.2:1)."
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#77797e",
+        "$description": "Input borders (4.4:1 on white; meets 3:1 for UI)."
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#bdbdbd",
+        "$description": "Quiet borders, chip outlines."
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#dddddd",
+        "$description": "Brand primary light gray (style guide)."
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#eeeeee",
+        "$description": "Muted section background."
+      }
+    },
+    "cream": {
+      "50": {
+        "$type": "color",
+        "$value": "#f7f5f0",
+        "$description": "Warm subtle background."
+      }
+    },
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "White."
+    },
+    "dante": {
+      "500": {
+        "$type": "color",
+        "$value": "#65276d",
+        "$description": "Character accent: Dante (style guide)."
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#4e1e55",
+        "$description": "Dante hover/pressed."
+      }
+    },
+    "amie": {
+      "500": {
+        "$type": "color",
+        "$value": "#40a070",
+        "$description": "Character accent: Amie (style guide). Large type/art only with white."
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#2d7a52",
+        "$description": "Accessible Amie for white text (5.3:1)."
+      }
+    },
+    "emily": {
+      "500": {
+        "$type": "color",
+        "$value": "#61579c",
+        "$description": "Character accent: Emily (style guide)."
+      }
+    },
+    "kyle": {
+      "500": {
+        "$type": "color",
+        "$value": "#406c96",
+        "$description": "Character accent: Kyle (style guide)."
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#2b5d8a",
+        "$description": "Deep blue for featured panels (6.9:1 with white)."
+      }
+    },
+    "danny": {
+      "500": {
+        "$type": "color",
+        "$value": "#902d16",
+        "$description": "Character accent: Danny (style guide)."
+      }
+    },
+    "gold": {
+      "500": {
+        "$type": "color",
+        "$value": "#cfac38",
+        "$description": "Character accent: Group (style guide). Use dark text on it."
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#b8962a",
+        "$description": "Gold hover (6.2:1 with ink text)."
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#9c7f22",
+        "$description": "Gold pressed (4.5:1 with ink text)."
+      }
+    },
+    "kaia": {
+      "500": {
+        "$type": "color",
+        "$value": "#37998a",
+        "$description": "Story accent: Kaia (from live site)."
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#26786c",
+        "$description": "Accessible Kaia for white text."
+      }
+    },
+    "vince": {
+      "500": {
+        "$type": "color",
+        "$value": "#2b6d99",
+        "$description": "Story accent: Vince (from live site)."
+      }
+    },
+    "green": {
+      "700": {
+        "$type": "color",
+        "$value": "#2b6b49",
+        "$description": "Success messages."
+      }
+    },
+    "raquelle": {
+      "500": {
+        "$type": "color",
+        "$value": "#a33a72",
+        "$description": "Character accent: Raquelle (raspberry, approved). White text 6.2:1 (AA)."
+      }
+    }
+  },
+  "color": {
+    "bg": {
+      "page": {
+        "$type": "color",
+        "$value": "{primitive.white}",
+        "$description": "Default page background."
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{primitive.cream.50}",
+        "$description": "Warm alternate section (Start here)."
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{primitive.gray.100}",
+        "$description": "Muted section (Stories)."
+      },
+      "surface": {
+        "$type": "color",
+        "$value": "{primitive.white}",
+        "$description": "Cards on any background."
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{primitive.ink.900}",
+        "$description": "Crisis bar, footer, primary buttons."
+      },
+      "brand": {
+        "$type": "color",
+        "$value": "{primitive.red.500}",
+        "$description": "Brand red fills."
+      },
+      "hero": {
+        "$type": "color",
+        "$value": "{primitive.dante.500}",
+        "$description": "Hero section."
+      },
+      "help": {
+        "$type": "color",
+        "$value": "{primitive.kyle.500}",
+        "$description": "Get help section."
+      },
+      "featured": {
+        "$type": "color",
+        "$value": "{primitive.kyle.700}",
+        "$description": "Featured story panel."
+      },
+      "highlight": {
+        "$type": "color",
+        "$value": "{primitive.gold.500}",
+        "$description": "Awards band, badges."
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{primitive.ink.900}",
+        "$description": "Headings and body."
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{primitive.gray.600}",
+        "$description": "Supporting text."
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{primitive.white}",
+        "$description": "Text on dark, hero, help and character colors."
+      },
+      "brand": {
+        "$type": "color",
+        "$value": "{primitive.red.600}",
+        "$description": "Eyebrows and links on light backgrounds."
+      },
+      "accent-on-dark": {
+        "$type": "color",
+        "$value": "{primitive.gold.500}",
+        "$description": "Eyebrow on the purple hero."
+      },
+      "success": {
+        "$type": "color",
+        "$value": "{primitive.green.700}",
+        "$description": "Success status text."
+      },
+      "inverse-secondary": {
+        "$type": "color",
+        "$value": "{primitive.gray.200}",
+        "$description": "Secondary text on ink (12.8:1)."
+      }
+    },
+    "border": {
+      "default": {
+        "$type": "color",
+        "$value": "{primitive.gray.200}",
+        "$description": "Card and section dividers."
+      },
+      "quiet": {
+        "$type": "color",
+        "$value": "{primitive.gray.300}",
+        "$description": "Chips and secondary outlines."
+      },
+      "input": {
+        "$type": "color",
+        "$value": "{primitive.gray.500}",
+        "$description": "Form inputs (3:1+)."
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{primitive.ink.900}",
+        "$description": "Outlined buttons and active chips."
+      },
+      "inverse": {
+        "$type": "color",
+        "$value": "{primitive.white}",
+        "$description": "Outlined buttons on dark."
+      },
+      "brand": {
+        "$type": "color",
+        "$value": "{primitive.red.500}",
+        "$description": "Brand red underline for nav hover/current."
+      }
+    },
+    "action": {
+      "primary": {
+        "bg": {
+          "$type": "color",
+          "$value": "{primitive.ink.900}",
+          "$description": "Primary button fill (black CTA)."
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{primitive.white}",
+          "$description": "Primary button label."
+        },
+        "bg-hover": {
+          "$type": "color",
+          "$value": "{primitive.gray.700}",
+          "$description": "Primary button hover."
+        },
+        "bg-pressed": {
+          "$type": "color",
+          "$value": "{primitive.gray.600}",
+          "$description": "Primary button pressed."
+        }
+      },
+      "accent": {
+        "bg": {
+          "$type": "color",
+          "$value": "{primitive.gold.500}",
+          "$description": "Hero CTA fill (Watch free)."
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{primitive.ink.900}",
+          "$description": "Label on gold CTA."
+        },
+        "bg-hover": {
+          "$type": "color",
+          "$value": "{primitive.gold.600}",
+          "$description": "Gold button hover."
+        },
+        "bg-pressed": {
+          "$type": "color",
+          "$value": "{primitive.gold.700}",
+          "$description": "Gold button pressed."
+        }
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{primitive.red.600}",
+        "$description": "Inline links."
+      },
+      "outline": {
+        "bg-hover": {
+          "$type": "color",
+          "$value": "{primitive.gray.100}",
+          "$description": "Outline button hover on light backgrounds."
+        },
+        "bg-pressed": {
+          "$type": "color",
+          "$value": "{primitive.gray.200}",
+          "$description": "Outline button pressed."
+        }
+      },
+      "inverse": {
+        "bg-hover": {
+          "$type": "color",
+          "$value": "{primitive.white}",
+          "$description": "Outline-on-dark hover: fills white, label turns ink."
+        },
+        "bg-pressed": {
+          "$type": "color",
+          "$value": "{primitive.gray.200}",
+          "$description": "Outline-on-dark pressed (label ink)."
+        }
+      },
+      "selected": {
+        "bg": {
+          "$type": "color",
+          "$value": "{primitive.dante.500}",
+          "$description": "Selected / current state of Primary (white label, 10.2:1)."
+        },
+        "bg-hover": {
+          "$type": "color",
+          "$value": "{primitive.dante.700}",
+          "$description": "Language select / selected hover."
+        }
+      },
+      "disabled": {
+        "bg": {
+          "$type": "color",
+          "$value": "{primitive.gray.200}",
+          "$description": "Disabled fill."
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{primitive.gray.500}",
+          "$description": "Disabled label (exempt from contrast; never the only cue)."
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{primitive.gray.300}",
+          "$description": "Disabled outline."
+        }
+      }
+    },
+    "focus": {
+      "ring": {
+        "$type": "color",
+        "$value": "{primitive.gold.500}",
+        "$description": "Keyboard focus outline (paired with black halo)."
+      }
+    },
+    "character": {
+      "dante": {
+        "$type": "color",
+        "$value": "{primitive.dante.500}",
+        "$description": "Dante story color."
+      },
+      "amie": {
+        "$type": "color",
+        "$value": "{primitive.amie.500}",
+        "$description": "Amie story color."
+      },
+      "emily": {
+        "$type": "color",
+        "$value": "{primitive.emily.500}",
+        "$description": "Emily story color."
+      },
+      "kyle": {
+        "$type": "color",
+        "$value": "{primitive.kyle.500}",
+        "$description": "Kyle story color."
+      },
+      "danny": {
+        "$type": "color",
+        "$value": "{primitive.danny.500}",
+        "$description": "Danny story color."
+      },
+      "group": {
+        "$type": "color",
+        "$value": "{primitive.gold.500}",
+        "$description": "Group / Are You OK? color."
+      },
+      "kaia": {
+        "$type": "color",
+        "$value": "{primitive.kaia.500}",
+        "$description": "Kaia story color."
+      },
+      "vince": {
+        "$type": "color",
+        "$value": "{primitive.vince.500}",
+        "$description": "Vince story color."
+      },
+      "raquelle": {
+        "$type": "color",
+        "$value": "{primitive.raquelle.500}",
+        "$description": "Raquelle / Are You OK? story color."
+      }
+    }
+  },
+  "space": {
+    "0": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      },
+      "$description": "0px"
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$description": "4px · half-step, inside small elements only"
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$description": "8px"
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$description": "12px · half-step, inside small elements only"
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$description": "16px"
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$description": "20px · half-step, inside small elements only"
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$description": "24px"
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$description": "32px"
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": {
+        "value": 40,
+        "unit": "px"
+      },
+      "$description": "40px"
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$description": "48px"
+    },
+    "56": {
+      "$type": "dimension",
+      "$value": {
+        "value": 56,
+        "unit": "px"
+      },
+      "$description": "56px"
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      },
+      "$description": "64px"
+    },
+    "72": {
+      "$type": "dimension",
+      "$value": {
+        "value": 72,
+        "unit": "px"
+      },
+      "$description": "72px"
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": {
+        "value": 80,
+        "unit": "px"
+      },
+      "$description": "80px"
+    },
+    "96": {
+      "$type": "dimension",
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      },
+      "$description": "96px"
+    }
+  },
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$value": {
+        "value": 0,
+        "unit": "px"
+      },
+      "$description": "Square"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$description": "Tags"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$description": "Skip link, small controls"
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$description": "Inputs"
+    },
+    "ml": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$description": "Notes, tips, small panels, thumbnails"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$description": "Cards, help cards"
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$description": "Audience and story cards"
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": {
+        "value": 28,
+        "unit": "px"
+      },
+      "$description": "Featured panel"
+    },
+    "3xl": {
+      "$type": "dimension",
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$description": "Large panels"
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": {
+        "value": 999,
+        "unit": "px"
+      },
+      "$description": "Pills: buttons, chips, language select"
+    }
+  },
+  "layout": {
+    "section-y": {
+      "$type": "dimension",
+      "$value": "{space.72}",
+      "$description": "Vertical padding of page sections",
+      "$extensions": {
+        "mliwl.modes": {
+          "Desktop": "{space.72}",
+          "Mobile": "{space.48}",
+          "Tablet": "{space.64}"
+        }
+      }
+    },
+    "gutter": {
+      "$type": "dimension",
+      "$value": "{space.24}",
+      "$description": "Page side padding",
+      "$extensions": {
+        "mliwl.modes": {
+          "Desktop": "{space.24}",
+          "Mobile": "{space.16}",
+          "Tablet": "{space.32}"
+        }
+      }
+    },
+    "card-padding": {
+      "$type": "dimension",
+      "$value": "{space.32}",
+      "$description": "Padding inside cards",
+      "$extensions": {
+        "mliwl.modes": {
+          "Desktop": "{space.32}",
+          "Mobile": "{space.24}",
+          "Tablet": "{space.24}"
+        }
+      }
+    },
+    "grid-gap": {
+      "$type": "dimension",
+      "$value": "{space.24}",
+      "$description": "Gap between cards",
+      "$extensions": {
+        "mliwl.modes": {
+          "Desktop": "{space.24}",
+          "Mobile": "{space.16}",
+          "Tablet": "{space.24}"
+        }
+      }
+    },
+    "container-max": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1200,
+        "unit": "px"
+      },
+      "$description": "Max content width",
+      "$extensions": {
+        "mliwl.modes": {
+          "Desktop": {
+            "value": 1200,
+            "unit": "px"
+          },
+          "Mobile": {
+            "value": 1200,
+            "unit": "px"
+          },
+          "Tablet": {
+            "value": 704,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "touch-target": {
+      "$type": "dimension",
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      },
+      "$description": "Minimum height of any tappable control",
+      "$extensions": {
+        "mliwl.modes": {
+          "Desktop": {
+            "value": 48,
+            "unit": "px"
+          },
+          "Mobile": {
+            "value": 48,
+            "unit": "px"
+          },
+          "Tablet": {
+            "value": 48,
+            "unit": "px"
+          }
+        }
+      }
+    }
+  },
+  "type": {
+    "size": {
+      "display": {
+        "$type": "dimension",
+        "$value": {
+          "value": 66,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 66,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 40,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 52,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h1": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 48,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 34,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 40,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h2": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 40,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 30,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 34,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h3": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 20,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 22,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h4": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 20,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 18,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 19,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body-lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 19,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 19,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 18,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 18,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body": {
+        "$type": "dimension",
+        "$value": {
+          "value": 17,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 17,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body-strong": {
+        "$type": "dimension",
+        "$value": {
+          "value": 17,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 17,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body-sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 15,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 15,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 15,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 15,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "caption": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 13,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 13,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 13,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "eyebrow": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 13,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 12,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 12,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "button": {
+        "$type": "dimension",
+        "$value": {
+          "value": 15,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 15,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 15,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 15,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "button-sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 13,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 13,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 13,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "nav": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 13,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 13,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 13,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "tag": {
+        "$type": "dimension",
+        "$value": {
+          "value": 11,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 11,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 11,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 11,
+              "unit": "px"
+            }
+          }
+        }
+      }
+    },
+    "line-height": {
+      "display": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 64,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 40,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 56,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h1": {
+        "$type": "dimension",
+        "$value": {
+          "value": 50,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 50,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 36,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 44,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h2": {
+        "$type": "dimension",
+        "$value": {
+          "value": 42,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 42,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 32,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 40,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h3": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 28,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 28,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "h4": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 24,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body-lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 30,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 30,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 28,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 28,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 28,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 24,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body-strong": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 28,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 24,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "body-sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 24,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "caption": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 20,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 20,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 20,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "eyebrow": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "button": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 24,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 24,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "button-sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "nav": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      },
+      "tag": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$extensions": {
+          "mliwl.modes": {
+            "Desktop": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Mobile": {
+              "value": 16,
+              "unit": "px"
+            },
+            "Tablet": {
+              "value": 16,
+              "unit": "px"
+            }
+          }
+        }
+      }
+    }
+  },
+  "shadow": {
+    "raised": {
+      "$type": "shadow",
+      "$value": {
+        "color": "#181a1d2e",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 12,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 40,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "hover": {
+      "$type": "shadow",
+      "$value": {
+        "color": "#181a1d1f",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 18,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 40,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "tag": {
+      "$type": "shadow",
+      "$value": {
+        "color": "#181a1d33",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 2,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 8,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "typography": {
+    "display": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 900,
+        "fontSize": "{type.size.display}",
+        "lineHeight": "{type.line-height.display}",
+        "letterSpacing": "-1%"
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "heading-h1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 900,
+        "fontSize": "{type.size.h1}",
+        "lineHeight": "{type.line-height.h1}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "heading-h2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 900,
+        "fontSize": "{type.size.h2}",
+        "lineHeight": "{type.line-height.h2}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "heading-h3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 900,
+        "fontSize": "{type.size.h3}",
+        "lineHeight": "{type.line-height.h3}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "heading-h4": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 900,
+        "fontSize": "{type.size.h4}",
+        "lineHeight": "{type.line-height.h4}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "body-large": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 400,
+        "fontSize": "{type.size.body-lg}",
+        "lineHeight": "{type.line-height.body-lg}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "none"
+      }
+    },
+    "body-default": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 400,
+        "fontSize": "{type.size.body}",
+        "lineHeight": "{type.line-height.body}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "none"
+      }
+    },
+    "body-strong": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 700,
+        "fontSize": "{type.size.body-strong}",
+        "lineHeight": "{type.line-height.body-strong}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "none"
+      }
+    },
+    "body-small": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 400,
+        "fontSize": "{type.size.body-sm}",
+        "lineHeight": "{type.line-height.body-sm}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "none"
+      }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 500,
+        "fontSize": "{type.size.caption}",
+        "lineHeight": "{type.line-height.caption}",
+        "letterSpacing": 0
+      },
+      "$extensions": {
+        "mliwl.textTransform": "none"
+      }
+    },
+    "eyebrow": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 800,
+        "fontSize": "{type.size.eyebrow}",
+        "lineHeight": "{type.line-height.eyebrow}",
+        "letterSpacing": "16%"
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "label-button": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 800,
+        "fontSize": "{type.size.button}",
+        "lineHeight": "{type.line-height.button}",
+        "letterSpacing": "6%"
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "label-button-small": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 800,
+        "fontSize": "{type.size.button-sm}",
+        "lineHeight": "{type.line-height.button-sm}",
+        "letterSpacing": "6%"
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "label-nav": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 800,
+        "fontSize": "{type.size.nav}",
+        "lineHeight": "{type.line-height.nav}",
+        "letterSpacing": "10%"
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    },
+    "label-tag": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "Montserrat",
+        "fontWeight": 800,
+        "fontSize": "{type.size.tag}",
+        "lineHeight": "{type.line-height.tag}",
+        "letterSpacing": "10%"
+      },
+      "$extensions": {
+        "mliwl.textTransform": "uppercase"
+      }
+    }
+  }
+}

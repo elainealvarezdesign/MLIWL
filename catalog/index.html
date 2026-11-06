@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLIWL component catalog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../plugin/mliwl-design-system/assets/css/tokens.css">
+<link rel="stylesheet" href="../plugin/mliwl-design-system/assets/css/components.css">
+<style>
+  /* catalog-only layout */
+  .cat-row { display: flex; flex-wrap: wrap; gap: var(--space-16); align-items: center; margin-top: var(--space-16); }
+  .cat-block { margin-top: var(--space-48); }
+  .cat-dark { background: var(--color-bg-hero); padding: var(--space-24); border-radius: var(--radius-xl); }
+  .cat-grid { display: grid; gap: var(--space-24); grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); margin-top: var(--space-16); }
+  .cat-swatch { display: flex; flex-direction: column; gap: var(--space-4); font-size: var(--font-size-caption); }
+  .cat-swatch span:first-child { height: 56px; border-radius: var(--radius-md); border: 1px solid var(--color-border-default); }
+</style>
+</head>
+<body>
+<a class="mliwl-skip-link" href="#main">Skip to content</a>
+<div class="mliwl-crisis-bar">
+  <span>Struggling right now? You are not alone.</span>
+  <a href="tel:988">Call 988</a><a href="sms:988">Text 988</a>
+  <a href="https://findahelpline.com">Outside the U.S.? Find a helpline</a>
+</div>
+
+<main id="main" class="mliwl-container mliwl-section">
+  <p class="text-eyebrow" style="color: var(--color-text-brand)">Design system · v0.1</p>
+  <h1 class="text-display">Component catalog</h1>
+  <p class="text-body-large" style="color: var(--color-text-secondary); max-width: 720px">Every class here is in <code>components.css</code>. In Elementor, put the class in the widget’s Advanced › CSS Classes. Resize the window to see the tablet (768) and mobile (≤767) sizes.</p>
+
+  <section class="cat-block" aria-labelledby="t-type">
+    <h2 id="t-type" class="text-heading-h2">Type</h2>
+    <p class="text-display">Display</p>
+    <p class="text-heading-h1">Heading H1</p>
+    <p class="text-heading-h2">Heading H2</p>
+    <p class="text-heading-h3">Heading H3</p>
+    <p class="text-heading-h4">Heading H4</p>
+    <p class="text-body-large">Body Large — short animated stories about teen mental health.</p>
+    <p class="text-body-default">Body Default — each story ends with where to find help.</p>
+    <p class="text-body-strong">Body Strong</p>
+    <p class="text-body-small">Body Small</p>
+    <p class="text-caption">Caption</p>
+    <p class="text-eyebrow">Eyebrow</p>
+  </section>
+
+  <section class="cat-block" aria-labelledby="t-color">
+    <h2 id="t-color" class="text-heading-h2">Color roles</h2>
+    <div class="cat-grid" style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr))">
+      <div class="cat-swatch"><span style="background: var(--color-bg-hero)"></span><span>bg/hero</span></div>
+      <div class="cat-swatch"><span style="background: var(--color-bg-help)"></span><span>bg/help</span></div>
+      <div class="cat-swatch"><span style="background: var(--color-bg-inverse)"></span><span>bg/inverse</span></div>
+      <div class="cat-swatch"><span style="background: var(--color-bg-highlight)"></span><span>bg/highlight</span></div>
+      <div class="cat-swatch"><span style="background: var(--color-bg-muted)"></span><span>bg/muted</span></div>
+      <div class="cat-swatch"><span style="background: var(--color-bg-subtle)"></span><span>bg/subtle</span></div>
+      <div class="cat-swatch"><span style="background: var(--color-text-brand)"></span><span>text/brand</span></div>
+      <div class="cat-swatch"><span style="background: var(--color-character-amie)"></span><span>character/amie</span></div>
+    </div>
+  </section>
+
+  <section class="cat-block" aria-labelledby="t-btn">
+    <h2 id="t-btn" class="text-heading-h2">Buttons</h2>
+    <div class="cat-row">
+      <a class="mliwl-btn mliwl-btn-primary" href="#">Watch Kyle’s story</a>
+      <a class="mliwl-btn mliwl-btn-accent" href="#">Watch free</a>
+      <a class="mliwl-btn mliwl-btn-outline" href="#">Lesson plans</a>
+      <button class="mliwl-btn mliwl-btn-primary" disabled>Disabled</button>
+      <a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="#">Small</a>
+    </div>
+    <div class="cat-row cat-dark">
+      <a class="mliwl-btn mliwl-btn-accent" href="#">Call 988</a>
+      <a class="mliwl-btn mliwl-btn-outline-inverse" href="#">Text 988</a>
+    </div>
+  </section>
+
+  <section class="cat-block" aria-labelledby="t-tag">
+    <h2 id="t-tag" class="text-heading-h2">Tags and chips</h2>
+    <div class="cat-row">
+      <span class="mliwl-tag">Subtle</span>
+      <span class="mliwl-tag mliwl-tag-inverse">Now playing</span>
+      <span class="mliwl-tag mliwl-tag-highlight">Episode 1 of 4</span>
+      <span class="mliwl-tag mliwl-tag-on-image">Suicide survivor</span>
+    </div>
+    <div class="mliwl-chip-group" role="group" aria-label="Filter by topic" style="margin-top: var(--space-16)">
+      <button class="mliwl-chip" aria-pressed="true">All topics</button>
+      <button class="mliwl-chip" aria-pressed="false">Suicide</button>
+      <button class="mliwl-chip" aria-pressed="false">Bullying</button>
+      <button class="mliwl-chip" aria-pressed="false">LGBTQ+</button>
+    </div>
+    <p class="text-body-small" role="status" style="margin-top: var(--space-8)">Showing 8 stories</p>
+  </section>
+
+  <section class="cat-block" aria-labelledby="t-form">
+    <h2 id="t-form" class="text-heading-h2">Form</h2>
+    <form class="cat-grid" novalidate onsubmit="return false">
+      <div class="mliwl-field">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="name@example.com" aria-describedby="email-help">
+        <p id="email-help" class="mliwl-field-help">We’ll never share your email.</p>
+      </div>
+      <div class="mliwl-field">
+        <label for="email2">Email address</label>
+        <input id="email2" type="email" value="name@example" aria-invalid="true" aria-describedby="email2-err">
+        <p id="email2-err" class="mliwl-field-help is-error">Enter a full email, like name@example.com</p>
+      </div>
+      <div class="mliwl-field">
+        <label for="who">I am a…</label>
+        <select id="who"><option>Parent or caregiver</option><option>Teen</option><option>Educator</option></select>
+      </div>
+      <div class="mliwl-field">
+        <label for="q">Your question</label>
+        <textarea id="q" placeholder="Type your question"></textarea>
+      </div>
+      <fieldset class="mliwl-fieldset">
+        <legend>Send me</legend>
+        <label class="mliwl-choice"><input type="checkbox" checked> New stories</label>
+        <label class="mliwl-choice"><input type="checkbox"> Lesson plans</label>
+      </fieldset>
+      <fieldset class="mliwl-fieldset">
+        <legend>I’m a…</legend>
+        <label class="mliwl-choice"><input type="radio" name="aud" checked> Teen</label>
+        <label class="mliwl-choice"><input type="radio" name="aud"> Parent or caregiver</label>
+      </fieldset>
+    </form>
+  </section>
+
+  <section class="cat-block" aria-labelledby="t-card">
+    <h2 id="t-card" class="text-heading-h2">Card</h2>
+    <ul class="cat-grid" style="list-style: none; padding: 0">
+      <li class="mliwl-card">
+        <span class="mliwl-tag">Suicide prevention</span>
+        <h3 class="text-heading-h4"><a class="mliwl-card-link" href="#">Making a safety plan</a></h3>
+        <p class="text-body-small" style="color: var(--color-text-secondary)">Steps to write down with your teen: warning signs, coping strategies and people to call.</p>
+        <p class="text-caption" style="color: var(--color-text-secondary)">5 min read</p>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<div class="mliwl-crisis-strip mliwl-section" style="padding-block: var(--space-24)">
+  <div class="mliwl-container cat-row" style="margin: 0 auto">
+    <p class="text-body-strong" style="flex: 1 1 320px">In a mental health emergency? Call or text 988, or call 911 if you’re in danger.</p>
+    <a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="tel:988">Call 988</a>
+    <a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="sms:988">Text 988</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MLIWL header and footer preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../plugin/mliwl-design-system/assets/css/tokens.css">
+<link rel="stylesheet" href="../plugin/mliwl-design-system/assets/css/components.css">
+<style>
+  /* Minimal stand-ins for Elementor's own frontend CSS, so the preview behaves like the site. */
+  body { margin: 0; }
+  .e-con { display: flex; flex-direction: var(--dir, row); gap: var(--gap, 0); align-items: var(--align, stretch); justify-content: var(--justify, flex-start); flex-wrap: var(--wrap, nowrap); }
+  .e-con-boxed > .e-con-inner { width: 100%; max-width: var(--content-width); margin-inline: auto; display: flex; flex-direction: inherit; gap: inherit; align-items: inherit; justify-content: inherit; flex-wrap: inherit; }
+  .elementor-nav-menu { list-style: none; margin: 0; padding: 0; display: flex; }
+  .elementor-nav-menu--layout-vertical .elementor-nav-menu { flex-direction: column; gap: 4px; }
+  .elementor-nav-menu a { display: flex; align-items: center; text-decoration: none; }
+  .elementor-icon-list-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .elementor-heading-title { margin: 0; }
+  @media (max-width: 1023px) { .elementor-hidden-tablet { display: none !important; } }
+  @media (max-width: 767px) { .elementor-hidden-mobile { display: none !important; } }
+  @media (min-width: 768px) { .elementor-hidden-mobile-only { display: none !important; } }
+  @media (max-width: 767px) { .mliwl-header-actions { --gap: 12px !important; } }
+  .preview-label { font: 700 12px/1 var(--font-family-base); text-transform: uppercase; letter-spacing: .1em; padding: 24px 16px 8px; color: var(--color-text-secondary); }
+</style>
+</head>
+<body>
+<p class="preview-label">Header template</p>
+<aside class="e-con mliwl-crisis-bar" style="--justify:center;--align:center">
+  <div class="elementor-widget elementor-hidden-mobile"><p><strong>Struggling right now? You are not alone.</strong> <a href="tel:988">Call 988</a> <a href="sms:988">Text 988</a> <span class="mliwl-crisis-note">Free and confidential, 24/7 in the U.S.</span> <a href="https://findahelpline.com">Outside the U.S.? Find a helpline</a></p></div>
+  <div class="elementor-widget elementor-hidden-mobile-only"><p><strong>Need help now?</strong> <a href="tel:988">Call 988</a> <a href="sms:988">Text 988</a></p></div>
+</aside>
+<header class="e-con e-con-boxed mliwl-header" style="--align:center;--justify:space-between;--gap:24px">
+  <div class="e-con-inner">
+    <a class="mliwl-logo" href="/"><img alt="My Life Is Worth Living" width="224" height="40" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='40'%3E%3Crect width='224' height='40' rx='4' fill='%23e70000'/%3E%3Ctext x='12' y='26' font-family='Arial' font-weight='900' font-size='15' fill='white'%3EMY LIFE IS WORTH LIVING%3C/text%3E%3C/svg%3E"></a>
+    <div class="e-con mliwl-header-actions" style="--dir:row;--align:center;--justify:flex-end;--gap:24px">
+      <nav class="elementor-widget mliwl-nav elementor-hidden-tablet elementor-hidden-mobile" aria-label="Main">
+        <ul class="elementor-nav-menu"><li><a class="elementor-item" href="#">Watch</a></li><li><a class="elementor-item" href="#">For parents</a></li><li><a class="elementor-item elementor-item-active" aria-current="page" href="#">For educators</a></li><li><a class="elementor-item" href="#">About</a></li></ul>
+      </nav>
+      <div class="elementor-widget-button mliwl-btn-primary mliwl-btn-sm elementor-hidden-mobile"><a class="elementor-button" href="#">Get help now</a></div><div class="elementor-widget-button mliwl-btn-primary mliwl-btn-sm elementor-hidden-mobile-only"><a class="elementor-button" href="#">Get help</a></div>
+      <div class="elementor-widget elementor-hidden-tablet elementor-hidden-mobile"><label class="mliwl-lang"><span class="screen-reader-text">Video language</span><select><option>English</option><option lang="es">Español</option></select></label></div>
+      <div class="elementor-widget-button mliwl-menu-button"><a class="elementor-button" href="#mliwl-open-menu" aria-label="Open menu" aria-expanded="false"><span class="elementor-button-icon" aria-hidden="true">&#9776;</span><span class="elementor-button-text"></span></a></div>
+    </div>
+  </div>
+</header>
+
+<p class="preview-label">Mobile menu popup (390 wide)</p>
+<div style="max-width:390px;border:1px solid var(--color-border-default)">
+  <div class="e-con mliwl-mobile-menu" style="--dir:column;--gap:24px;padding:24px 16px 32px">
+    <nav class="mliwl-menu-items" aria-label="Main"><div class="elementor-nav-menu--layout-vertical"><ul class="elementor-nav-menu"><li><a class="elementor-item" href="#">Watch</a></li><li><a class="elementor-item" href="#">For parents</a></li><li><a class="elementor-item elementor-item-active" href="#">For educators</a></li><li><a class="elementor-item" href="#">About</a></li></ul></div></nav>
+    <div class="e-con" style="--dir:column;--gap:8px"><p class="mliwl-footer-label" style="color:var(--color-text-secondary);margin:0">Video language</p><label class="mliwl-lang"><span class="screen-reader-text">Video language</span><select><option>English</option></select></label></div>
+    <div class="e-con mliwl-menu-crisis" style="--dir:column;--gap:16px">
+      <h2 class="elementor-heading-title">Struggling right now?</h2>
+      <p>You are not alone. Free and confidential, 24/7 in the U.S.</p>
+      <div class="e-con" style="--dir:row;--gap:8px"><div class="elementor-widget-button mliwl-btn-accent mliwl-btn-sm"><a class="elementor-button" href="#">Call 988</a></div><div class="elementor-widget-button mliwl-btn-outline-inverse mliwl-btn-sm"><a class="elementor-button" href="#">Text 988</a></div></div>
+      <p><a href="#">Outside the U.S.? Find a helpline</a></p>
+    </div>
+  </div>
+</div>
+
+<p class="preview-label">Footer template</p>
+<footer class="e-con e-con-boxed mliwl-footer" style="--dir:column;--gap:40px">
+  <div class="e-con-inner">
+    <div class="e-con mliwl-footer-columns" style="--dir:row;--wrap:wrap;--gap:24px">
+      <div class="e-con mliwl-footer-col" style="--dir:column;--gap:16px"><a class="mliwl-logo" href="/"><img alt="My Life Is Worth Living" width="224" height="40" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='224' height='40'%3E%3Crect width='224' height='40' rx='4' fill='%23e70000'/%3E%3C/svg%3E"></a><p>Produced by The Cook Center for Human Connection and Wonder Media.</p><p class="mliwl-footer-label">Grant sponsor</p></div>
+      <nav class="e-con mliwl-footer-col" aria-label="Explore" style="--dir:column;--gap:16px"><div class="mliwl-footer-heading"><h2 class="elementor-heading-title">Explore</h2></div><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item"><a href="#">Watch</a></li><li class="elementor-icon-list-item"><a href="#">Lessons for educators</a></li><li class="elementor-icon-list-item"><a href="#">Parent playbooks</a></li><li class="elementor-icon-list-item"><a href="#">About</a></li></ul></nav>
+      <div class="e-con mliwl-footer-col" style="--dir:column;--gap:16px"><div class="mliwl-footer-heading"><h2 class="elementor-heading-title">Follow</h2></div><ul class="elementor-icon-list-items"><li class="elementor-icon-list-item"><a href="#">YouTube</a></li><li class="elementor-icon-list-item"><a href="#">Instagram</a></li><li class="elementor-icon-list-item"><a href="#">TikTok</a></li><li class="elementor-icon-list-item"><a href="#">Facebook</a></li></ul></div>
+      <div class="e-con mliwl-footer-col" style="--dir:column;--gap:16px"><div class="mliwl-footer-heading"><h2 class="elementor-heading-title">Need help now?</h2></div><p><a href="tel:988">Call</a> or <a href="sms:988">text 988</a> any time.</p><p>Text HOME to <a href="#">741741</a>.</p><p>Outside the U.S.: <a href="#">findahelpline.com</a></p></div>
+    </div>
+    <div class="e-con mliwl-footer-legal"><p>© The Cook Center for Human Connection · <a href="#">Privacy policy</a></p></div>
+  </div>
+</footer>
+</body>
+</html>
