@@ -8,13 +8,13 @@ Three Elementor Pro templates, in `elementor/templates/`:
 | `mliwl-footer.json` | Footer | Brand, Explore, Follow, Need help now?, legal line | Footer |
 | `mliwl-mobile-menu.json` | Popup | Full-screen phone/tablet menu with 988 block | Mobile Menu, Menu Item |
 
-The templates hold structure, copy and links only. Colors, type and spacing come from the child theme
+The templates hold structure, copy and links only. Colors, type and spacing come from the MLIWL Design System plugin
 (`tokens.css` + `components.css`) through CSS classes, so a Figma change never has to be redone by hand in Elementor.
 To change the templates, edit `elementor/build_templates.py` and run `python3 elementor/build_templates.py`.
 
 ## Before you import
 
-1. The **MLIWL child theme** is active (see `docs/elementor-setup.md`).
+1. The **MLIWL Design System** plugin is active (see `docs/elementor-setup.md`).
 2. **Menu:** Appearance › Menus › create a menu named **Main** with: Watch (`/stories`), For parents (`/parents`), For educators (`/educators`), About (`/about`).
 3. **Logo:** Site Settings › Site Identity › Site Logo: upload the MLIWL logo (alt text: "My Life Is Worth Living").
 
@@ -37,7 +37,7 @@ Templates › Saved Templates › **Import Templates** › choose each JSON file
 ### Mobile menu popup
 1. Open **MLIWL Mobile Menu**. Pick the **Main** menu in the Nav Menu widget.
 2. Publish › Conditions › **Entire Site**. Triggers: **none**. Advanced rules: none.
-3. Keep the title exactly **MLIWL Mobile Menu**: the child theme finds the popup by that title and wires the header's Menu button to it (`assets/js/mobile-menu.js`). No popup ID has to be copied anywhere.
+3. Keep the title exactly **MLIWL Mobile Menu**: the plugin finds the popup by that title and wires the header's Menu button to it (`assets/js/mobile-menu.js`). No popup ID has to be copied anywhere.
 4. Popup settings to confirm after import: width 100vw, height fit to screen, position top/center, close button inside, close on Escape on, no entrance animation.
 
 ## What happens on each device

@@ -1,6 +1,6 @@
 # My Life Is Worth Living — website
 
-Design system and WordPress child theme for [mylifeisworthliving.org](https://mylifeisworthliving.org), which runs on **WordPress + Elementor**.
+Design system and WordPress plugin for [mylifeisworthliving.org](https://mylifeisworthliving.org), which runs on **WordPress + Elementor**.
 
 Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). Figma variables are the source of truth for every color, size and font.
 
@@ -10,8 +10,8 @@ Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). 
 |---|---|
 | `tokens/figma-export.json` | Variables, text styles and shadows exported from Figma |
 | `tokens/build.py` | Builds `tokens/dist/tokens.css` (CSS variables) and `tokens/dist/mliwl.tokens.json` (W3C format) |
-| `theme/mliwl-child/` | Hello Elementor child theme: loads Montserrat, `tokens.css`, `components.css` and the mobile-menu script |
-| `theme/mliwl-child/assets/css/components.css` | Component classes (`mliwl-btn-primary`, `mliwl-tag`, `mliwl-chip`, `mliwl-form`, `mliwl-card`…) to use from Elementor's CSS Classes field |
+| `plugin/mliwl-design-system/` | WordPress plugin: loads Montserrat, `tokens.css`, `components.css` and the mobile-menu script. Works with Astra (the current theme) or any other theme |
+| `plugin/mliwl-design-system/assets/css/components.css` | Component classes (`mliwl-btn-primary`, `mliwl-tag`, `mliwl-chip`, `mliwl-form`, `mliwl-card`…) to use from Elementor's CSS Classes field |
 | `DESIGN.md` | Design rules: principles, pages, layout, color, type, components, content and accessibility |
 | `docs/elementor-setup.md` | Elementor breakpoints, Global Colors, Global Fonts and the Figma → Elementor component map |
 | `elementor/templates/` + `build_templates.py` | Elementor Pro templates: header, footer and mobile menu popup |
@@ -24,15 +24,15 @@ Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). 
 
 ```bash
 python3 tokens/build.py tokens/figma-export.json tokens/dist
-cp tokens/dist/tokens.css theme/mliwl-child/assets/css/tokens.css
+cp tokens/dist/tokens.css plugin/mliwl-design-system/assets/css/tokens.css
 ```
 
 Then update Elementor's Global Colors and Global Fonts if those values changed (see `docs/elementor-setup.md`).
 
 ## Install on WordPress
 
-Full steps: [docs/staging-install.md](docs/staging-install.md). Note: the live site uses Astra today, so this is a theme switch.
+Full steps: [docs/staging-install.md](docs/staging-install.md). The site keeps its current theme (Astra); nothing is switched.
 
-1. Install and keep **Hello Elementor** as the parent theme.
-2. Zip `theme/mliwl-child/` and upload it in Appearance › Themes › Add New › Upload. Activate it on staging first.
+1. Zip `plugin/mliwl-design-system/` and upload it in Plugins › Add New › Upload Plugin. Activate it on staging first.
+2. Elementor Pro is required for the header, footer and mobile menu templates.
 3. Follow `docs/elementor-setup.md`.

@@ -4,7 +4,7 @@ Usage: python3 elementor/build_templates.py
 Writes elementor/templates/*.json (Elementor template export format, version 0.4).
 
 The templates carry structure, copy and links only. Colors, type and spacing come
-from the child theme (tokens.css + components.css) through the CSS classes below,
+from the MLIWL Design System plugin (tokens.css + components.css) through the CSS classes below,
 so Figma stays the single source for visual values.
 """
 import hashlib

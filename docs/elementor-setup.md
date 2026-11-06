@@ -3,11 +3,11 @@
 How to make Elementor match the Figma design system. Do this once per site (staging first).
 Source of every value: `tokens/figma-export.json` (exported from Figma). If Figma changes, regenerate with `tokens/build.py` and update these settings.
 
-## 1. Install the child theme
+## 1. Install the plugin
 
-1. The site must use **Hello Elementor** as the parent theme (Appearance › Themes).
-2. Zip the folder `theme/mliwl-child/` and upload it in Appearance › Themes › Add New › Upload. Activate **MLIWL (Hello Elementor child)**.
-3. It loads Montserrat, `tokens.css` and `components.css` on the site and inside the Elementor editor.
+1. Zip the folder `plugin/mliwl-design-system/` and upload it in Plugins › Add New › **Upload Plugin**. Activate **MLIWL Design System**.
+2. It works with the current theme (Astra) or any other; no theme change is needed.
+3. It loads Montserrat, `tokens.css` and `components.css` on the site and inside the Elementor editor, after Astra's and Elementor's own styles so the MLIWL classes win.
 
 ## 2. Breakpoints
 

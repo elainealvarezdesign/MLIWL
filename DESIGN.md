@@ -3,7 +3,7 @@
 The design rules for **My Life Is Worth Living**, for anyone building or editing the site, with or without Figma open.
 
 - **Figma (source of truth):** [Design System - MLIWL](https://www.figma.com/design/pji462RDmAcvludSloZL2w/Design-System---MLIWL?node-id=0-1)
-- **Tokens in code:** `tokens/` and `theme/mliwl-child/assets/css/tokens.css` (see [README](README.md))
+- **Tokens in code:** `tokens/` and `plugin/mliwl-design-system/assets/css/tokens.css` (see [README](README.md))
 - **Building in Elementor:** [docs/elementor-setup.md](docs/elementor-setup.md)
 
 If this file and Figma disagree, Figma wins; update this file.
