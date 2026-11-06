@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For educators — Free lesson plans | My Life Is Worth Living</title>
+<meta name="description" content="Free animated stories with lesson plans, discussion guides and help resources for grades 6–12. Made with clinicians, ready for class in minutes.">
+<!-- @include head -->
+</head>
+<body>
+<!-- @page educators -->
+<!-- @include icons -->
+<!-- @include header -->
+
+<main id="main">
+
+<!-- ========== Hero (Figma: Educator Hub / Hero) ========== -->
+<section class="mliwl-hero mliwl-page-hero mliwl-hero-boxed mliwl-bg-hero mliwl-zip mliwl-on-dark" aria-labelledby="hero-title">
+  <div class="mliwl-hero-row">
+    <div class="mliwl-hero-copy">
+      <p class="text-eyebrow mliwl-eyebrow">For educators</p>
+      <h1 id="hero-title" class="text-display">Teach mental health with stories</h1>
+      <p class="text-body-large">Free animated stories with lesson plans, discussion guides and help resources. Made with clinicians, ready for class in minutes.</p>
+      <div class="mliwl-actions">
+        <a class="mliwl-btn mliwl-btn-accent" href="#lessons">Browse lesson plans<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="mliwl-btn mliwl-btn-outline-inverse" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download all (ZIP)</a>
+      </div>
+      <p class="text-caption">8 stories · Free lesson plans · Grades 6–12 · No sign-up needed</p>
+    </div>
+    <img class="mliwl-hero-art mliwl-hero-art-card" src="assets/img/story-group.webp" width="576" height="432" alt="">
+  </div>
+</section>
+
+<!-- ========== How it works ========== -->
+<section class="mliwl-band" aria-labelledby="steps-title">
+  <div class="mliwl-inner">
+    <div class="mliwl-section-header">
+      <p class="text-eyebrow mliwl-eyebrow">How it works</p>
+      <h2 id="steps-title" class="text-heading-h2">One class period, three steps</h2>
+    </div>
+    <ol class="mliwl-card-grid mliwl-steps">
+      <li class="mliwl-step"><span class="mliwl-step-number" aria-hidden="true">1</span><h3 class="text-heading-h4">Watch together</h3><p class="text-body-default mliwl-muted-text">Show a 5–10 minute episode in class. Captions and Spanish audio are available.</p></li>
+      <li class="mliwl-step"><span class="mliwl-step-number" aria-hidden="true">2</span><h3 class="text-heading-h4">Talk about it</h3><p class="text-body-default mliwl-muted-text">Use the discussion guide to start an open, judgment-free conversation.</p></li>
+      <li class="mliwl-step"><span class="mliwl-step-number" aria-hidden="true">3</span><h3 class="text-heading-h4">Know where to send help</h3><p class="text-body-default mliwl-muted-text">Share 988 and the help lines. The lesson plan explains what to do if a student opens up.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ========== Lesson library (Elementor: Loop Grid + taxonomy filters) ========== -->
+<section id="lessons" class="mliwl-band mliwl-bg-muted" aria-labelledby="lessons-title">
+  <div class="mliwl-inner">
+    <div class="mliwl-section-header">
+      <p class="text-eyebrow mliwl-eyebrow">Lesson library</p>
+      <h2 id="lessons-title" class="text-heading-h2">Pick a story to teach</h2>
+      <p class="text-body-large mliwl-muted-text">Every lesson plan is free to download and share.</p>
+    </div>
+    <div class="site-stack-16">
+      <div class="mliwl-chip-group" role="group" aria-label="Filter lessons by grade">
+        <button class="mliwl-chip" type="button" aria-pressed="true" data-grade="all">All grades</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-grade="6-8">Grades 6–8</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-grade="9-12">Grades 9–12</button>
+      </div>
+      <div class="mliwl-chip-group" role="group" aria-label="Filter lessons by topic">
+        <button class="mliwl-chip" type="button" aria-pressed="true" data-topic="all">All topics</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="suicide">Suicide survivor</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="bullying">Bullying</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="substance">Substance use</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="lgbtq">LGBTQ+</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="trauma">Trauma survivor</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="abuse">Abuse</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="body">Body image</button>
+      </div>
+      <p class="text-body-small mliwl-muted-text" role="status" id="story-count" data-noun="lesson plan">Showing 8 lesson plans</p>
+    </div>
+    <ul class="mliwl-card-grid mliwl-playbook-grid" id="lesson-grid"></ul>
+  </div>
+</section>
+
+<!-- ========== Safe viewing ========== -->
+<section class="mliwl-band" aria-labelledby="safe-title">
+  <div class="mliwl-inner mliwl-two-col mliwl-signs">
+    <div class="mliwl-section-header">
+      <p class="text-eyebrow mliwl-eyebrow">Safe viewing</p>
+      <h2 id="safe-title" class="text-heading-h2">Before you show a story</h2>
+      <p class="text-body-large mliwl-muted-text">These stories deal with real topics like self-harm and substance use. A few minutes of prep helps every student feel safe.</p>
+      <div class="mliwl-actions">
+        <a class="mliwl-btn mliwl-btn-outline" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download the safe-viewing guide</a>
+      </div>
+    </div>
+    <ul class="mliwl-tips">
+      <li><h3 class="text-body-strong">Read the content note</h3><p class="text-body-small mliwl-muted-text">Each story lists its topics. Let students know what to expect and that they can step out.</p></li>
+      <li><h3 class="text-body-strong">Have support ready</h3><p class="text-body-small mliwl-muted-text">Tell your school counselor which story you’re showing and when.</p></li>
+      <li><h3 class="text-body-strong">If a student opens up</h3><p class="text-body-small mliwl-muted-text">Listen, thank them, and follow your school’s referral process. Share 988 if there’s risk.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- @include newsletter -->
+<!-- @include get-help -->
+
+</main>
+
+<!-- @include footer -->
+
+<script src="assets/site.js"></script>
+</body>
+</html>
