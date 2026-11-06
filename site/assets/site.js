@@ -18,24 +18,28 @@
 		{ name: 'Kaia', topic: 'Body image', tags: ['body'], meta: '2 episodes', note: 'low self-esteem, body image',
 			desc: 'Low self-esteem makes Kaia feel she doesn’t measure up, until she finds hope in the people she loves.' },
 		{ name: 'Vince', topic: 'Body image', tags: ['body'], meta: '2 episodes', note: 'body image, anxiety',
-			desc: 'Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.' }
+			desc: 'Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.' },
+		{ name: 'Raquelle', slug: 'raquelle', title: 'Are You OK?', watch: 'Watch “Are You OK?”', lesson: 'Classroom activities (PDF)',
+			topic: 'Bullying', tags: ['bullying'], meta: '[N] episodes · classroom activities', note: 'bullying',
+			desc: '[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]' }
 	];
 
 	var grid = document.getElementById('story-grid');
 	if (grid) {
 		grid.innerHTML = stories.map(function (s) {
-			var slug = s.name.toLowerCase();
+			var slug = s.slug || s.name.toLowerCase();
+			var title = s.title || (s.name + '’s story');
 			return '<li data-tags="' + s.tags.join(' ') + '"><article class="mliwl-story-card">' +
 				'<div class="mliwl-story-media"><img src="assets/img/story-' + slug + '.webp" width="576" height="432" alt="" loading="lazy">' +
 				'<span class="mliwl-tag mliwl-tag-on-image">' + s.topic + '</span></div>' +
 				'<div class="mliwl-story-body">' +
-				'<h4 class="text-heading-h4">' + s.name + '’s story</h4>' +
+				'<h4 class="text-heading-h4">' + title + '</h4>' +
 				'<p class="text-body-small desc">' + s.desc + '</p>' +
 				'<p class="text-caption meta">' + s.meta + '</p>' +
 				'<p class="text-caption note">Includes: ' + s.note + '. Need to talk? Call or text 988.</p>' +
 				'<div class="mliwl-story-actions">' +
-				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="#"><svg aria-hidden="true"><use href="#i-play"/></svg>Watch ' + s.name + '’s story</a>' +
-				'<a class="mliwl-text-link" href="#">Lesson plan (PDF)<span class="screen-reader-text"> for ' + s.name + '’s story</span></a>' +
+				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="#"><svg aria-hidden="true"><use href="#i-play"/></svg>' + (s.watch || ('Watch ' + s.name + '’s story')) + '</a>' +
+				'<a class="mliwl-text-link" href="#">' + (s.lesson || 'Lesson plan (PDF)') + '<span class="screen-reader-text"> for ' + title + '</span></a>' +
 				'</div></div></article></li>';
 		}).join('');
 	}

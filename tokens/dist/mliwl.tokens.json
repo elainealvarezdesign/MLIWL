@@ -156,6 +156,13 @@
         "$value": "#2b6b49",
         "$description": "Success messages."
       }
+    },
+    "raquelle": {
+      "500": {
+        "$type": "color",
+        "$value": "#a33a72",
+        "$description": "Character accent: Raquelle (raspberry, approved). White text 6.2:1 (AA)."
+      }
     }
   },
   "color": {
@@ -431,6 +438,11 @@
         "$type": "color",
         "$value": "{primitive.vince.500}",
         "$description": "Vince story color."
+      },
+      "raquelle": {
+        "$type": "color",
+        "$value": "{primitive.raquelle.500}",
+        "$description": "Raquelle / Are You OK? story color."
       }
     }
   },

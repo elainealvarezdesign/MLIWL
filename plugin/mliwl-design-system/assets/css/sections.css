@@ -56,6 +56,15 @@
 
 /* ---------- Featured story + coming next --------------------------------- */
 .mliwl-featured { display: grid; grid-template-columns: 480px 1fr; border-radius: var(--radius-2xl); overflow: hidden; background-color: var(--color-bg-featured); color: var(--color-text-inverse); }
+/* The featured panel takes the featured character's color (data-character="raquelle", "amie"…) */
+.mliwl-featured[data-character="raquelle"] { background-color: var(--color-character-raquelle); }
+.mliwl-featured[data-character="amie"] { background-color: var(--color-amie-700); }
+.mliwl-featured[data-character="kyle"] { background-color: var(--color-kyle-700); }
+.mliwl-featured[data-character="dante"] { background-color: var(--color-character-dante); }
+.mliwl-featured[data-character="danny"] { background-color: var(--color-character-danny); }
+.mliwl-featured[data-character="emily"] { background-color: var(--color-character-emily); }
+.mliwl-featured[data-character="kaia"] { background-color: var(--color-kaia-700); }
+.mliwl-featured[data-character="vince"] { background-color: var(--color-character-vince); }
 .mliwl-featured-media { display: flex; align-items: flex-end; justify-content: center; padding-top: var(--space-32); }
 .mliwl-featured-media img { width: 316px; height: auto; display: block; }
 .mliwl-featured-body { display: flex; flex-direction: column; justify-content: center; gap: var(--space-16); padding: var(--space-48); }
@@ -95,7 +104,7 @@
 
 /* ---------- Stories ------------------------------------------------------ */
 .mliwl-stories-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--space-16); }
-.mliwl-story-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-32) var(--space-16); }
+.mliwl-story-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-32) var(--space-16); }
 .mliwl-story-card { position: relative; display: flex; flex-direction: column; border-radius: var(--radius-xl); background: var(--color-bg-surface); overflow: hidden; height: 100%; }
 .mliwl-story-card[hidden] { display: none; }
 .mliwl-story-media { position: relative; aspect-ratio: 4 / 3; }
@@ -108,7 +117,7 @@
 .mliwl-story-actions .mliwl-btn { width: 100%; }
 .mliwl-text-link { display: flex; align-items: center; justify-content: center; min-height: 48px; color: var(--color-text-primary); font-weight: var(--font-weight-bold); }
 .mliwl-carousel-controls { display: none; }
-@media (max-width: 1023px) { .mliwl-story-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1023px) { .mliwl-story-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 767px) {
 	.mliwl-story-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: var(--space-16); scrollbar-width: none; }
 	.mliwl-story-grid > li { flex: 0 0 85%; scroll-snap-align: start; }

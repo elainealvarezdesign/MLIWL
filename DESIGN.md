@@ -95,6 +95,7 @@ Use **semantic tokens** (what the color is for), never raw hex. Primitives exist
 | `character/group` | `#cfac38` | Group / Are You OK? color. |
 | `character/kaia` | `#37998a` | Kaia story color. |
 | `character/vince` | `#2b6d99` | Vince story color. |
+| `character/raquelle` | `#a33a72` | Raquelle / Are You OK? story color (raspberry). White text 6.2:1. |
 | `action/primary/bg-hover` | `#3a3c40` | Primary button hover. |
 | `action/accent/bg-hover` | `#b8962a` | Gold button hover. |
 | `action/outline/bg-hover` | `#eeeeee` | Outline button hover on light backgrounds. |

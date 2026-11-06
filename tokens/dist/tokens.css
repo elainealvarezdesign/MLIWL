@@ -37,6 +37,7 @@
   --color-green-700: #2b6b49;
   --color-gold-600: #b8962a;
   --color-gold-700: #9c7f22;
+  --color-raquelle-500: #a33a72;
 
   /* Color */
   --color-bg-page: var(--color-white); /* Default page background. */
@@ -89,6 +90,7 @@
   --color-text-inverse-secondary: var(--color-gray-200); /* Secondary text on ink (12.8:1). */
   --color-border-brand: var(--color-red-500); /* Brand red underline for nav hover/current. */
   --color-action-selected-bg-hover: var(--color-dante-700); /* Language select / selected hover. */
+  --color-character-raquelle: var(--color-raquelle-500); /* Raquelle / Are You OK? story color. */
 
   /* Spacing */
   --space-0: 0;

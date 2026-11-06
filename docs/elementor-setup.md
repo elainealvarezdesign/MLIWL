@@ -51,6 +51,7 @@ Site Settings › Design System › Global Colors. Set the four system colors, t
 | character · group | `#cfac38` | `--color-character-group` | Group / Are You OK? color. |
 | character · kaia | `#37998a` | `--color-character-kaia` | Kaia story color. |
 | character · vince | `#2b6d99` | `--color-character-vince` | Vince story color. |
+| character · raquelle | `#a33a72` | `--color-character-raquelle` | Raquelle / Are You OK? story color. |
 | action · primary · bg-hover | `#3a3c40` | `--color-action-primary-bg-hover` | Primary button hover. |
 | action · accent · bg-hover | `#b8962a` | `--color-action-accent-bg-hover` | Gold button hover. |
 
