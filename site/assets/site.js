@@ -1,4 +1,4 @@
-/* Page behavior (Home, Watch) for the static build. On WordPress the same behaviors come
+/* Page behavior (Home, Watch, For parents) for the static build. On WordPress the same behaviors come
    from Elementor (Loop Grid / taxonomy filter, Popup, Form). */
 (function () {
 	'use strict';
@@ -44,19 +44,41 @@
 		}).join('');
 	}
 
-	// ---- Topic filter chips ----
+	// ---- Parent playbook cards (For parents). Figma: Lesson Card. ----
+	var playbooks = document.getElementById('playbook-grid');
+	if (playbooks) {
+		playbooks.innerHTML = stories.map(function (s) {
+			var slug = s.slug || s.name.toLowerCase();
+			var title = s.title || (s.name + '’s story');
+			return '<li data-tags="' + s.tags.join(' ') + '"><article class="mliwl-playbook-card">' +
+				'<div class="media"><img src="assets/img/story-' + slug + '.webp" width="576" height="432" alt="" loading="lazy"></div>' +
+				'<div class="body"><span class="mliwl-tag">' + s.topic + '</span>' +
+				'<h3 class="text-heading-h4">' + title + '</h3>' +
+				'<p class="text-body-small desc">[Playbook title from the PDF cover, e.g. “How to support a loved one with their mental health struggles”]</p>' +
+				'<p class="text-caption meta">Parent playbook · PDF · [size]</p>' +
+				'<div class="mliwl-actions">' +
+				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Playbook<span class="screen-reader-text"> for ' + title + ' (PDF)</span></a>' +
+				'<a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="watch.html#story-' + slug + '"><svg aria-hidden="true"><use href="#i-play"/></svg>Watch<span class="screen-reader-text"> ' + title + '</span></a>' +
+				'</div></div></article></li>';
+		}).join('');
+	}
+
+	// ---- Topic filter chips (stories or playbooks) ----
 	var count = document.getElementById('story-count');
+	var filterList = grid || playbooks;
+	var noun = (count && count.getAttribute('data-noun')) || 'story';
+	var plural = noun === 'story' ? 'stories' : noun + 's';
 	document.querySelectorAll('[data-topic]').forEach(function (chip) {
 		chip.addEventListener('click', function () {
 			var topic = chip.getAttribute('data-topic');
 			document.querySelectorAll('[data-topic]').forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
 			var shown = 0;
-			grid.querySelectorAll('li').forEach(function (li) {
+			filterList.querySelectorAll('li').forEach(function (li) {
 				var show = topic === 'all' || li.getAttribute('data-tags').split(' ').indexOf(topic) > -1;
 				li.hidden = !show;
 				if (show) shown++;
 			});
-			count.textContent = 'Showing ' + shown + (shown === 1 ? ' story' : ' stories') + langNote();
+			count.textContent = 'Showing ' + shown + ' ' + (shown === 1 ? noun : plural) + langNote();
 		});
 	});
 
