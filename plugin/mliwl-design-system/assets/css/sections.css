@@ -173,3 +173,37 @@
 
 /* Long labels on full-width phone buttons may wrap instead of overflowing */
 @media (max-width: 767px) { .mliwl-btn { max-width: 100%; white-space: normal; text-align: center; } }
+
+/* ---------- Watch page ---------------------------------------------------- */
+/* Inner-page hero: art sits on the bottom edge, no stats or awards */
+.mliwl-page-hero .mliwl-hero-row { align-items: center; }
+.mliwl-page-hero .mliwl-hero-copy { padding-block: var(--space-16) var(--space-64); }
+.mliwl-page-hero .mliwl-hero-art { align-self: end; }
+/* Topic chips + video-language select on one row */
+.mliwl-filter-bar { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-24); }
+.mliwl-filter-bar .mliwl-chip-group { min-width: 0; }
+.mliwl-filter-bar .mliwl-field { flex: 0 0 200px; }
+/* Content note before the cards */
+.mliwl-content-note { display: flex; align-items: center; justify-content: space-between; gap: var(--space-24); padding: var(--space-16) var(--space-24); border: 1px solid var(--color-border-default); border-radius: var(--radius-lg); background: var(--color-bg-subtle); }
+.mliwl-content-note p { margin: 0; }
+.mliwl-content-note .mliwl-btn { flex: none; }
+/* Cards on a white band get an outline */
+.mliwl-band:not([class*="mliwl-bg-"]) .mliwl-story-card { border: 1px solid var(--color-border-default); }
+.mliwl-card-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.mliwl-band > .mliwl-inner.mliwl-languages-band { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; }
+.mliwl-language-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-16); }
+@media (max-width: 1023px) {
+	.mliwl-filter-bar { flex-direction: column; align-items: stretch; }
+	.mliwl-filter-bar .mliwl-field { flex: none; max-width: 320px; }
+	.mliwl-page-hero .mliwl-hero-copy { padding-block: 0; }
+	.mliwl-band > .mliwl-inner.mliwl-languages-band { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+	/* Watch lists every story, so cards stack instead of scrolling sideways */
+	.mliwl-story-grid-stack { display: grid; grid-template-columns: minmax(0, 1fr); overflow: visible; gap: var(--space-24); }
+	.mliwl-filter-bar .mliwl-field { max-width: none; }
+	.mliwl-content-note { flex-direction: column; align-items: flex-start; padding: var(--space-16); }
+	.mliwl-card-grid-2 { grid-template-columns: minmax(0, 1fr); }
+	.mliwl-language-list .mliwl-btn { width: 100%; }
+	.mliwl-language-list > li { flex: 1 1 calc(50% - 8px); }
+}

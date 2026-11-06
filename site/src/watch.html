@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch the stories — My Life Is Worth Living</title>
+<meta name="description" content="Eight free animated stories about suicide, bullying, identity, trauma and more. Each one ends with where to find help. Free to watch, share and teach.">
+<!-- @include head -->
+</head>
+<body>
+<!-- @page watch -->
+<!-- @include icons -->
+<!-- @include header -->
+
+<main id="main">
+
+<!-- ========== Hero (Figma: Watch / Hero) ========== -->
+<section class="mliwl-hero mliwl-page-hero mliwl-bg-hero mliwl-zip mliwl-on-dark" aria-labelledby="hero-title">
+  <div class="mliwl-hero-row">
+    <div class="mliwl-hero-copy">
+      <p class="text-eyebrow mliwl-eyebrow">Watch</p>
+      <h1 id="hero-title" class="text-display">Eight stories. Real hope.</h1>
+      <p class="text-body-large">Short animated episodes about suicide, bullying, identity, trauma and more — each one ends with where to find help. Free to watch, share and teach.</p>
+      <div class="mliwl-actions">
+        <a class="mliwl-btn mliwl-btn-accent" href="#story-amie"><svg aria-hidden="true"><use href="#i-play"/></svg>Start with Amie’s story</a>
+        <a class="mliwl-btn mliwl-btn-outline-inverse" href="#languages"><svg aria-hidden="true"><use href="#i-globe"/></svg>Videos in other languages</a>
+      </div>
+    </div>
+    <img class="mliwl-hero-art" src="assets/img/group-logo.webp" width="1280" height="721" alt="">
+  </div>
+</section>
+
+<!-- ========== All stories (Elementor: Loop Grid + taxonomy filter) ========== -->
+<section id="stories" class="mliwl-band" aria-labelledby="stories-title">
+  <div class="mliwl-inner">
+    <div class="mliwl-section-header">
+      <h2 id="stories-title" class="text-heading-h2">All stories</h2>
+      <p class="text-body-default mliwl-muted-text">Each story is 4–5 short episodes. Topics are listed on every card so you know what to expect.</p>
+    </div>
+    <div class="mliwl-filter-bar">
+      <div class="mliwl-chip-group" role="group" aria-label="Filter stories by topic">
+        <button class="mliwl-chip" type="button" aria-pressed="true" data-topic="all">All topics</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="suicide">Suicide</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="bullying">Bullying</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="substance">Substance use</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="lgbtq">LGBTQ+</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="trauma">Trauma</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="abuse">Abuse</button>
+        <button class="mliwl-chip" type="button" aria-pressed="false" data-topic="body">Body image</button>
+      </div>
+      <div class="mliwl-field">
+        <label for="story-language">Video language</label>
+        <select id="story-language">
+          <option value="en" selected>English</option>
+          <option value="es" lang="es">Español</option>
+          <option value="pt" lang="pt">Português</option>
+          <option value="ja" lang="ja">日本語</option>
+          <option value="zh" lang="zh">中文</option>
+        </select>
+      </div>
+    </div>
+    <div class="mliwl-content-note">
+      <p class="text-body-small">These stories include suicide, self-harm, abuse and substance use. If a story brings something up, you can talk to someone right now.</p>
+      <a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="#get-help">Get help<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <p class="text-body-small mliwl-muted-text" role="status" id="story-count">Showing 8 stories</p>
+    <ul class="mliwl-story-grid mliwl-story-grid-stack" id="story-grid"></ul>
+  </div>
+</section>
+
+<!-- ========== Other languages ========== -->
+<section id="languages" class="mliwl-band mliwl-bg-muted" aria-labelledby="languages-title">
+  <div class="mliwl-inner mliwl-languages-band">
+    <div class="mliwl-section-header">
+      <p class="text-eyebrow mliwl-eyebrow">Other languages</p>
+      <h2 id="languages-title" class="text-heading-h2">Watch in your language</h2>
+      <p class="text-body-default mliwl-muted-text">Videos are dubbed or subtitled in these languages. The rest of the site is in English for now.</p>
+    </div>
+    <ul class="mliwl-language-list">
+      <li><a class="mliwl-btn mliwl-btn-outline" href="#" lang="es"><svg aria-hidden="true"><use href="#i-globe"/></svg>Español</a></li>
+      <li><a class="mliwl-btn mliwl-btn-outline" href="#" lang="pt"><svg aria-hidden="true"><use href="#i-globe"/></svg>Português</a></li>
+      <li><a class="mliwl-btn mliwl-btn-outline" href="#" lang="ja"><svg aria-hidden="true"><use href="#i-globe"/></svg>日本語</a></li>
+      <li><a class="mliwl-btn mliwl-btn-outline" href="#" lang="zh"><svg aria-hidden="true"><use href="#i-globe"/></svg>中文</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== Using the stories ========== -->
+<section class="mliwl-band" aria-labelledby="guides-title">
+  <div class="mliwl-inner">
+    <div class="mliwl-section-header">
+      <p class="text-eyebrow mliwl-eyebrow">Watching with someone?</p>
+      <h2 id="guides-title" class="text-heading-h2">Free guides for every story</h2>
+    </div>
+    <ul class="mliwl-card-grid mliwl-card-grid-2">
+      <li class="mliwl-audience-card" data-audience="parents">
+        <div class="mliwl-audience-band mliwl-zip"><p class="text-eyebrow">For parents &amp; caregivers</p><span class="mliwl-icon-badge" aria-hidden="true"><svg><use href="#i-message"/></svg></span></div>
+        <div class="mliwl-audience-body"><h3 class="text-heading-h3">Start the conversation</h3><p class="text-body-default">Parent Guidance playbooks help you talk with your teen about each story and spot warning signs.</p><a class="mliwl-arrow-link" href="#">Open the parent playbooks<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </li>
+      <li class="mliwl-audience-card" data-audience="educators">
+        <div class="mliwl-audience-band mliwl-zip"><p class="text-eyebrow">For educators</p><span class="mliwl-icon-badge" aria-hidden="true"><svg><use href="#i-book"/></svg></span></div>
+        <div class="mliwl-audience-body"><h3 class="text-heading-h3">Teach it in class</h3><p class="text-body-default">Free lesson plans for every story, ready for grades 6–12. Use them at school or at home.</p><a class="mliwl-arrow-link" href="#">Browse all lessons<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- @include get-help -->
+
+</main>
+
+<!-- @include footer -->
+
+<script src="assets/site.js"></script>
+</body>
+</html>

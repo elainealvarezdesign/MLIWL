@@ -1,4 +1,4 @@
-/* Home page behavior for the static build. On WordPress the same behaviors come
+/* Page behavior (Home, Watch) for the static build. On WordPress the same behaviors come
    from Elementor (Loop Grid / taxonomy filter, Popup, Form). */
 (function () {
 	'use strict';
@@ -29,7 +29,7 @@
 		grid.innerHTML = stories.map(function (s) {
 			var slug = s.slug || s.name.toLowerCase();
 			var title = s.title || (s.name + '’s story');
-			return '<li data-tags="' + s.tags.join(' ') + '"><article class="mliwl-story-card">' +
+			return '<li id="story-' + slug + '" data-tags="' + s.tags.join(' ') + '"><article class="mliwl-story-card">' +
 				'<div class="mliwl-story-media"><img src="assets/img/story-' + slug + '.webp" width="576" height="432" alt="" loading="lazy">' +
 				'<span class="mliwl-tag mliwl-tag-on-image">' + s.topic + '</span></div>' +
 				'<div class="mliwl-story-body">' +
@@ -56,9 +56,20 @@
 				li.hidden = !show;
 				if (show) shown++;
 			});
-			count.textContent = 'Showing ' + shown + (shown === 1 ? ' story' : ' stories');
+			count.textContent = 'Showing ' + shown + (shown === 1 ? ' story' : ' stories') + langNote();
 		});
 	});
+
+	// ---- Video language (Watch). On WordPress this is a Loop Grid taxonomy filter. ----
+	var langSelect = document.getElementById('story-language');
+	function langNote() {
+		return langSelect && langSelect.value !== 'en' ? ' in ' + langSelect.options[langSelect.selectedIndex].text : '';
+	}
+	if (langSelect && count) {
+		langSelect.addEventListener('change', function () {
+			count.textContent = count.textContent.replace(/ in .*$/, '') + langNote();
+		});
+	}
 
 	// ---- Mobile carousel arrows ----
 	document.querySelectorAll('[data-scroll]').forEach(function (btn) {
