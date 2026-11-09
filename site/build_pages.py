@@ -47,8 +47,9 @@ def build_stories():
     tpl = open(os.path.join(HERE, "src", "_story.tpl"), encoding="utf-8").read()
     for st in STORIES:
         n = st["count"] if isinstance(st["count"], int) else 4
+        current = ' aria-current="true"'  # no backslashes inside f-string braces: Python < 3.12 rejects them
         rows = "\n".join(
-            f'          <li><button class="mliwl-episode" type="button" data-episode="{i}"{" aria-current=\"true\"" if i == 1 else ""}>'
+            f'          <li><button class="mliwl-episode" type="button" data-episode="{i}"{current if i == 1 else ""}>'
             f'<span class="mliwl-episode-thumb" aria-hidden="true"><svg><use href="#i-play"/></svg></span>'
             f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">Episode {i}<span class="mliwl-now"> · Now playing</span></span>'
             f'<span class="text-body-strong">[Episode {i} title]</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>'
