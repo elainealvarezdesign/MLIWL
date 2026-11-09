@@ -41,7 +41,7 @@ The prototype is published at **https://mliwl.netlify.app** from this repo with 
 - Every page sends `X-Robots-Tag: noindex` and `robots.txt` blocks crawlers, because the copy is still placeholder. Remove both before using it as a public site.
 - Build locally: `python3 scripts/build_netlify.py`, then open `dist/index.html` or run `python3 -m http.server -d dist`.
 
-Pages: Home, Watch, the 8 story pages, For parents, For educators, Get help, About, Meet the team, Partners, News & media. Still to build: Privacy and 404.
+Pages: Home, Watch, the 8 story pages, For parents, For educators, Get help, About, Meet the team, Partners, News & media. Privacy policy and the 404 page are included; Netlify serves `404.html` for any missing path.
 
 ## Update tokens after a Figma change
 

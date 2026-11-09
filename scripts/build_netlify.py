@@ -27,6 +27,9 @@ pages = sorted(f for f in os.listdir(SITE) if f.endswith(".html"))
 for page in pages:
     html = open(os.path.join(SITE, page), encoding="utf-8").read()
     html = html.replace("../plugin/mliwl-design-system/assets/css/", "assets/css/")
+    if page == "404.html":
+        # Netlify serves 404.html at any missing path (e.g. /a/b), so links must start at the site root.
+        html = re.sub(r'(href|src)="(?!https?:|mailto:|tel:|sms:|#|/)([^"]+)"', r'\1="/\2"', html)
     if "../" in re.sub(r"<!--.*?-->", "", html, flags=re.S):
         raise SystemExit(f"{page}: a path still points outside site/")
     open(os.path.join(DIST, page), "w", encoding="utf-8").write(html)
