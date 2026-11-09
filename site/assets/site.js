@@ -1,4 +1,4 @@
-/* Page behavior (Home, Watch, For parents, For educators, Meet the team) for the static build. On WordPress the same behaviors come
+/* Page behavior (Home, Watch, For parents, For educators, Meet the team, News & media) for the static build. On WordPress the same behaviors come
    from Elementor (Loop Grid / taxonomy filter, Popup, Form). */
 (function () {
 	'use strict';
@@ -73,10 +73,27 @@
 
 	// ---- Filter chips: topic (data-topic) and grade (data-grade), combined ----
 	var count = document.getElementById('story-count');
-	var filterList = grid || playbooks || lessons;
+	var filterList = grid || playbooks || lessons || document.getElementById('article-grid');
 	var noun = (count && count.getAttribute('data-noun')) || 'story';
 	var plural = noun === 'story' ? 'stories' : noun + 's';
 	var active = { topic: 'all', grade: 'all' };
+	// Empty state (Figma: Empty State) when a filter combination has no results
+	var empty = null;
+	function showEmpty(on) {
+		if (!filterList) return;
+		if (!empty) {
+			empty = document.createElement('div');
+			empty.className = 'mliwl-empty';
+			empty.innerHTML = '<p class="text-body-strong">Nothing here yet for this topic.</p>' +
+				'<p class="text-body-small mliwl-muted-text">Try another topic, or see everything.</p>' +
+				'<button class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" type="button">Show all</button>';
+			empty.querySelector('button').addEventListener('click', function () {
+				document.querySelectorAll('[data-topic="all"], [data-grade="all"]').forEach(function (c) { c.click(); });
+			});
+			filterList.parentNode.insertBefore(empty, filterList.nextSibling);
+		}
+		empty.hidden = !on;
+	}
 	['topic', 'grade'].forEach(function (key) {
 		var chips = document.querySelectorAll('[data-' + key + ']');
 		chips.forEach(function (chip) {
@@ -91,6 +108,7 @@
 					if (show) shown++;
 				});
 				count.textContent = 'Showing ' + shown + ' ' + (shown === 1 ? noun : plural) + langNote();
+				showEmpty(shown === 0);
 			});
 		});
 	});
@@ -125,7 +143,7 @@
 		menu.querySelectorAll('a[href^="#"]').forEach(function (a) { a.addEventListener('click', function () { menu.close(); }); });
 	}
 
-	// ---- Bio dialog (Meet the team). Focus returns to the button that opened it. ----
+	// ---- Bio dialog (Meet the team, News & media). Focus returns to the button that opened it. ----
 	var bio = document.getElementById('bio-dialog');
 	if (bio && bio.showModal) {
 		var opener = null;

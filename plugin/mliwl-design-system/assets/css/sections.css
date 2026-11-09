@@ -369,3 +369,36 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 .mliwl-partner-logo img { max-width: 100%; max-height: 64px; object-fit: contain; }
 .mliwl-partner-text { display: flex; flex-direction: column; gap: var(--space-8); }
 .mliwl-partner .mliwl-caps-link { margin-top: auto; }
+
+/* ---------- News & media page ---------------------------------------------- */
+.mliwl-awards-band { padding-block: var(--space-48); }
+.mliwl-awards-band > .mliwl-inner { gap: var(--space-24); }
+.mliwl-laurels { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-24); }
+.mliwl-laurels img { display: block; width: 168px; height: auto; }
+/* Article card (Figma: Article Card · News / Article) */
+.mliwl-article { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-12); height: 100%; padding: var(--space-24); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); background: var(--color-bg-surface); }
+.mliwl-article[hidden] { display: none; }
+.mliwl-article-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-8); align-self: stretch; }
+.mliwl-article > .mliwl-caps-link { margin-top: auto; }
+.mliwl-article p { margin: 0; }
+/* Crisis note above the articles */
+.mliwl-crisis-note { display: flex; align-items: center; justify-content: space-between; gap: var(--space-16); padding: var(--space-16) var(--space-24); border: 2px solid var(--color-border-brand); border-radius: var(--radius-ml); background: var(--color-bg-surface); }
+.mliwl-crisis-note .mliwl-btn { flex: none; }
+/* Press kit downloads */
+.mliwl-press-kit { align-items: center; }
+.mliwl-download-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); overflow: hidden; }
+.mliwl-download-list li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-16); padding: var(--space-16) var(--space-24); }
+.mliwl-download-list li + li { border-top: 1px solid var(--color-border-default); }
+.mliwl-download-list h3, .mliwl-download-list p { margin: 0; }
+.mliwl-download-list .mliwl-btn { flex: none; }
+@media (max-width: 767px) {
+	.mliwl-laurels { gap: var(--space-16); }
+	.mliwl-laurels img { width: 120px; }
+	.mliwl-crisis-note { flex-direction: column; align-items: flex-start; }
+	.mliwl-download-list li { padding: var(--space-16); }
+}
+/* Empty filter result (Figma: Empty State) */
+.mliwl-empty { display: flex; flex-direction: column; align-items: center; gap: var(--space-8); padding: var(--space-48) var(--space-24); border: 1px dashed var(--color-border-strong); border-radius: var(--radius-xl); text-align: center; }
+.mliwl-empty[hidden] { display: none; }
+.mliwl-empty p { margin: 0; }
+.mliwl-empty .mliwl-btn { margin-top: var(--space-8); }
