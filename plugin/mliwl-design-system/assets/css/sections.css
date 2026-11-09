@@ -361,3 +361,11 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 	.mliwl-person-photo-lg { width: 96px; height: 96px; font-size: var(--font-size-h3); }
 	.mliwl-dialog { padding: var(--space-24); }
 }
+
+/* ---------- Partners page -------------------------------------------------- */
+/* Partner card (Figma: Partner Card) */
+.mliwl-partner { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); height: 100%; padding: var(--space-24); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); background: var(--color-bg-surface); }
+.mliwl-partner-logo { display: grid; place-items: center; align-self: stretch; height: 96px; padding: var(--space-16); border-radius: var(--radius-ml); background: var(--color-bg-subtle); color: var(--color-text-secondary); font-size: var(--font-size-body-sm); text-align: center; }
+.mliwl-partner-logo img { max-width: 100%; max-height: 64px; object-fit: contain; }
+.mliwl-partner-text { display: flex; flex-direction: column; gap: var(--space-8); }
+.mliwl-partner .mliwl-caps-link { margin-top: auto; }
