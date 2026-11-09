@@ -402,3 +402,39 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 .mliwl-empty[hidden] { display: none; }
 .mliwl-empty p { margin: 0; }
 .mliwl-empty .mliwl-btn { margin-top: var(--space-8); }
+
+/* ---------- Get help page --------------------------------------------------- */
+.mliwl-help-hero { grid-template-columns: minmax(0, 752fr) minmax(0, 400fr); }
+.mliwl-help-hero .mliwl-hero-copy a { color: inherit; text-underline-offset: 3px; }
+/* 911 card: white with a red border */
+.mliwl-danger-card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); padding: var(--space-32); border: 2px solid var(--color-border-brand); border-radius: var(--radius-xl); background: var(--color-bg-surface); color: var(--color-text-primary); }
+.mliwl-danger-card :where(h2, p) { margin: 0; }
+.mliwl-danger-card .mliwl-btn { align-self: stretch; }
+/* Help line cards (988 is featured on gold) */
+.mliwl-helpline { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); height: 100%; padding: var(--space-32); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); background: var(--color-bg-surface); }
+.mliwl-helpline-desc { color: var(--color-text-secondary); }
+.mliwl-helpline-featured { background: var(--color-bg-highlight); }
+.mliwl-helpline-featured .mliwl-helpline-desc { color: var(--color-text-primary); }
+.mliwl-helpline-featured .mliwl-tag { background: var(--color-bg-surface); }
+.mliwl-helpline .mliwl-actions { margin-top: auto; padding-top: var(--space-8); gap: var(--space-8); }
+/* Numbered step rows (Worried about someone) */
+.mliwl-step-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-16); }
+.mliwl-step-rows li { display: flex; align-items: flex-start; gap: var(--space-16); padding: var(--space-24); border-radius: var(--radius-ml); background: var(--color-bg-surface); }
+.mliwl-step-rows .mliwl-step-number { flex: none; width: 40px; height: 40px; }
+.mliwl-step-rows :where(h3, p) { margin: 0; }
+.mliwl-step-rows li > div { display: flex; flex-direction: column; gap: var(--space-4); }
+/* Link rows (Learn more) */
+.mliwl-download-list li:has(> .mliwl-link-row) { padding: 0; }
+.mliwl-link-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-16); padding: var(--space-24) var(--space-32); color: var(--color-text-primary); text-decoration: none; }
+.mliwl-link-row > span:first-child { display: flex; flex-direction: column; gap: var(--space-4); min-width: 0; }
+.mliwl-link-row > svg { width: 24px; height: 24px; flex: none; transition: transform .15s ease; }
+.mliwl-link-row:hover { background: var(--color-bg-subtle); }
+.mliwl-link-row:hover > svg { transform: translateX(4px); }
+@media (max-width: 1023px) {
+	.mliwl-help-hero { grid-template-columns: minmax(0, 1fr); }
+	.mliwl-danger-card { max-width: 480px; }
+}
+@media (max-width: 767px) {
+	.mliwl-danger-card, .mliwl-helpline { padding: var(--space-24); }
+	.mliwl-link-row { padding: var(--space-16); }
+}

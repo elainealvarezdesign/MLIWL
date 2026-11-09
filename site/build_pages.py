@@ -8,7 +8,7 @@ Nav links in the header use {{nav:NAME}} for their href, resolved from NAV below
 """
 import os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
-NAV = {"watch": "watch.html", "parents": "parents.html", "educators": "educators.html", "about": "about.html", "team": "team.html", "partners": "partners.html", "news": "news.html"}  # fill in as pages are built
+NAV = {"watch": "watch.html", "parents": "parents.html", "educators": "educators.html", "about": "about.html", "team": "team.html", "partners": "partners.html", "news": "news.html", "help": "get-help.html"}  # fill in as pages are built
 
 def build(name):
     src = open(os.path.join(HERE, "src", name), encoding="utf-8").read()
