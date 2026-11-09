@@ -1,6 +1,10 @@
 # My Life Is Worth Living — website
 
-Design system, WordPress plugin and clickable prototype for [mylifeisworthliving.org](https://mylifeisworthliving.org), a free animated series about teen mental health. The live site runs on **WordPress + Elementor**; this repo holds the design tokens, the plugin that styles it, Elementor templates and a static HTML prototype of every page.
+Design system, WordPress plugin and clickable prototype for [mylifeisworthliving.org](https://mylifeisworthliving.org), a free animated series about teen mental health.
+
+**Prototype:** https://mliwl.netlify.app (published from `main` by Netlify)
+
+The live site runs on **WordPress + Elementor**; this repo holds the design tokens, the plugin that styles it, Elementor templates and a static HTML prototype of every page.
 
 Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). Figma variables are the source of truth for every color, size and font.
 
@@ -25,7 +29,7 @@ Design source: Figma file **Design System - MLIWL** (`pji462RDmAcvludSloZL2w`). 
 
 ## Prototype on Netlify
 
-The prototype is published from this repo with Netlify. `netlify.toml` holds the settings, so nothing has to be typed in Netlify's UI:
+The prototype is published at **https://mliwl.netlify.app** from this repo with Netlify. `netlify.toml` holds the settings, so nothing has to be typed in Netlify's UI:
 
 | Setting | Value |
 |---|---|
