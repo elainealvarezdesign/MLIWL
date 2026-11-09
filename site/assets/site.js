@@ -1,4 +1,4 @@
-/* Page behavior (Home, Watch, For parents, For educators, Meet the team, News & media) for the static build. On WordPress the same behaviors come
+/* Page behavior (Home, Watch, For parents, For educators, Meet the team, News & media, Story) for the static build. On WordPress the same behaviors come
    from Elementor (Loop Grid / taxonomy filter, Popup, Form). */
 (function () {
 	'use strict';
@@ -26,7 +26,9 @@
 
 	var grid = document.getElementById('story-grid');
 	if (grid) {
-		grid.innerHTML = stories.map(function (s) {
+		var exclude = grid.getAttribute('data-exclude');
+		var limit = Number(grid.getAttribute('data-limit')) || stories.length;
+		grid.innerHTML = stories.filter(function (s) { return (s.slug || s.name.toLowerCase()) !== exclude; }).slice(0, limit).map(function (s) {
 			var slug = s.slug || s.name.toLowerCase();
 			var title = s.title || (s.name + '’s story');
 			return '<li id="story-' + slug + '" data-tags="' + s.tags.join(' ') + '"><article class="mliwl-story-card">' +
@@ -38,8 +40,8 @@
 				'<p class="text-caption meta">' + s.meta + '</p>' +
 				'<p class="text-caption note">Includes: ' + s.note + '. Need to talk? Call or text 988.</p>' +
 				'<div class="mliwl-story-actions">' +
-				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="#"><svg aria-hidden="true"><use href="#i-play"/></svg>' + (s.watch || ('Watch ' + s.name + '’s story')) + '</a>' +
-				'<a class="mliwl-text-link" href="#">' + (s.lesson || 'Lesson plan (PDF)') + '<span class="screen-reader-text"> for ' + title + '</span></a>' +
+				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="story-' + slug + '.html"><svg aria-hidden="true"><use href="#i-play"/></svg>' + (s.watch || ('Watch ' + s.name + '’s story')) + '</a>' +
+				'<a class="mliwl-text-link" href="story-' + slug + '.html#teach">' + (s.lesson || 'Lesson plan (PDF)') + '<span class="screen-reader-text"> for ' + title + '</span></a>' +
 				'</div></div></article></li>';
 		}).join('');
 	}
@@ -58,7 +60,7 @@
 				'<p class="text-caption meta">' + ((s.slug && o.altMeta) || o.meta) + '</p>' +
 				'<div class="mliwl-actions">' +
 				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>' + o.download + '<span class="screen-reader-text"> ' + file + ' for ' + title + ' (PDF)</span></a>' +
-				'<a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="watch.html#story-' + slug + '"><svg aria-hidden="true"><use href="#i-play"/></svg>' + o.watch + '<span class="screen-reader-text"> ' + title + '</span></a>' +
+				'<a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="story-' + slug + '.html"><svg aria-hidden="true"><use href="#i-play"/></svg>' + o.watch + '<span class="screen-reader-text"> ' + title + '</span></a>' +
 				'</div></div></article></li>';
 		}).join('');
 	}
@@ -143,7 +145,19 @@
 		menu.querySelectorAll('a[href^="#"]').forEach(function (a) { a.addEventListener('click', function () { menu.close(); }); });
 	}
 
-	// ---- Bio dialog (Meet the team, News & media). Focus returns to the button that opened it. ----
+	// ---- Story page: pick an episode (the embed swaps video on WordPress) ----
+	var episodeTag = document.getElementById('episode-tag');
+	document.querySelectorAll('.mliwl-episode').forEach(function (btn, i, all) {
+		btn.addEventListener('click', function () {
+			all.forEach(function (b) { b.removeAttribute('aria-current'); });
+			btn.setAttribute('aria-current', 'true');
+			if (episodeTag) episodeTag.textContent = episodeTag.textContent.replace(/Episode \d+/, 'Episode ' + btn.getAttribute('data-episode'));
+			var play = document.querySelector('.mliwl-player-play');
+			if (play) play.setAttribute('aria-label', play.getAttribute('aria-label').replace(/episode \d+/, 'episode ' + btn.getAttribute('data-episode')));
+		});
+	});
+
+	// ---- Bio dialog (Meet the team, News & media, Story). Focus returns to the button that opened it. ----
 	var bio = document.getElementById('bio-dialog');
 	if (bio && bio.showModal) {
 		var opener = null;
