@@ -1,0 +1,29 @@
+# Netlify: static prototype of the MLIWL website (site/ + plugin CSS).
+# The real site runs on WordPress + Elementor; this is for design review only.
+
+[build]
+  command = "python3 scripts/build_netlify.py"
+  publish = "dist"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+# Prototype with placeholder copy: keep it out of search engines.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Clean URLs: /watch serves watch.html (Netlify's pretty URLs also do this).
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
