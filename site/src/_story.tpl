@@ -20,9 +20,9 @@
     <nav class="mliwl-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="watch.html">Stories</a></li><li><span aria-current="page">{{title}}</span></li></ol></nav>
     <div class="mliwl-player-row" data-character="{{slug}}">
       <div class="mliwl-player-main">
-        <div class="mliwl-player">
+        <div class="mliwl-player" id="player" data-video="{{video}}">
           <img src="assets/img/story-{{slug}}.webp" width="576" height="432" alt="">
-          <a class="mliwl-player-play" href="#" aria-label="Play episode 1 of {{title}}"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+          <a class="mliwl-player-play" href="{{play_href}}" aria-label="Play episode 1 of {{title}}"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
         </div>
         <div class="mliwl-story-info">
           <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag">Episode 1 of {{count}}</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>

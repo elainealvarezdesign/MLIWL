@@ -26,7 +26,12 @@ def build(name):
 # (keep in step with the stories array in assets/site.js; on WordPress these are Story posts)
 STORIES = [
     dict(slug="amie", title="Amie’s story", count=4, note="suicide attempt", lesson="lesson plan",
-         desc="When negative thoughts keep haunting a teenage suicide survivor, the support of her family and boyfriend helps her find purpose."),
+         desc="When negative thoughts keep haunting a teenage suicide survivor, the support of her family and boyfriend helps her find purpose.",
+         # (YouTube video id, episode title) from the client, Nov 11 2026
+         videos=[("-emjHyVSuwg", "Amie Opens Up About Her Mental Health in Therapy"),
+                 ("lJeRqYpjiRs", "Amie and Nick Struggle to Reconnect After Her Suicide Attempt"),
+                 ("tjlKxi8oQ_w", "Amie Learns About Her Mom’s Struggle With Mental Health"),
+                 ("kPp-ABkfYgI", "Amie Learns to Accept Help From Her Friends and Family")]),
     dict(slug="kyle", title="Kyle’s story", count=4, note="bullying, alcohol use", lesson="lesson plan",
          desc="Bullied at school, a teen turns to alcohol to drown out the bad feelings and his own negative voice."),
     dict(slug="dante", title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
@@ -48,13 +53,19 @@ def build_stories():
     for st in STORIES:
         n = st["count"] if isinstance(st["count"], int) else 4
         current = ' aria-current="true"'  # no backslashes inside f-string braces: Python < 3.12 rejects them
-        rows = "\n".join(
-            f'          <li><button class="mliwl-episode" type="button" data-episode="{i}"{current if i == 1 else ""}>'
-            f'<span class="mliwl-episode-thumb" aria-hidden="true"><svg><use href="#i-play"/></svg></span>'
-            f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">Episode {i}<span class="mliwl-now"> · Now playing</span></span>'
-            f'<span class="text-body-strong">[Episode {i} title]</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>'
-            for i in range(1, n + 1))
-        fields = dict(st, episodes=f"{st['count']} episodes", episode_rows=rows,
+        videos = st.get("videos", [])
+        def ep(i):
+            vid, title = videos[i - 1] if i <= len(videos) else ("", f"[Episode {i} title]")
+            data = f' data-video="{vid}" data-title="{title}"' if vid else ""
+            thumb = f' style="background-image:url(https://i.ytimg.com/vi/{vid}/mqdefault.jpg)"' if vid else ""
+            return (f'          <li><button class="mliwl-episode" type="button" data-episode="{i}"{data}{current if i == 1 else ""}>'
+                    f'<span class="mliwl-episode-thumb" aria-hidden="true"{thumb}><svg><use href="#i-play"/></svg></span>'
+                    f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">Episode {i}<span class="mliwl-now"> · Now playing</span></span>'
+                    f'<span class="text-body-strong">{title}</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>')
+        rows = "\n".join(ep(i) for i in range(1, n + 1))
+        first = videos[0][0] if videos else ""
+        play_href = f"https://www.youtube.com/watch?v={first}" if first else "#"
+        fields = dict(st, episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
                       lesson_title=st["lesson"][0].upper() + st["lesson"][1:])
         out = re.sub(r"\{\{(\w+)\}\}", lambda m: str(fields.get(m.group(1), m.group(0))), tpl)
         tmp = f"_tmp_story_{st['slug']}.html"
