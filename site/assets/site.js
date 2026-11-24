@@ -13,11 +13,11 @@
 			desc: 'A football star’s struggles with identity and an overbearing father challenge him to accept support.' },
 		{ name: 'Danny', topic: 'Trauma survivor', tags: ['trauma'], meta: '4 episodes · trailer', note: 'serious injury, trauma',
 			desc: 'After a life-changing accident, a teen learns to rely on his network of supporters.' },
-		{ name: 'Emily', topic: 'Abuse', tags: ['abuse'], meta: '4 episodes', note: 'abuse at home',
+		{ name: 'Emily', topic: 'Abuse', tags: ['abuse'], meta: '4 episodes · trailer', note: 'abuse at home',
 			desc: 'Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth.' },
-		{ name: 'Kaia', topic: 'Body image', tags: ['body'], meta: '2 episodes', note: 'low self-esteem, body image',
+		{ name: 'Kaia', topic: 'Body image', tags: ['body'], meta: '2 episodes · trailer', note: 'low self-esteem, body image',
 			desc: 'Low self-esteem makes Kaia feel she doesn’t measure up, until she finds hope in the people she loves.' },
-		{ name: 'Vince', topic: 'Body image', tags: ['body'], meta: '2 episodes', note: 'body image, anxiety',
+		{ name: 'Vince', topic: 'Body image', tags: ['body'], meta: '2 episodes · trailer', note: 'body image, anxiety',
 			desc: 'Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.' },
 		{ name: 'Raquelle', slug: 'raquelle', title: 'Are You OK?', watch: 'Watch “Are You OK?”', lesson: 'Classroom activities (PDF)',
 			topic: 'Bullying', tags: ['bullying'], meta: 'Award-winning short film · classroom activities', note: 'bullying',
@@ -164,7 +164,8 @@
 	}
 	function videoTitle(btn) {
 		if (document.querySelectorAll('.mliwl-episode').length === 1 && storyTitle) return storyTitle.textContent;
-		return (storyTitle ? storyTitle.textContent + ' — ' : '') + 'Episode ' + btn.getAttribute('data-episode') + ': ' + btn.getAttribute('data-title');
+		var which = btn.getAttribute('data-episode') === 'trailer' ? 'Trailer' : 'Episode ' + btn.getAttribute('data-episode');
+		return (storyTitle ? storyTitle.textContent + ' — ' : '') + which + ': ' + btn.getAttribute('data-title');
 	}
 	var playLink = player && player.querySelector('.mliwl-player-play');
 	if (playLink && player.getAttribute('data-video')) {
@@ -179,7 +180,10 @@
 			all.forEach(function (b) { b.removeAttribute('aria-current'); });
 			btn.setAttribute('aria-current', 'true');
 			var n = btn.getAttribute('data-episode');
-			if (episodeTag) episodeTag.textContent = episodeTag.textContent.replace(/Episode \d+/, 'Episode ' + n);
+			var trailer = n === 'trailer';
+			if (episodeTag && episodeTag.getAttribute('data-total') !== '1') {
+				episodeTag.textContent = trailer ? 'Trailer' : 'Episode ' + n + ' of ' + episodeTag.getAttribute('data-total');
+			}
 			var id = btn.getAttribute('data-video');
 			if (!player || !id) return;
 			player.setAttribute('data-video', id);
@@ -187,7 +191,7 @@
 				embed(id, videoTitle(btn), true);
 			} else if (playLink) {
 				playLink.href = 'https://www.youtube.com/watch?v=' + id;
-				playLink.setAttribute('aria-label', playLink.getAttribute('aria-label').replace(/episode \d+/, 'episode ' + n));
+				playLink.setAttribute('aria-label', 'Play ' + (trailer ? 'the trailer' : 'episode ' + n) + ' of ' + (storyTitle ? storyTitle.textContent : 'this story'));
 			}
 			player.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 		});

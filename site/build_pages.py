@@ -25,47 +25,47 @@ def build(name):
 # Story pages: src/_story.tpl filled from STORIES -> story-<slug>.html
 # (keep in step with the stories array in assets/site.js; on WordPress these are Story posts)
 STORIES = [
-    dict(slug="amie", title="Amie’s story", count=4, note="suicide attempt", lesson="lesson plan",
+    dict(slug="amie", trailer=("HOvFQKGUfhE", "Amie Struggles With Depression and Perfectionism"), title="Amie’s story", count=4, note="suicide attempt", lesson="lesson plan",
          desc="When negative thoughts keep haunting a teenage suicide survivor, the support of her family and boyfriend helps her find purpose.",
          # (YouTube video id, episode title) from the client, Nov 11 2026
          videos=[("-emjHyVSuwg", "Amie Opens Up About Her Mental Health in Therapy"),
                  ("lJeRqYpjiRs", "Amie and Nick Struggle to Reconnect After Her Suicide Attempt"),
                  ("tjlKxi8oQ_w", "Amie Learns About Her Mom’s Struggle With Mental Health"),
                  ("kPp-ABkfYgI", "Amie Learns to Accept Help From Her Friends and Family")]),
-    dict(slug="kyle", title="Kyle’s story", count=4, note="bullying, alcohol use", lesson="lesson plan",
+    dict(slug="kyle", trailer=("BVI7TgdnLRo", "Kyle Struggles With Bullying and Addiction"), title="Kyle’s story", count=4, note="bullying, alcohol use", lesson="lesson plan",
          desc="Bullied at school, a teen turns to alcohol to drown out the bad feelings and his own negative voice.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("rx3X1VJqEq4", "Bullied at School, Kyle Turns to Alcohol to Cope"),
                  ("zqM-XCifn0o", "Online Bullying Fuels Kyle’s Self-Loathing"),
                  ("X16x2TxAgmQ", "Kyle Learns About Dad’s Military PTSD & Addiction"),
                  ("HA3HBeDBUME", "Kyle Learns How to Cope With Negative Self-Talk Through Therapy")]),
-    dict(slug="dante", title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
+    dict(slug="dante", trailer=("63b8BqdvpVc", "Dante Struggles With Rejection and LGBTQ+ Acceptance"), title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
          desc="A football star’s struggles with identity and an overbearing father challenge him to accept support.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("eH3O9Snp5UI", "Dante Struggles With His Father’s Narrow Expectations"),
                  ("C6IQDQFvf8o", "Dante Worries His Teammates Will Reject His LGBTQ+ Identity"),
                  ("HixhTwoEShg", "Dante Learns How to Cope With His Negative Thoughts"),
                  ("n-8R8t-uUM4", "Dante Shares His Journey and Reconnects With His Dad")]),
-    dict(slug="danny", title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
+    dict(slug="danny", trailer=("qPROOH2vxxc", "Danny Learns a New Normal"), title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
          desc="After a life-changing accident, a teen learns to rely on his network of supporters.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("oR9LztZi_Yc", "Danny’s Inspiring Road to Recovery as a Burn Survivor"),
                  ("ukA7G-Xegsg", "Danny Is Given a Safety Plan to Help Him Cope With His Trauma"),
                  ("NNzdFqGC3M8", "Danny Reaches Out When He Needs Help"),
                  ("b0YYGUzc0gk", "Danny Is Ready to Embrace His Life After Trauma")]),
-    dict(slug="emily", title="Emily’s story", count=4, note="abuse at home", lesson="lesson plan",
+    dict(slug="emily", trailer=("e7Zw3wF7a-8", "Emily Shares Her Story to Stop Abuse"), title="Emily’s story", count=4, note="abuse at home", lesson="lesson plan",
          desc="Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("8AdBvbjgFBo", "Emily Uses Her Support Network to Escape Abuse"),
                  ("6JmPWTu9kNs", "Emily Shares Her Story With a Friend"),
                  ("_KzgMJhcmXo", "Emily Opens Up About the Abuse to a Trusted Adult"),
                  ("igoYAbfphOE", "Emily Learns Coping Skills as She Continues to Adjust to New Home")]),
-    dict(slug="kaia", title="Kaia’s story", count=2, note="low self-esteem, body image", lesson="lesson plan",
+    dict(slug="kaia", trailer=("HCY9eeS5IL4", "Introducing Kaia’s Story"), title="Kaia’s story", count=2, note="low self-esteem, body image", lesson="lesson plan",
          desc="Low self-esteem makes Kaia feel she doesn’t measure up, until she finds hope in the people she loves.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("gctypUcTLyg", "Taking Up Space"),
                  ("rqZvp0gnsrM", "Rallying Together")]),
-    dict(slug="vince", title="Vince’s story", count=2, note="body image, anxiety", lesson="lesson plan",
+    dict(slug="vince", trailer=("eCPYIYrYwmw", "Introducing Vince’s Story"), title="Vince’s story", count=2, note="body image, anxiety", lesson="lesson plan",
          desc="Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("CwLyLMSx81M", "Muscle Isolation"),
@@ -94,6 +94,13 @@ def build_stories():
                     f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">{label if film else label + " " + str(i)}<span class="mliwl-now"> · Now playing</span></span>'
                     f'<span class="text-body-strong">{title}</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>')
         rows = "\n".join(ep(i) for i in range(1, n + 1))
+        if st.get("trailer"):  # trailer first in the list; the player still starts on episode 1
+            tvid, ttitle = st["trailer"]
+            ttitle = html.escape(ttitle, quote=True)
+            rows = (f'          <li><button class="mliwl-episode mliwl-episode-trailer" type="button" data-episode="trailer" data-video="{tvid}" data-title="{ttitle}">'
+                    f'<span class="mliwl-episode-thumb" aria-hidden="true" style="background-image:url(https://i.ytimg.com/vi/{tvid}/mqdefault.jpg)"><svg><use href="#i-play"/></svg></span>'
+                    f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">Trailer<span class="mliwl-now"> · Now playing</span></span>'
+                    f'<span class="text-body-strong">{ttitle}</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>\n') + rows
         first = videos[0][0] if videos else ""
         play_href = f"https://www.youtube.com/watch?v={first}" if first else "#"
         if st.get("film"):
