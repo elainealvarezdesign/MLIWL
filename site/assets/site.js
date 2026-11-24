@@ -20,7 +20,7 @@
 		{ name: 'Vince', topic: 'Body image', tags: ['body'], meta: '2 episodes', note: 'body image, anxiety',
 			desc: 'Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.' },
 		{ name: 'Raquelle', slug: 'raquelle', title: 'Are You OK?', watch: 'Watch “Are You OK?”', lesson: 'Classroom activities (PDF)',
-			topic: 'Bullying', tags: ['bullying'], meta: '[N] episodes · classroom activities', note: 'bullying',
+			topic: 'Bullying', tags: ['bullying'], meta: 'Award-winning short film · classroom activities', note: 'bullying',
 			desc: '[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]' }
 	];
 
@@ -145,15 +145,51 @@
 		menu.querySelectorAll('a[href^="#"]').forEach(function (a) { a.addEventListener('click', function () { menu.close(); }); });
 	}
 
-	// ---- Story page: pick an episode (the embed swaps video on WordPress) ----
+	// ---- Story page: YouTube player and episode list ----
+	// The poster + play button loads the embed only when clicked (lighter page, no YouTube cookies before play).
+	// Without JS the play button is a plain link to the video on YouTube.
+	var player = document.getElementById('player');
 	var episodeTag = document.getElementById('episode-tag');
+	var storyTitle = document.getElementById('story-title');
+	function embed(id, title, autoplay) {
+		var frame = document.createElement('iframe');
+		frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?rel=0&modestbranding=1' + (autoplay ? '&autoplay=1' : '');
+		frame.title = title;
+		frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+		frame.allowFullscreen = true;
+		frame.referrerPolicy = 'strict-origin-when-cross-origin';
+		player.innerHTML = '';
+		player.appendChild(frame);
+		player.classList.add('is-playing');
+	}
+	function videoTitle(btn) {
+		if (document.querySelectorAll('.mliwl-episode').length === 1 && storyTitle) return storyTitle.textContent;
+		return (storyTitle ? storyTitle.textContent + ' — ' : '') + 'Episode ' + btn.getAttribute('data-episode') + ': ' + btn.getAttribute('data-title');
+	}
+	var playLink = player && player.querySelector('.mliwl-player-play');
+	if (playLink && player.getAttribute('data-video')) {
+		playLink.addEventListener('click', function (e) {
+			e.preventDefault();
+			var current = document.querySelector('.mliwl-episode[aria-current]');
+			embed(player.getAttribute('data-video'), current ? videoTitle(current) : 'Video', true);
+		});
+	}
 	document.querySelectorAll('.mliwl-episode').forEach(function (btn, i, all) {
 		btn.addEventListener('click', function () {
 			all.forEach(function (b) { b.removeAttribute('aria-current'); });
 			btn.setAttribute('aria-current', 'true');
-			if (episodeTag) episodeTag.textContent = episodeTag.textContent.replace(/Episode \d+/, 'Episode ' + btn.getAttribute('data-episode'));
-			var play = document.querySelector('.mliwl-player-play');
-			if (play) play.setAttribute('aria-label', play.getAttribute('aria-label').replace(/episode \d+/, 'episode ' + btn.getAttribute('data-episode')));
+			var n = btn.getAttribute('data-episode');
+			if (episodeTag) episodeTag.textContent = episodeTag.textContent.replace(/Episode \d+/, 'Episode ' + n);
+			var id = btn.getAttribute('data-video');
+			if (!player || !id) return;
+			player.setAttribute('data-video', id);
+			if (player.classList.contains('is-playing')) {
+				embed(id, videoTitle(btn), true);
+			} else if (playLink) {
+				playLink.href = 'https://www.youtube.com/watch?v=' + id;
+				playLink.setAttribute('aria-label', playLink.getAttribute('aria-label').replace(/episode \d+/, 'episode ' + n));
+			}
+			player.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 		});
 	});
 
