@@ -39,7 +39,12 @@ STORIES = [
     dict(slug="danny", title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
          desc="After a life-changing accident, a teen learns to rely on his network of supporters."),
     dict(slug="emily", title="Emily’s story", count=4, note="abuse at home", lesson="lesson plan",
-         desc="Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth."),
+         desc="Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth.",
+         # (YouTube video id, episode title) from the client, Nov 24 2026
+         videos=[("8AdBvbjgFBo", "Emily Uses Her Support Network to Escape Abuse"),
+                 ("6JmPWTu9kNs", "Emily Shares Her Story With a Friend"),
+                 ("_KzgMJhcmXo", "Emily Opens Up About the Abuse to a Trusted Adult"),
+                 ("igoYAbfphOE", "Emily Learns Coping Skills as She Continues to Adjust to New Home")]),
     dict(slug="kaia", title="Kaia’s story", count=2, note="low self-esteem, body image", lesson="lesson plan",
          desc="Low self-esteem makes Kaia feel she doesn’t measure up, until she finds hope in the people she loves."),
     dict(slug="vince", title="Vince’s story", count=2, note="body image, anxiety", lesson="lesson plan",
