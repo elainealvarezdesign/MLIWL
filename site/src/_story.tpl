@@ -25,10 +25,10 @@
           <a class="mliwl-player-play" href="{{play_href}}" aria-label="Play episode 1 of {{title}}"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
         </div>
         <div class="mliwl-story-info">
-          <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag">Episode 1 of {{count}}</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
+          <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag">{{episode_tag}}</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
           <h1 id="story-title" class="text-heading-h1">{{title}}</h1>
           <p class="text-body-large mliwl-muted-text">{{desc}} [Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
-          <p class="text-body-small mliwl-muted-text">{{episodes}} · [total min] · Animated short</p>
+          <p class="text-body-small mliwl-muted-text">{{summary_line}}</p>
           <div class="mliwl-content-note mliwl-story-note"><p class="text-body-strong">Content note</p><p class="text-body-small">Includes: {{note}}. Watch with a trusted adult if you need to. Need to talk? Call or text 988.</p></div>
           <div class="mliwl-actions">
             <a class="mliwl-btn mliwl-btn-primary" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download {{lesson}}</a>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <aside class="mliwl-episodes" aria-labelledby="episodes-title">
-        <div><h2 id="episodes-title" class="text-heading-h4">Episodes</h2><p class="text-body-small mliwl-muted-text">{{episodes}} · [total min]</p></div>
+        <div><h2 id="episodes-title" class="text-heading-h4">{{list_heading}}</h2><p class="text-body-small mliwl-muted-text">{{list_line}}</p></div>
         <ol class="mliwl-episode-list">
 {{episode_rows}}
         </ol>

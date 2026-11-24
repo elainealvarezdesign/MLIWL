@@ -70,8 +70,10 @@ STORIES = [
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("CwLyLMSx81M", "Muscle Isolation"),
                  ("GzACs2yieGo", "Quest for Rest")]),
-    dict(slug="raquelle", title="Are You OK?", count="[N]", note="bullying", lesson="classroom activities",
-         desc="[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]"),
+    dict(slug="raquelle", title="Are You OK?", count=1, film=True, note="bullying", lesson="classroom activities",
+         desc="[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]",
+         # One award-winning short film, not a series (from the client, Nov 24 2026)
+         videos=[("tJsGGsPNakw", "Are You OK?")]),
 ]
 
 def build_stories():
@@ -80,6 +82,8 @@ def build_stories():
         n = st["count"] if isinstance(st["count"], int) else 4
         current = ' aria-current="true"'  # no backslashes inside f-string braces: Python < 3.12 rejects them
         videos = st.get("videos", [])
+        film = st.get("film", False)
+        label = "Short film" if film else "Episode"
         def ep(i):
             vid, title = videos[i - 1] if i <= len(videos) else ("", f"[Episode {i} title]")
             title = html.escape(title, quote=True)  # titles can hold & or quotes
@@ -87,12 +91,18 @@ def build_stories():
             thumb = f' style="background-image:url(https://i.ytimg.com/vi/{vid}/mqdefault.jpg)"' if vid else ""
             return (f'          <li><button class="mliwl-episode" type="button" data-episode="{i}"{data}{current if i == 1 else ""}>'
                     f'<span class="mliwl-episode-thumb" aria-hidden="true"{thumb}><svg><use href="#i-play"/></svg></span>'
-                    f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">Episode {i}<span class="mliwl-now"> · Now playing</span></span>'
+                    f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">{label if film else label + " " + str(i)}<span class="mliwl-now"> · Now playing</span></span>'
                     f'<span class="text-body-strong">{title}</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>')
         rows = "\n".join(ep(i) for i in range(1, n + 1))
         first = videos[0][0] if videos else ""
         play_href = f"https://www.youtube.com/watch?v={first}" if first else "#"
-        fields = dict(st, episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
+        if st.get("film"):
+            looks = dict(episode_tag="Short film", summary_line="Award-winning short film · [mm:ss]",
+                         list_heading="Watch", list_line="Award-winning short film")
+        else:
+            looks = dict(episode_tag=f"Episode 1 of {st['count']}", summary_line=f"{st['count']} episodes · [total min] · Animated short",
+                         list_heading="Episodes", list_line=f"{st['count']} episodes · [total min]")
+        fields = dict(st, **looks, episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
                       lesson_title=st["lesson"][0].upper() + st["lesson"][1:])
         out = re.sub(r"\{\{(\w+)\}\}", lambda m: str(fields.get(m.group(1), m.group(0))), tpl)
         tmp = f"_tmp_story_{st['slug']}.html"

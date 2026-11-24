@@ -20,7 +20,7 @@
 		{ name: 'Vince', topic: 'Body image', tags: ['body'], meta: '2 episodes', note: 'body image, anxiety',
 			desc: 'Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.' },
 		{ name: 'Raquelle', slug: 'raquelle', title: 'Are You OK?', watch: 'Watch “Are You OK?”', lesson: 'Classroom activities (PDF)',
-			topic: 'Bullying', tags: ['bullying'], meta: '[N] episodes · classroom activities', note: 'bullying',
+			topic: 'Bullying', tags: ['bullying'], meta: 'Award-winning short film · classroom activities', note: 'bullying',
 			desc: '[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]' }
 	];
 
@@ -163,6 +163,7 @@
 		player.classList.add('is-playing');
 	}
 	function videoTitle(btn) {
+		if (document.querySelectorAll('.mliwl-episode').length === 1 && storyTitle) return storyTitle.textContent;
 		return (storyTitle ? storyTitle.textContent + ' — ' : '') + 'Episode ' + btn.getAttribute('data-episode') + ': ' + btn.getAttribute('data-title');
 	}
 	var playLink = player && player.querySelector('.mliwl-player-play');
