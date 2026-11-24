@@ -6,7 +6,7 @@ In a source page:
   <!-- @page watch -->        marks the current page (nav link gets aria-current)
 Nav links in the header use {{nav:NAME}} for their href, resolved from NAV below.
 """
-import os, re
+import html, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 NAV = {"watch": "watch.html", "parents": "parents.html", "educators": "educators.html", "about": "about.html", "team": "team.html", "partners": "partners.html", "news": "news.html", "help": "get-help.html", "privacy": "privacy.html"}  # fill in as pages are built
 
@@ -33,7 +33,12 @@ STORIES = [
                  ("tjlKxi8oQ_w", "Amie Learns About Her Mom’s Struggle With Mental Health"),
                  ("kPp-ABkfYgI", "Amie Learns to Accept Help From Her Friends and Family")]),
     dict(slug="kyle", title="Kyle’s story", count=4, note="bullying, alcohol use", lesson="lesson plan",
-         desc="Bullied at school, a teen turns to alcohol to drown out the bad feelings and his own negative voice."),
+         desc="Bullied at school, a teen turns to alcohol to drown out the bad feelings and his own negative voice.",
+         # (YouTube video id, episode title) from the client, Nov 24 2026
+         videos=[("rx3X1VJqEq4", "Bullied at School, Kyle Turns to Alcohol to Cope"),
+                 ("zqM-XCifn0o", "Online Bullying Fuels Kyle’s Self-Loathing"),
+                 ("X16x2TxAgmQ", "Kyle Learns About Dad’s Military PTSD & Addiction"),
+                 ("HA3HBeDBUME", "Kyle Learns How to Cope With Negative Self-Talk Through Therapy")]),
     dict(slug="dante", title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
          desc="A football star’s struggles with identity and an overbearing father challenge him to accept support."),
     dict(slug="danny", title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
@@ -66,6 +71,7 @@ def build_stories():
         videos = st.get("videos", [])
         def ep(i):
             vid, title = videos[i - 1] if i <= len(videos) else ("", f"[Episode {i} title]")
+            title = html.escape(title, quote=True)  # titles can hold & or quotes
             data = f' data-video="{vid}" data-title="{title}"' if vid else ""
             thumb = f' style="background-image:url(https://i.ytimg.com/vi/{vid}/mqdefault.jpg)"' if vid else ""
             return (f'          <li><button class="mliwl-episode" type="button" data-episode="{i}"{data}{current if i == 1 else ""}>'
