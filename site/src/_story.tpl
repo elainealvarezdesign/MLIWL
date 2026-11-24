@@ -25,7 +25,7 @@
           <a class="mliwl-player-play" href="{{play_href}}" aria-label="Play episode 1 of {{title}}"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
         </div>
         <div class="mliwl-story-info">
-          <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag">{{episode_tag}}</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
+          <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag" data-total="{{count}}">{{episode_tag}}</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
           <h1 id="story-title" class="text-heading-h1">{{title}}</h1>
           <p class="text-body-large mliwl-muted-text">{{desc}} [Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
           <p class="text-body-small mliwl-muted-text">{{summary_line}}</p>
