@@ -40,7 +40,12 @@ STORIES = [
                  ("X16x2TxAgmQ", "Kyle Learns About Dad’s Military PTSD & Addiction"),
                  ("HA3HBeDBUME", "Kyle Learns How to Cope With Negative Self-Talk Through Therapy")]),
     dict(slug="dante", title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
-         desc="A football star’s struggles with identity and an overbearing father challenge him to accept support."),
+         desc="A football star’s struggles with identity and an overbearing father challenge him to accept support.",
+         # (YouTube video id, episode title) from the client, Nov 24 2026
+         videos=[("eH3O9Snp5UI", "Dante Struggles With His Father’s Narrow Expectations"),
+                 ("C6IQDQFvf8o", "Dante Worries His Teammates Will Reject His LGBTQ+ Identity"),
+                 ("HixhTwoEShg", "Dante Learns How to Cope With His Negative Thoughts"),
+                 ("n-8R8t-uUM4", "Dante Shares His Journey and Reconnects With His Dad")]),
     dict(slug="danny", title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
          desc="After a life-changing accident, a teen learns to rely on his network of supporters.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
