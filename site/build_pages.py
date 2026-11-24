@@ -61,7 +61,10 @@ STORIES = [
                  ("_KzgMJhcmXo", "Emily Opens Up About the Abuse to a Trusted Adult"),
                  ("igoYAbfphOE", "Emily Learns Coping Skills as She Continues to Adjust to New Home")]),
     dict(slug="kaia", title="Kaia’s story", count=2, note="low self-esteem, body image", lesson="lesson plan",
-         desc="Low self-esteem makes Kaia feel she doesn’t measure up, until she finds hope in the people she loves."),
+         desc="Low self-esteem makes Kaia feel she doesn’t measure up, until she finds hope in the people she loves.",
+         # (YouTube video id, episode title) from the client, Nov 24 2026
+         videos=[("gctypUcTLyg", "Taking Up Space"),
+                 ("rqZvp0gnsrM", "Rallying Together")]),
     dict(slug="vince", title="Vince’s story", count=2, note="body image, anxiety", lesson="lesson plan",
          desc="Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial."),
     dict(slug="raquelle", title="Are You OK?", count="[N]", note="bullying", lesson="classroom activities",
