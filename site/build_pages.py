@@ -37,7 +37,12 @@ STORIES = [
     dict(slug="dante", title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
          desc="A football star’s struggles with identity and an overbearing father challenge him to accept support."),
     dict(slug="danny", title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
-         desc="After a life-changing accident, a teen learns to rely on his network of supporters."),
+         desc="After a life-changing accident, a teen learns to rely on his network of supporters.",
+         # (YouTube video id, episode title) from the client, Nov 24 2026
+         videos=[("oR9LztZi_Yc", "Danny’s Inspiring Road to Recovery as a Burn Survivor"),
+                 ("ukA7G-Xegsg", "Danny Is Given a Safety Plan to Help Him Cope With His Trauma"),
+                 ("NNzdFqGC3M8", "Danny Reaches Out When He Needs Help"),
+                 ("b0YYGUzc0gk", "Danny Is Ready to Embrace His Life After Trauma")]),
     dict(slug="emily", title="Emily’s story", count=4, note="abuse at home", lesson="lesson plan",
          desc="Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
