@@ -128,19 +128,23 @@
   </div>
 </section>
 
-<!-- ========== Meet the character. On WordPress: Elementor's Lottie widget with assets/lottie/amie.json ========== -->
-<section class="mliwl-band mliwl-meet" aria-labelledby="meet-title">
-  <div class="mliwl-inner mliwl-meet-row" data-character="amie">
-    <figure class="mliwl-meet-art mliwl-zip">
+<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
+     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/amie.json ========== -->
+<section class="mliwl-band mliwl-meet" data-character="amie" aria-labelledby="meet-title">
+  <div class="mliwl-meet-scene" data-scene="HOvFQKGUfhE" style="background-image:url(https://i.ytimg.com/vi/HOvFQKGUfhE/mqdefault.jpg)" aria-hidden="true"></div>
+  <div class="mliwl-inner mliwl-meet-row">
+    <figure class="mliwl-meet-art">
       <img class="mliwl-meet-still" src="assets/img/character-amie.webp" width="165" height="232" alt="Amie, a teen with red braids and glasses, in a green cardigan" loading="lazy">
       <div class="mliwl-meet-lottie" data-lottie="assets/lottie/amie.json" aria-hidden="true"></div>
       <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Amie"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
     </figure>
-    <div class="mliwl-section-header">
-      <p class="text-eyebrow mliwl-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="text-heading-h2">Meet Amie</h2>
+    <div class="mliwl-meet-text">
+      <p class="text-eyebrow">Meet the character</p>
+      <h2 id="meet-title" class="mliwl-meet-name">Amie</h2>
+      <span class="mliwl-meet-topic">Suicide survivor</span>
       <p class="text-body-large">When negative thoughts keep haunting a teenage suicide survivor, the support of her family and boyfriend helps her find purpose.</p>
-      <p class="text-body-small mliwl-muted-text">Includes: suicide attempt. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <p class="text-body-small">Includes: suicide attempt. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">Watch Amie’s story<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>

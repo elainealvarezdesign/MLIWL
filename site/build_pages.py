@@ -25,52 +25,52 @@ def build(name):
 # Story pages: src/_story.tpl filled from STORIES -> story-<slug>.html
 # (keep in step with the stories array in assets/site.js; on WordPress these are Story posts)
 STORIES = [
-    dict(slug="amie", name="Amie", alt="Amie, a teen with red braids and glasses, in a green cardigan", trailer=("HOvFQKGUfhE", "Amie Struggles With Depression and Perfectionism"), title="Amie’s story", count=4, note="suicide attempt", lesson="lesson plan",
+    dict(slug="amie", topic="Suicide survivor", name="Amie", alt="Amie, a teen with red braids and glasses, in a green cardigan", trailer=("HOvFQKGUfhE", "Amie Struggles With Depression and Perfectionism"), title="Amie’s story", count=4, note="suicide attempt", lesson="lesson plan",
          desc="When negative thoughts keep haunting a teenage suicide survivor, the support of her family and boyfriend helps her find purpose.",
          # (YouTube video id, episode title) from the client, Nov 11 2026
          videos=[("-emjHyVSuwg", "Amie Opens Up About Her Mental Health in Therapy"),
                  ("lJeRqYpjiRs", "Amie and Nick Struggle to Reconnect After Her Suicide Attempt"),
                  ("tjlKxi8oQ_w", "Amie Learns About Her Mom’s Struggle With Mental Health"),
                  ("kPp-ABkfYgI", "Amie Learns to Accept Help From Her Friends and Family")]),
-    dict(slug="kyle", name="Kyle", alt="Kyle, a teen in a light blue hoodie with a backpack on one shoulder", trailer=("BVI7TgdnLRo", "Kyle Struggles With Bullying and Addiction"), title="Kyle’s story", count=4, note="bullying, alcohol use", lesson="lesson plan",
+    dict(slug="kyle", topic="Bullying + substance use", name="Kyle", alt="Kyle, a teen in a light blue hoodie with a backpack on one shoulder", trailer=("BVI7TgdnLRo", "Kyle Struggles With Bullying and Addiction"), title="Kyle’s story", count=4, note="bullying, alcohol use", lesson="lesson plan",
          desc="Bullied at school, a teen turns to alcohol to drown out the bad feelings and his own negative voice.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("rx3X1VJqEq4", "Bullied at School, Kyle Turns to Alcohol to Cope"),
                  ("zqM-XCifn0o", "Online Bullying Fuels Kyle’s Self-Loathing"),
                  ("X16x2TxAgmQ", "Kyle Learns About Dad’s Military PTSD & Addiction"),
                  ("HA3HBeDBUME", "Kyle Learns How to Cope With Negative Self-Talk Through Therapy")]),
-    dict(slug="dante", name="Dante", alt="Dante, a teen in a purple jacket over a pink T-shirt", trailer=("63b8BqdvpVc", "Dante Struggles With Rejection and LGBTQ+ Acceptance"), title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
+    dict(slug="dante", topic="LGBTQ+", name="Dante", alt="Dante, a teen in a purple jacket over a pink T-shirt", trailer=("63b8BqdvpVc", "Dante Struggles With Rejection and LGBTQ+ Acceptance"), title="Dante’s story", count=4, note="identity, family conflict", lesson="lesson plan",
          desc="A football star’s struggles with identity and an overbearing father challenge him to accept support.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("eH3O9Snp5UI", "Dante Struggles With His Father’s Narrow Expectations"),
                  ("C6IQDQFvf8o", "Dante Worries His Teammates Will Reject His LGBTQ+ Identity"),
                  ("HixhTwoEShg", "Dante Learns How to Cope With His Negative Thoughts"),
                  ("n-8R8t-uUM4", "Dante Shares His Journey and Reconnects With His Dad")]),
-    dict(slug="danny", name="Danny", alt="Danny, a teen with glasses and a shaved side cut, in a brown jacket and navy hoodie", trailer=("qPROOH2vxxc", "Danny Learns a New Normal"), title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
+    dict(slug="danny", topic="Trauma survivor", name="Danny", alt="Danny, a teen with glasses and a shaved side cut, in a brown jacket and navy hoodie", trailer=("qPROOH2vxxc", "Danny Learns a New Normal"), title="Danny’s story", count=4, note="serious injury, trauma", lesson="lesson plan",
          desc="After a life-changing accident, a teen learns to rely on his network of supporters.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("oR9LztZi_Yc", "Danny’s Inspiring Road to Recovery as a Burn Survivor"),
                  ("ukA7G-Xegsg", "Danny Is Given a Safety Plan to Help Him Cope With His Trauma"),
                  ("NNzdFqGC3M8", "Danny Reaches Out When He Needs Help"),
                  ("b0YYGUzc0gk", "Danny Is Ready to Embrace His Life After Trauma")]),
-    dict(slug="emily", name="Emily", alt="Emily, a teen with two hair puffs, a choker and a green backpack", trailer=("e7Zw3wF7a-8", "Emily Shares Her Story to Stop Abuse"), title="Emily’s story", count=4, note="abuse at home", lesson="lesson plan",
+    dict(slug="emily", topic="Abuse", name="Emily", alt="Emily, a teen with two hair puffs, a choker and a green backpack", trailer=("e7Zw3wF7a-8", "Emily Shares Her Story to Stop Abuse"), title="Emily’s story", count=4, note="abuse at home", lesson="lesson plan",
          desc="Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("8AdBvbjgFBo", "Emily Uses Her Support Network to Escape Abuse"),
                  ("6JmPWTu9kNs", "Emily Shares Her Story With a Friend"),
                  ("_KzgMJhcmXo", "Emily Opens Up About the Abuse to a Trusted Adult"),
                  ("igoYAbfphOE", "Emily Learns Coping Skills as She Continues to Adjust to New Home")]),
-    dict(slug="kaia", name="Kaia", alt="Kaia, a teen with a ponytail and glasses, in a black T-shirt and a necklace", trailer=("HCY9eeS5IL4", "Introducing Kaia’s Story"), title="Kaia’s story", count=2, note="low self-esteem, body image", lesson="lesson plan",
+    dict(slug="kaia", topic="Body image", name="Kaia", alt="Kaia, a teen with a ponytail and glasses, in a black T-shirt and a necklace", trailer=("HCY9eeS5IL4", "Introducing Kaia’s Story"), title="Kaia’s story", count=2, note="low self-esteem, body image", lesson="lesson plan",
          desc="Low self-esteem makes Kaia feel she doesn’t measure up, until she finds hope in the people she loves.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("gctypUcTLyg", "Taking Up Space"),
                  ("rqZvp0gnsrM", "Rallying Together")]),
-    dict(slug="vince", name="Vince", alt="Vince, a teen in a denim shirt over a black T-shirt", trailer=("eCPYIYrYwmw", "Introducing Vince’s Story"), title="Vince’s story", count=2, note="body image, anxiety", lesson="lesson plan",
+    dict(slug="vince", topic="Body image", name="Vince", alt="Vince, a teen in a denim shirt over a black T-shirt", trailer=("eCPYIYrYwmw", "Introducing Vince’s Story"), title="Vince’s story", count=2, note="body image, anxiety", lesson="lesson plan",
          desc="Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.",
          # (YouTube video id, episode title) from the client, Nov 24 2026
          videos=[("CwLyLMSx81M", "Muscle Isolation"),
                  ("GzACs2yieGo", "Quest for Rest")]),
-    dict(slug="raquelle", name="Raquelle", alt="Raquelle, a teen with curly hair and a gray hoodie, looking worried", title="Are You OK?", count=1, film=True, note="bullying", lesson="classroom activities",
+    dict(slug="raquelle", topic="Bullying", name="Raquelle", alt="Raquelle, a teen with curly hair and a gray hoodie, looking worried", title="Are You OK?", count=1, film=True, note="bullying", lesson="classroom activities",
          desc="[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]",
          # One award-winning short film, not a series (from the client, Nov 24 2026)
          videos=[("tJsGGsPNakw", "Are You OK?")]),
@@ -111,7 +111,9 @@ def build_stories():
                          list_heading="Episodes", list_line=f"{st['count']} episodes · [total min]")
         with open(os.path.join(HERE, "assets", "lottie", st["slug"] + ".json"), encoding="utf-8") as lf:
             lj = json.load(lf)
-        fields = dict(st, **looks, art_w=lj["w"], art_h=lj["h"], episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
+        scene = st["trailer"][0] if st.get("trailer") else first   # the trailer still sets the scene
+        watch_label = "Watch the film" if film else f"Watch {st['name']}’s story"
+        fields = dict(st, **looks, art_w=lj["w"], art_h=lj["h"], scene=scene, watch_label=watch_label, episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
                       lesson_title=st["lesson"][0].upper() + st["lesson"][1:])
         out = re.sub(r"\{\{(\w+)\}\}", lambda m: str(fields.get(m.group(1), m.group(0))), tpl)
         tmp = f"_tmp_story_{st['slug']}.html"

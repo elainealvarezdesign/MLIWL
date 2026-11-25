@@ -47,19 +47,23 @@
   </div>
 </section>
 
-<!-- ========== Meet the character. On WordPress: Elementor's Lottie widget with assets/lottie/{{slug}}.json ========== -->
-<section class="mliwl-band mliwl-meet" aria-labelledby="meet-title">
-  <div class="mliwl-inner mliwl-meet-row" data-character="{{slug}}">
-    <figure class="mliwl-meet-art mliwl-zip">
+<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
+     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/{{slug}}.json ========== -->
+<section class="mliwl-band mliwl-meet" data-character="{{slug}}" aria-labelledby="meet-title">
+  <div class="mliwl-meet-scene" data-scene="{{scene}}" style="background-image:url(https://i.ytimg.com/vi/{{scene}}/mqdefault.jpg)" aria-hidden="true"></div>
+  <div class="mliwl-inner mliwl-meet-row">
+    <figure class="mliwl-meet-art">
       <img class="mliwl-meet-still" src="assets/img/character-{{slug}}.webp" width="{{art_w}}" height="{{art_h}}" alt="{{alt}}" loading="lazy">
       <div class="mliwl-meet-lottie" data-lottie="assets/lottie/{{slug}}.json" aria-hidden="true"></div>
       <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of {{name}}"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
     </figure>
-    <div class="mliwl-section-header">
-      <p class="text-eyebrow mliwl-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="text-heading-h2">Meet {{name}}</h2>
+    <div class="mliwl-meet-text">
+      <p class="text-eyebrow">Meet the character</p>
+      <h2 id="meet-title" class="mliwl-meet-name">{{name}}</h2>
+      <span class="mliwl-meet-topic">{{topic}}</span>
       <p class="text-body-large">{{desc}}</p>
-      <p class="text-body-small mliwl-muted-text">Includes: {{note}}. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <p class="text-body-small">Includes: {{note}}. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">{{watch_label}}<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>

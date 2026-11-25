@@ -128,19 +128,23 @@
   </div>
 </section>
 
-<!-- ========== Meet the character. On WordPress: Elementor's Lottie widget with assets/lottie/danny.json ========== -->
-<section class="mliwl-band mliwl-meet" aria-labelledby="meet-title">
-  <div class="mliwl-inner mliwl-meet-row" data-character="danny">
-    <figure class="mliwl-meet-art mliwl-zip">
+<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
+     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/danny.json ========== -->
+<section class="mliwl-band mliwl-meet" data-character="danny" aria-labelledby="meet-title">
+  <div class="mliwl-meet-scene" data-scene="qPROOH2vxxc" style="background-image:url(https://i.ytimg.com/vi/qPROOH2vxxc/mqdefault.jpg)" aria-hidden="true"></div>
+  <div class="mliwl-inner mliwl-meet-row">
+    <figure class="mliwl-meet-art">
       <img class="mliwl-meet-still" src="assets/img/character-danny.webp" width="205" height="232" alt="Danny, a teen with glasses and a shaved side cut, in a brown jacket and navy hoodie" loading="lazy">
       <div class="mliwl-meet-lottie" data-lottie="assets/lottie/danny.json" aria-hidden="true"></div>
       <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Danny"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
     </figure>
-    <div class="mliwl-section-header">
-      <p class="text-eyebrow mliwl-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="text-heading-h2">Meet Danny</h2>
+    <div class="mliwl-meet-text">
+      <p class="text-eyebrow">Meet the character</p>
+      <h2 id="meet-title" class="mliwl-meet-name">Danny</h2>
+      <span class="mliwl-meet-topic">Trauma survivor</span>
       <p class="text-body-large">After a life-changing accident, a teen learns to rely on his network of supporters.</p>
-      <p class="text-body-small mliwl-muted-text">Includes: serious injury, trauma. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <p class="text-body-small">Includes: serious injury, trauma. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">Watch Danny’s story<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>
