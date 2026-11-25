@@ -2,12 +2,12 @@
 
 Usage: python3 scripts/build_netlify.py
 - Rebuilds the pages from site/src (site/build_pages.py)
-- Copies site/*.html and site/assets into dist/
+- Copies site/*.html and site/assets into dist/, adding ?v=<hash> to asset links (cache busting)
 - Copies the plugin CSS (tokens, components, sections) into dist/assets/css
   and points the pages at it, so dist/ works on its own
 Standard library only: runs on Netlify's default build image.
 """
-import os, re, shutil, subprocess, sys
+import hashlib, os, re, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
@@ -23,10 +23,19 @@ for name in ("tokens.css", "components.css", "sections.css"):
     shutil.copy(os.path.join(PLUGIN_CSS, name), os.path.join(DIST, "assets", "css", name))
 # sections.css uses ../img/zip-tone.png, which resolves to assets/img/ in dist as well.
 
+def versioned(m):
+    """assets/x.css -> assets/x.css?v=<content hash>, so a browser never shows an old copy after a deploy."""
+    path = os.path.join(DIST, m.group(2))
+    if not os.path.isfile(path):
+        return m.group(0)
+    digest = hashlib.md5(open(path, "rb").read()).hexdigest()[:8]
+    return f'{m.group(1)}="{m.group(2)}?v={digest}"'
+
 pages = sorted(f for f in os.listdir(SITE) if f.endswith(".html"))
 for page in pages:
     html = open(os.path.join(SITE, page), encoding="utf-8").read()
     html = html.replace("../plugin/mliwl-design-system/assets/css/", "assets/css/")
+    html = re.sub(r'(href|src|data-lottie)="(assets/[^"?#]+)"', versioned, html)
     if page == "404.html":
         # Netlify serves 404.html at any missing path (e.g. /a/b), so links must start at the site root.
         html = re.sub(r'(href|src)="(?!https?:|mailto:|tel:|sms:|#|/)([^"]+)"', r'\1="/\2"', html)
