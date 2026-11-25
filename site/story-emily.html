@@ -128,19 +128,23 @@
   </div>
 </section>
 
-<!-- ========== Meet the character. On WordPress: Elementor's Lottie widget with assets/lottie/emily.json ========== -->
-<section class="mliwl-band mliwl-meet" aria-labelledby="meet-title">
-  <div class="mliwl-inner mliwl-meet-row" data-character="emily">
-    <figure class="mliwl-meet-art mliwl-zip">
+<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
+     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/emily.json ========== -->
+<section class="mliwl-band mliwl-meet" data-character="emily" aria-labelledby="meet-title">
+  <div class="mliwl-meet-scene" data-scene="e7Zw3wF7a-8" style="background-image:url(https://i.ytimg.com/vi/e7Zw3wF7a-8/mqdefault.jpg)" aria-hidden="true"></div>
+  <div class="mliwl-inner mliwl-meet-row">
+    <figure class="mliwl-meet-art">
       <img class="mliwl-meet-still" src="assets/img/character-emily.webp" width="554" height="792" alt="Emily, a teen with two hair puffs, a choker and a green backpack" loading="lazy">
       <div class="mliwl-meet-lottie" data-lottie="assets/lottie/emily.json" aria-hidden="true"></div>
       <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Emily"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
     </figure>
-    <div class="mliwl-section-header">
-      <p class="text-eyebrow mliwl-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="text-heading-h2">Meet Emily</h2>
+    <div class="mliwl-meet-text">
+      <p class="text-eyebrow">Meet the character</p>
+      <h2 id="meet-title" class="mliwl-meet-name">Emily</h2>
+      <span class="mliwl-meet-topic">Abuse</span>
       <p class="text-body-large">Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth.</p>
-      <p class="text-body-small mliwl-muted-text">Includes: abuse at home. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <p class="text-body-small">Includes: abuse at home. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">Watch Emily’s story<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>

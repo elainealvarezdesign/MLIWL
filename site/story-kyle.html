@@ -128,19 +128,23 @@
   </div>
 </section>
 
-<!-- ========== Meet the character. On WordPress: Elementor's Lottie widget with assets/lottie/kyle.json ========== -->
-<section class="mliwl-band mliwl-meet" aria-labelledby="meet-title">
-  <div class="mliwl-inner mliwl-meet-row" data-character="kyle">
-    <figure class="mliwl-meet-art mliwl-zip">
+<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
+     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/kyle.json ========== -->
+<section class="mliwl-band mliwl-meet" data-character="kyle" aria-labelledby="meet-title">
+  <div class="mliwl-meet-scene" data-scene="BVI7TgdnLRo" style="background-image:url(https://i.ytimg.com/vi/BVI7TgdnLRo/mqdefault.jpg)" aria-hidden="true"></div>
+  <div class="mliwl-inner mliwl-meet-row">
+    <figure class="mliwl-meet-art">
       <img class="mliwl-meet-still" src="assets/img/character-kyle.webp" width="175" height="232" alt="Kyle, a teen in a light blue hoodie with a backpack on one shoulder" loading="lazy">
       <div class="mliwl-meet-lottie" data-lottie="assets/lottie/kyle.json" aria-hidden="true"></div>
       <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Kyle"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
     </figure>
-    <div class="mliwl-section-header">
-      <p class="text-eyebrow mliwl-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="text-heading-h2">Meet Kyle</h2>
+    <div class="mliwl-meet-text">
+      <p class="text-eyebrow">Meet the character</p>
+      <h2 id="meet-title" class="mliwl-meet-name">Kyle</h2>
+      <span class="mliwl-meet-topic">Bullying + substance use</span>
       <p class="text-body-large">Bullied at school, a teen turns to alcohol to drown out the bad feelings and his own negative voice.</p>
-      <p class="text-body-small mliwl-muted-text">Includes: bullying, alcohol use. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <p class="text-body-small">Includes: bullying, alcohol use. Need to talk? <a href="get-help.html">Find help now</a>.</p>
+      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">Watch Kyle’s story<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>

@@ -198,6 +198,14 @@
 		});
 	});
 
+	// ---- Meet the character: swap the small video still for the HD one when YouTube has it ----
+	// (YouTube answers a missing maxres still with a 120px grey placeholder, so check the size.)
+	document.querySelectorAll('.mliwl-meet-scene[data-scene]').forEach(function (el) {
+		var hd = new Image();
+		hd.onload = function () { if (hd.naturalWidth > 320) el.style.backgroundImage = 'url(' + hd.src + ')'; };
+		hd.src = 'https://i.ytimg.com/vi/' + el.getAttribute('data-scene') + '/maxresdefault.jpg';
+	});
+
 	// ---- Meet the character: Lottie breathing loop, loaded only when the block comes into view ----
 	// The still image stays when motion is reduced, when the player can't load, or before it does.
 	// On WordPress, Elementor's Lottie widget plays the same JSON files.
