@@ -97,14 +97,26 @@
     <nav class="mliwl-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="watch.html">Stories</a></li><li><span aria-current="page">Emily’s story</span></li></ol></nav>
     <div class="mliwl-player-row" data-character="emily">
       <div class="mliwl-player-main">
-        <div class="mliwl-player" id="player" data-video="8AdBvbjgFBo">
-          <img src="assets/img/story-emily.webp" width="576" height="432" alt="">
-          <a class="mliwl-player-play" href="https://www.youtube.com/watch?v=8AdBvbjgFBo" aria-label="Play episode 1 of Emily’s story"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+        <!-- Poster: the character on a still from the story's video, tinted with the character's colour.
+             On WordPress: a container with the still as background + colour overlay, Elementor's Lottie widget with assets/lottie/emily.json, and the YouTube embed on click. -->
+        <div class="mliwl-player mliwl-meet" id="player" data-video="8AdBvbjgFBo">
+          <div class="mliwl-meet-scene" data-scene="e7Zw3wF7a-8" style="background-image:url(https://i.ytimg.com/vi/e7Zw3wF7a-8/mqdefault.jpg)" aria-hidden="true"></div>
+          <figure class="mliwl-meet-art">
+            <img class="mliwl-meet-still" src="assets/img/character-emily.webp" width="554" height="792" alt="Emily, a teen with two hair puffs, a choker and a green backpack">
+            <div class="mliwl-meet-lottie" data-lottie="assets/lottie/emily.json" aria-hidden="true"></div>
+          </figure>
+          <div class="mliwl-meet-text">
+            <p class="text-eyebrow">Meet the character</p>
+            <p class="mliwl-meet-name" style="--len:5">Emily</p>
+            <span class="mliwl-meet-topic">Abuse</span>
+            <a class="mliwl-player-play" href="https://www.youtube.com/watch?v=8AdBvbjgFBo" aria-label="Play episode 1 of Emily’s story"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+          </div>
+          <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Emily"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
         </div>
         <div class="mliwl-story-info">
           <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag" data-total="4">Episode 1 of 4</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
           <h1 id="story-title" class="text-heading-h1">Emily’s story</h1>
-          <p class="text-body-large mliwl-muted-text">[Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
+          <p class="text-body-large mliwl-muted-text">Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth. [Client copy: 1–2 more sentences — what viewers will learn.]</p>
           <p class="text-body-small mliwl-muted-text">4 episodes · [total min] · Animated short</p>
           <div class="mliwl-content-note mliwl-story-note"><p class="text-body-strong">Content note</p><p class="text-body-small">Includes: abuse at home. Watch with a trusted adult if you need to. Need to talk? Call or text 988.</p></div>
           <div class="mliwl-actions">
@@ -124,27 +136,6 @@
         </ol>
         <div class="mliwl-after-series"><p class="text-eyebrow mliwl-eyebrow">After the last episode</p><p class="text-body-small">Talk about it with the <a href="#teach">discussion guide</a>, or <a href="get-help.html">reach out</a> if it brought something up.</p></div>
       </section>
-    </div>
-  </div>
-</section>
-
-<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
-     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/emily.json ========== -->
-<section class="mliwl-band mliwl-meet" data-character="emily" aria-labelledby="meet-title">
-  <div class="mliwl-meet-scene" data-scene="e7Zw3wF7a-8" style="background-image:url(https://i.ytimg.com/vi/e7Zw3wF7a-8/mqdefault.jpg)" aria-hidden="true"></div>
-  <div class="mliwl-inner mliwl-meet-row">
-    <figure class="mliwl-meet-art">
-      <img class="mliwl-meet-still" src="assets/img/character-emily.webp" width="554" height="792" alt="Emily, a teen with two hair puffs, a choker and a green backpack" loading="lazy">
-      <div class="mliwl-meet-lottie" data-lottie="assets/lottie/emily.json" aria-hidden="true"></div>
-      <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Emily"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
-    </figure>
-    <div class="mliwl-meet-text">
-      <p class="text-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="mliwl-meet-name">Emily</h2>
-      <span class="mliwl-meet-topic">Abuse</span>
-      <p class="text-body-large">Escaping an abusive home, a teen protects her own wellbeing while shielding her mother from the truth.</p>
-      <p class="text-body-small">Includes: abuse at home. Need to talk? <a href="get-help.html">Find help now</a>.</p>
-      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">Watch Emily’s story<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>

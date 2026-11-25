@@ -20,14 +20,26 @@
     <nav class="mliwl-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="watch.html">Stories</a></li><li><span aria-current="page">{{title}}</span></li></ol></nav>
     <div class="mliwl-player-row" data-character="{{slug}}">
       <div class="mliwl-player-main">
-        <div class="mliwl-player" id="player" data-video="{{video}}">
-          <img src="assets/img/story-{{slug}}.webp" width="576" height="432" alt="">
-          <a class="mliwl-player-play" href="{{play_href}}" aria-label="Play episode 1 of {{title}}"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+        <!-- Poster: the character on a still from the story's video, tinted with the character's colour.
+             On WordPress: a container with the still as background + colour overlay, Elementor's Lottie widget with assets/lottie/{{slug}}.json, and the YouTube embed on click. -->
+        <div class="mliwl-player mliwl-meet" id="player" data-video="{{video}}">
+          <div class="mliwl-meet-scene" data-scene="{{scene}}" style="background-image:url(https://i.ytimg.com/vi/{{scene}}/mqdefault.jpg)" aria-hidden="true"></div>
+          <figure class="mliwl-meet-art">
+            <img class="mliwl-meet-still" src="assets/img/character-{{slug}}.webp" width="{{art_w}}" height="{{art_h}}" alt="{{alt}}">
+            <div class="mliwl-meet-lottie" data-lottie="assets/lottie/{{slug}}.json" aria-hidden="true"></div>
+          </figure>
+          <div class="mliwl-meet-text">
+            <p class="text-eyebrow">Meet the character</p>
+            <p class="mliwl-meet-name" style="--len:{{name_len}}">{{name}}</p>
+            <span class="mliwl-meet-topic">{{topic}}</span>
+            <a class="mliwl-player-play" href="{{play_href}}" aria-label="Play episode 1 of {{title}}"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+          </div>
+          <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of {{name}}"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
         </div>
         <div class="mliwl-story-info">
           <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag" data-total="{{count}}">{{episode_tag}}</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
           <h1 id="story-title" class="text-heading-h1">{{title}}</h1>
-          <p class="text-body-large mliwl-muted-text">[Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
+          <p class="text-body-large mliwl-muted-text">{{desc}} [Client copy: 1–2 more sentences — what viewers will learn.]</p>
           <p class="text-body-small mliwl-muted-text">{{summary_line}}</p>
           <div class="mliwl-content-note mliwl-story-note"><p class="text-body-strong">Content note</p><p class="text-body-small">Includes: {{note}}. Watch with a trusted adult if you need to. Need to talk? Call or text 988.</p></div>
           <div class="mliwl-actions">
@@ -43,27 +55,6 @@
         </ol>
         <div class="mliwl-after-series"><p class="text-eyebrow mliwl-eyebrow">After the last episode</p><p class="text-body-small">Talk about it with the <a href="#teach">discussion guide</a>, or <a href="get-help.html">reach out</a> if it brought something up.</p></div>
       </section>
-    </div>
-  </div>
-</section>
-
-<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
-     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/{{slug}}.json ========== -->
-<section class="mliwl-band mliwl-meet" data-character="{{slug}}" aria-labelledby="meet-title">
-  <div class="mliwl-meet-scene" data-scene="{{scene}}" style="background-image:url(https://i.ytimg.com/vi/{{scene}}/mqdefault.jpg)" aria-hidden="true"></div>
-  <div class="mliwl-inner mliwl-meet-row">
-    <figure class="mliwl-meet-art">
-      <img class="mliwl-meet-still" src="assets/img/character-{{slug}}.webp" width="{{art_w}}" height="{{art_h}}" alt="{{alt}}" loading="lazy">
-      <div class="mliwl-meet-lottie" data-lottie="assets/lottie/{{slug}}.json" aria-hidden="true"></div>
-      <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of {{name}}"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
-    </figure>
-    <div class="mliwl-meet-text">
-      <p class="text-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="mliwl-meet-name">{{name}}</h2>
-      <span class="mliwl-meet-topic">{{topic}}</span>
-      <p class="text-body-large">{{desc}}</p>
-      <p class="text-body-small">Includes: {{note}}. Need to talk? <a href="get-help.html">Find help now</a>.</p>
-      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">{{watch_label}}<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>
