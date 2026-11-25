@@ -27,7 +27,7 @@
         <div class="mliwl-story-info">
           <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag" data-total="{{count}}">{{episode_tag}}</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
           <h1 id="story-title" class="text-heading-h1">{{title}}</h1>
-          <p class="text-body-large mliwl-muted-text">{{desc}} [Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
+          <p class="text-body-large mliwl-muted-text">[Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
           <p class="text-body-small mliwl-muted-text">{{summary_line}}</p>
           <div class="mliwl-content-note mliwl-story-note"><p class="text-body-strong">Content note</p><p class="text-body-small">Includes: {{note}}. Watch with a trusted adult if you need to. Need to talk? Call or text 988.</p></div>
           <div class="mliwl-actions">
@@ -43,6 +43,23 @@
         </ol>
         <div class="mliwl-after-series"><p class="text-eyebrow mliwl-eyebrow">After the last episode</p><p class="text-body-small">Talk about it with the <a href="#teach">discussion guide</a>, or <a href="get-help.html">reach out</a> if it brought something up.</p></div>
       </section>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Meet the character. On WordPress: Elementor's Lottie widget with assets/lottie/{{slug}}.json ========== -->
+<section class="mliwl-band mliwl-meet" aria-labelledby="meet-title">
+  <div class="mliwl-inner mliwl-meet-row" data-character="{{slug}}">
+    <figure class="mliwl-meet-art mliwl-zip">
+      <img class="mliwl-meet-still" src="assets/img/character-{{slug}}.webp" width="{{art_w}}" height="{{art_h}}" alt="{{alt}}" loading="lazy">
+      <div class="mliwl-meet-lottie" data-lottie="assets/lottie/{{slug}}.json" aria-hidden="true"></div>
+      <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of {{name}}"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
+    </figure>
+    <div class="mliwl-section-header">
+      <p class="text-eyebrow mliwl-eyebrow">Meet the character</p>
+      <h2 id="meet-title" class="text-heading-h2">Meet {{name}}</h2>
+      <p class="text-body-large">{{desc}}</p>
+      <p class="text-body-small mliwl-muted-text">Includes: {{note}}. Need to talk? <a href="get-help.html">Find help now</a>.</p>
     </div>
   </div>
 </section>
