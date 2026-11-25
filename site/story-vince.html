@@ -97,14 +97,26 @@
     <nav class="mliwl-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="watch.html">Stories</a></li><li><span aria-current="page">Vince’s story</span></li></ol></nav>
     <div class="mliwl-player-row" data-character="vince">
       <div class="mliwl-player-main">
-        <div class="mliwl-player" id="player" data-video="CwLyLMSx81M">
-          <img src="assets/img/story-vince.webp" width="576" height="432" alt="">
-          <a class="mliwl-player-play" href="https://www.youtube.com/watch?v=CwLyLMSx81M" aria-label="Play episode 1 of Vince’s story"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+        <!-- Poster: the character on a still from the story's video, tinted with the character's colour.
+             On WordPress: a container with the still as background + colour overlay, Elementor's Lottie widget with assets/lottie/vince.json, and the YouTube embed on click. -->
+        <div class="mliwl-player mliwl-meet" id="player" data-video="CwLyLMSx81M">
+          <div class="mliwl-meet-scene" data-scene="eCPYIYrYwmw" style="background-image:url(https://i.ytimg.com/vi/eCPYIYrYwmw/mqdefault.jpg)" aria-hidden="true"></div>
+          <figure class="mliwl-meet-art">
+            <img class="mliwl-meet-still" src="assets/img/character-vince.webp" width="560" height="792" alt="Vince, a teen in a denim shirt over a black T-shirt">
+            <div class="mliwl-meet-lottie" data-lottie="assets/lottie/vince.json" aria-hidden="true"></div>
+          </figure>
+          <div class="mliwl-meet-text">
+            <p class="text-eyebrow">Meet the character</p>
+            <p class="mliwl-meet-name" style="--len:5">Vince</p>
+            <span class="mliwl-meet-topic">Body image</span>
+            <a class="mliwl-player-play" href="https://www.youtube.com/watch?v=CwLyLMSx81M" aria-label="Play episode 1 of Vince’s story"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+          </div>
+          <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Vince"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
         </div>
         <div class="mliwl-story-info">
           <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag" data-total="2">Episode 1 of 2</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
           <h1 id="story-title" class="text-heading-h1">Vince’s story</h1>
-          <p class="text-body-large mliwl-muted-text">[Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
+          <p class="text-body-large mliwl-muted-text">Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial. [Client copy: 1–2 more sentences — what viewers will learn.]</p>
           <p class="text-body-small mliwl-muted-text">2 episodes · [total min] · Animated short</p>
           <div class="mliwl-content-note mliwl-story-note"><p class="text-body-strong">Content note</p><p class="text-body-small">Includes: body image, anxiety. Watch with a trusted adult if you need to. Need to talk? Call or text 988.</p></div>
           <div class="mliwl-actions">
@@ -122,27 +134,6 @@
         </ol>
         <div class="mliwl-after-series"><p class="text-eyebrow mliwl-eyebrow">After the last episode</p><p class="text-body-small">Talk about it with the <a href="#teach">discussion guide</a>, or <a href="get-help.html">reach out</a> if it brought something up.</p></div>
       </section>
-    </div>
-  </div>
-</section>
-
-<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
-     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/vince.json ========== -->
-<section class="mliwl-band mliwl-meet" data-character="vince" aria-labelledby="meet-title">
-  <div class="mliwl-meet-scene" data-scene="eCPYIYrYwmw" style="background-image:url(https://i.ytimg.com/vi/eCPYIYrYwmw/mqdefault.jpg)" aria-hidden="true"></div>
-  <div class="mliwl-inner mliwl-meet-row">
-    <figure class="mliwl-meet-art">
-      <img class="mliwl-meet-still" src="assets/img/character-vince.webp" width="560" height="792" alt="Vince, a teen in a denim shirt over a black T-shirt" loading="lazy">
-      <div class="mliwl-meet-lottie" data-lottie="assets/lottie/vince.json" aria-hidden="true"></div>
-      <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Vince"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
-    </figure>
-    <div class="mliwl-meet-text">
-      <p class="text-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="mliwl-meet-name">Vince</h2>
-      <span class="mliwl-meet-topic">Body image</span>
-      <p class="text-body-large">Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.</p>
-      <p class="text-body-small">Includes: body image, anxiety. Need to talk? <a href="get-help.html">Find help now</a>.</p>
-      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">Watch Vince’s story<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>

@@ -198,7 +198,7 @@
 		});
 	});
 
-	// ---- Meet the character: swap the small video still for the HD one when YouTube has it ----
+	// ---- Story poster: swap the small video still for the HD one when YouTube has it ----
 	// (YouTube answers a missing maxres still with a 120px grey placeholder, so check the size.)
 	document.querySelectorAll('.mliwl-meet-scene[data-scene]').forEach(function (el) {
 		var hd = new Image();
@@ -206,24 +206,25 @@
 		hd.src = 'https://i.ytimg.com/vi/' + el.getAttribute('data-scene') + '/maxresdefault.jpg';
 	});
 
-	// ---- Meet the character: Lottie breathing loop, loaded only when the block comes into view ----
+	// ---- Story poster: the character's Lottie breathing loop, loaded only when the poster comes into view ----
 	// The still image stays when motion is reduced, when the player can't load, or before it does.
 	// On WordPress, Elementor's Lottie widget plays the same JSON files.
 	var meet = document.querySelector('.mliwl-meet-lottie');
 	var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 	if (meet && !reduceMotion && 'IntersectionObserver' in window) {
 		var art = meet.closest('.mliwl-meet-art');
-		var toggle = art.querySelector('.mliwl-meet-toggle');
-		var player = null, userPaused = false, visible = false;
-		var name = (document.getElementById('meet-title') || {}).textContent || '';
+		var toggle = art.parentNode.querySelector('.mliwl-meet-toggle');
+		var anim = null, userPaused = false, visible = false;  // not "player": that name is the video player above
+		var name = (art.parentNode.querySelector('.mliwl-meet-name') || {}).textContent || '';
 		function setToggle() {
 			var paused = userPaused;
 			toggle.setAttribute('aria-label', (paused ? 'Play' : 'Pause') + ' the animation of ' + name.replace(/^Meet /, ''));
 			toggle.querySelector('use').setAttribute('href', paused ? '#i-play' : '#i-pause');
 		}
 		function start() {
-			player = window.lottie.loadAnimation({ container: meet, renderer: 'svg', loop: true, autoplay: visible && !userPaused, path: meet.getAttribute('data-lottie') });
-			player.addEventListener('DOMLoaded', function () { art.classList.add('is-animated'); toggle.hidden = false; setToggle(); });
+			if (!art.isConnected) return;  // the video replaced the poster before the player loaded
+			anim = window.lottie.loadAnimation({ container: meet, renderer: 'svg', loop: true, autoplay: visible && !userPaused, path: meet.getAttribute('data-lottie') });
+			anim.addEventListener('DOMLoaded', function () { art.classList.add('is-animated'); toggle.hidden = false; setToggle(); });
 		}
 		function loadPlayer() {
 			if (window.lottie) return start();
@@ -234,14 +235,19 @@
 		}
 		toggle.addEventListener('click', function () {
 			userPaused = !userPaused;
-			if (player) { if (userPaused) player.pause(); else player.play(); }
+			if (anim) { if (userPaused) anim.pause(); else anim.play(); }
 			setToggle();
 		});
-		new IntersectionObserver(function (entries) {
+		var watcher = new IntersectionObserver(function (entries) {
 			visible = entries[0].isIntersecting;
-			if (visible && !player) loadPlayer();
-			else if (player && !userPaused) { if (visible) player.play(); else player.pause(); }  // no work off screen
-		}, { rootMargin: '200px' }).observe(art);
+			if (visible && !anim) loadPlayer();
+			else if (anim && !userPaused) { if (visible) anim.play(); else anim.pause(); }  // no work off screen
+		}, { rootMargin: '200px' });
+		watcher.observe(art);
+		// When the video starts it replaces the poster: stop the animation for good.
+		if (player) new MutationObserver(function () {
+			if (!art.isConnected) { watcher.disconnect(); if (anim) { anim.destroy(); anim = null; } }
+		}).observe(player, { childList: true });
 	}
 
 	// ---- Bio dialog (Meet the team, News & media, Story). Focus returns to the button that opened it. ----

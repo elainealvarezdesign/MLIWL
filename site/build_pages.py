@@ -113,7 +113,7 @@ def build_stories():
             lj = json.load(lf)
         scene = st["trailer"][0] if st.get("trailer") else first   # the trailer still sets the scene
         watch_label = "Watch the film" if film else f"Watch {st['name']}’s story"
-        fields = dict(st, **looks, art_w=lj["w"], art_h=lj["h"], scene=scene, watch_label=watch_label, episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
+        fields = dict(st, **looks, art_w=lj["w"], art_h=lj["h"], scene=scene, watch_label=watch_label, name_len=len(st["name"]), episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
                       lesson_title=st["lesson"][0].upper() + st["lesson"][1:])
         out = re.sub(r"\{\{(\w+)\}\}", lambda m: str(fields.get(m.group(1), m.group(0))), tpl)
         tmp = f"_tmp_story_{st['slug']}.html"

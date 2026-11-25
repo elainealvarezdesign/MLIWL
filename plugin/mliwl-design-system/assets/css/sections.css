@@ -535,32 +535,27 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 .mliwl-crisis-bar a { display: inline-flex; align-items: center; min-height: 44px; } /* the 988 links matter most */
 .mliwl-footer li > a, .mliwl-breadcrumb a, .mliwl-as-seen a { display: inline-flex; align-items: center; min-height: 24px; }
 
-/* ---------- Meet the character (story pages) --------------------------------
-   Full-width band in the character's colour, darkened 28% so white text stays at 5.3:1 or more
-   for every character; a still from the story's video sits on it in multiply (it can only darken). */
-.mliwl-meet { position: relative; overflow: hidden; padding-bottom: 0; color: #fff; background-color: var(--story-color, var(--color-bg-hero)); background-color: color-mix(in srgb, var(--story-color, var(--color-bg-hero)) 72%, #000); }
+/* ---------- Story poster: "Meet the character" (story pages) ----------------
+   The video poster in the character's colour, darkened 28% so white text stays at 5.3:1 or more
+   for every character; a still from the story's video sits on it in multiply (it can only darken).
+   Sizes follow the poster's width (cqi), so it reads the same from 1440px down to a phone. */
+.mliwl-player.mliwl-meet { container-type: inline-size; color: #fff; background-color: var(--story-color, var(--color-bg-hero)); background-color: color-mix(in srgb, var(--story-color, var(--color-bg-hero)) 72%, #000);
+	display: grid; grid-template-columns: minmax(0, 46fr) minmax(0, 54fr); align-items: stretch; }
 .mliwl-meet-scene { position: absolute; inset: 0; background-size: cover; background-position: center right; filter: grayscale(1) contrast(1.1); mix-blend-mode: multiply; opacity: .6;
 	-webkit-mask-image: linear-gradient(90deg, transparent 5%, #000 55%); mask-image: linear-gradient(90deg, transparent 5%, #000 55%); }
-.mliwl-band > .mliwl-inner.mliwl-meet-row { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: end; gap: var(--space-48); }
-.mliwl-meet-art { position: relative; margin: 0; display: flex; justify-content: center; align-items: flex-end; height: 520px; }
-.mliwl-meet-still, .mliwl-meet-lottie { height: 100%; width: auto; max-width: 100%; display: block; }
-.mliwl-meet-still { object-fit: contain; object-position: bottom center; }
-.mliwl-meet-lottie { position: absolute; inset: 0; margin: 0 auto; }
+.mliwl-meet-art { position: relative; margin: 0; display: flex; justify-content: center; align-items: flex-end; min-height: 0; padding-top: 5cqi; }
+.mliwl-player .mliwl-meet-still { position: relative; width: auto; height: 100%; max-width: 100%; object-fit: contain; object-position: bottom center; display: block; }
+.mliwl-meet-lottie { position: absolute; inset: 5cqi 0 0; margin: 0 auto; }
 .mliwl-meet-lottie svg { display: block; }
 .mliwl-meet-art.is-animated .mliwl-meet-still { visibility: hidden; }
-.mliwl-meet-toggle { position: absolute; left: 0; bottom: var(--space-24); display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: var(--color-bg-surface); color: var(--color-text-primary); box-shadow: var(--shadow-tag); cursor: pointer; }
+.mliwl-meet-text { position: relative; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 2cqi; padding: 4cqi 6cqi 4cqi 2cqi; min-width: 0; }
+.mliwl-meet-text :where(p) { margin: 0; }
+.mliwl-meet-text .text-eyebrow { color: rgb(255 255 255 / .85); font-size: clamp(11px, 1.8cqi, 14px); }
+.mliwl-meet-name { font-family: var(--font-family-base); font-weight: var(--font-weight-black, 900); font-size: max(22px, min(11cqi, 62cqi / var(--len, 6))); line-height: .95; text-transform: uppercase; letter-spacing: -0.01em; white-space: nowrap; }  /* --len = letters in the name, so the longest still fits */
+.mliwl-meet-topic { display: inline-flex; align-items: center; min-height: clamp(28px, 5cqi, 40px); padding: 0 clamp(12px, 3cqi, 24px); border-radius: var(--radius-full); background: #fff; color: color-mix(in srgb, var(--story-color, #181a1d) 72%, #000); font-weight: var(--font-weight-extrabold); font-size: clamp(11px, 1.9cqi, 16px); letter-spacing: .04em; text-transform: uppercase; }
+.mliwl-meet .mliwl-player-play { position: static; margin: 1.5cqi 0 0; width: clamp(48px, 11cqi, 88px); height: clamp(48px, 11cqi, 88px); }
+.mliwl-meet .mliwl-player-play svg { width: 36%; height: 36%; }
+.mliwl-meet-toggle { position: absolute; left: var(--space-16); bottom: var(--space-16); display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: var(--color-bg-surface); color: var(--color-text-primary); box-shadow: var(--shadow-tag); cursor: pointer; }
 .mliwl-meet-toggle[hidden] { display: none; }
 .mliwl-meet-toggle svg { width: 20px; height: 20px; }
-.mliwl-meet-text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); padding-bottom: var(--space-64); max-width: 640px; }
-.mliwl-meet-text :where(p, h2) { margin: 0; }
-.mliwl-meet-text .text-eyebrow { color: rgb(255 255 255 / .85); }
-.mliwl-meet-name { font-family: var(--font-family-base); font-weight: var(--font-weight-black, 900); font-size: clamp(56px, 8vw, 112px); line-height: .95; text-transform: uppercase; letter-spacing: -0.01em; }
-.mliwl-meet-topic { display: inline-flex; align-items: center; min-height: 40px; padding: 0 var(--space-24); border-radius: var(--radius-full); background: #fff; color: color-mix(in srgb, var(--story-color, #181a1d) 72%, #000); font-weight: var(--font-weight-extrabold); font-size: var(--font-size-button); letter-spacing: .04em; text-transform: uppercase; }
-.mliwl-meet-text a:not(.mliwl-btn) { color: inherit; font-weight: var(--font-weight-bold); text-underline-offset: 3px; }
-@media (max-width: 1023px) {
-	.mliwl-band > .mliwl-inner.mliwl-meet-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
-	.mliwl-meet-text { order: -1; padding-bottom: var(--space-32); }
-	.mliwl-meet-art { height: 420px; }
-	.mliwl-meet-scene { -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 95%); mask-image: linear-gradient(180deg, #000 30%, transparent 95%); background-position: center top; }
-}
-@media (max-width: 767px) { .mliwl-meet-art { height: 340px; } .mliwl-meet-toggle { left: auto; right: 0; } }
+@container (max-width: 480px) { .mliwl-meet-text .text-eyebrow { display: none; } }

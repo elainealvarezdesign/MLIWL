@@ -97,14 +97,26 @@
     <nav class="mliwl-breadcrumb" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="watch.html">Stories</a></li><li><span aria-current="page">Are You OK?</span></li></ol></nav>
     <div class="mliwl-player-row" data-character="raquelle">
       <div class="mliwl-player-main">
-        <div class="mliwl-player" id="player" data-video="tJsGGsPNakw">
-          <img src="assets/img/story-raquelle.webp" width="576" height="432" alt="">
-          <a class="mliwl-player-play" href="https://www.youtube.com/watch?v=tJsGGsPNakw" aria-label="Play episode 1 of Are You OK?"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+        <!-- Poster: the character on a still from the story's video, tinted with the character's colour.
+             On WordPress: a container with the still as background + colour overlay, Elementor's Lottie widget with assets/lottie/raquelle.json, and the YouTube embed on click. -->
+        <div class="mliwl-player mliwl-meet" id="player" data-video="tJsGGsPNakw">
+          <div class="mliwl-meet-scene" data-scene="tJsGGsPNakw" style="background-image:url(https://i.ytimg.com/vi/tJsGGsPNakw/mqdefault.jpg)" aria-hidden="true"></div>
+          <figure class="mliwl-meet-art">
+            <img class="mliwl-meet-still" src="assets/img/character-raquelle.webp" width="703" height="792" alt="Raquelle, a teen with curly hair and a gray hoodie, looking worried">
+            <div class="mliwl-meet-lottie" data-lottie="assets/lottie/raquelle.json" aria-hidden="true"></div>
+          </figure>
+          <div class="mliwl-meet-text">
+            <p class="text-eyebrow">Meet the character</p>
+            <p class="mliwl-meet-name" style="--len:8">Raquelle</p>
+            <span class="mliwl-meet-topic">Bullying</span>
+            <a class="mliwl-player-play" href="https://www.youtube.com/watch?v=tJsGGsPNakw" aria-label="Play episode 1 of Are You OK?"><svg aria-hidden="true"><use href="#i-play"/></svg></a>
+          </div>
+          <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Raquelle"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
         </div>
         <div class="mliwl-story-info">
           <div class="mliwl-tags"><span class="mliwl-tag mliwl-tag-highlight" id="episode-tag" data-total="1">Short film</span><span class="mliwl-tag">Ages 13+</span><span class="mliwl-tag">Subtitles: EN · ES</span></div>
           <h1 id="story-title" class="text-heading-h1">Are You OK?</h1>
-          <p class="text-body-large mliwl-muted-text">[Client copy: 2–3 sentences about the story — what happens and what viewers will learn.]</p>
+          <p class="text-body-large mliwl-muted-text">[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story] [Client copy: 1–2 more sentences — what viewers will learn.]</p>
           <p class="text-body-small mliwl-muted-text">Award-winning short film · [mm:ss]</p>
           <div class="mliwl-content-note mliwl-story-note"><p class="text-body-strong">Content note</p><p class="text-body-small">Includes: bullying. Watch with a trusted adult if you need to. Need to talk? Call or text 988.</p></div>
           <div class="mliwl-actions">
@@ -120,27 +132,6 @@
         </ol>
         <div class="mliwl-after-series"><p class="text-eyebrow mliwl-eyebrow">After the last episode</p><p class="text-body-small">Talk about it with the <a href="#teach">discussion guide</a>, or <a href="get-help.html">reach out</a> if it brought something up.</p></div>
       </section>
-    </div>
-  </div>
-</section>
-
-<!-- ========== Meet the character. Background: a still from the story's video, tinted with the character's colour.
-     On WordPress: a section with the still as background image + colour overlay, and Elementor's Lottie widget with assets/lottie/raquelle.json ========== -->
-<section class="mliwl-band mliwl-meet" data-character="raquelle" aria-labelledby="meet-title">
-  <div class="mliwl-meet-scene" data-scene="tJsGGsPNakw" style="background-image:url(https://i.ytimg.com/vi/tJsGGsPNakw/mqdefault.jpg)" aria-hidden="true"></div>
-  <div class="mliwl-inner mliwl-meet-row">
-    <figure class="mliwl-meet-art">
-      <img class="mliwl-meet-still" src="assets/img/character-raquelle.webp" width="703" height="792" alt="Raquelle, a teen with curly hair and a gray hoodie, looking worried" loading="lazy">
-      <div class="mliwl-meet-lottie" data-lottie="assets/lottie/raquelle.json" aria-hidden="true"></div>
-      <button class="mliwl-meet-toggle" type="button" hidden aria-label="Pause the animation of Raquelle"><svg aria-hidden="true"><use href="#i-pause"/></svg></button>
-    </figure>
-    <div class="mliwl-meet-text">
-      <p class="text-eyebrow">Meet the character</p>
-      <h2 id="meet-title" class="mliwl-meet-name">Raquelle</h2>
-      <span class="mliwl-meet-topic">Bullying</span>
-      <p class="text-body-large">[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]</p>
-      <p class="text-body-small">Includes: bullying. Need to talk? <a href="get-help.html">Find help now</a>.</p>
-      <div class="mliwl-actions"><a class="mliwl-btn mliwl-btn-outline-inverse" href="#player">Watch the film<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
     </div>
   </div>
 </section>
