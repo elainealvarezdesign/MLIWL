@@ -36,13 +36,13 @@
           </div>
         </div>
       </div>
-      <aside class="mliwl-episodes" aria-labelledby="episodes-title">
+      <section class="mliwl-episodes" aria-labelledby="episodes-title">
         <div><h2 id="episodes-title" class="text-heading-h4">{{list_heading}}</h2><p class="text-body-small mliwl-muted-text">{{list_line}}</p></div>
         <ol class="mliwl-episode-list">
 {{episode_rows}}
         </ol>
         <div class="mliwl-after-series"><p class="text-eyebrow mliwl-eyebrow">After the last episode</p><p class="text-body-small">Talk about it with the <a href="#teach">discussion guide</a>, or <a href="get-help.html">reach out</a> if it brought something up.</p></div>
-      </aside>
+      </section>
     </div>
   </div>
 </section>
