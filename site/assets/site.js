@@ -28,6 +28,7 @@
 	if (grid) {
 		var exclude = grid.getAttribute('data-exclude');
 		var limit = Number(grid.getAttribute('data-limit')) || stories.length;
+		var level = grid.getAttribute('data-heading') || '3'; // card title level follows the section's headings
 		grid.innerHTML = stories.filter(function (s) { return (s.slug || s.name.toLowerCase()) !== exclude; }).slice(0, limit).map(function (s) {
 			var slug = s.slug || s.name.toLowerCase();
 			var title = s.title || (s.name + '’s story');
@@ -35,7 +36,7 @@
 				'<div class="mliwl-story-media"><img src="assets/img/story-' + slug + '.webp" width="576" height="432" alt="" loading="lazy">' +
 				'<span class="mliwl-tag mliwl-tag-on-image">' + s.topic + '</span></div>' +
 				'<div class="mliwl-story-body">' +
-				'<h4 class="text-heading-h4">' + title + '</h4>' +
+				'<h' + level + ' class="text-heading-h4">' + title + '</h' + level + '>' +
 				'<p class="text-body-small desc">' + s.desc + '</p>' +
 				'<p class="text-caption meta">' + s.meta + '</p>' +
 				'<p class="text-caption note">Includes: ' + s.note + '. Need to talk? Call or text 988.</p>' +

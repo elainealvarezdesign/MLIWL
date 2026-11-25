@@ -35,5 +35,6 @@ for page in pages:
     open(os.path.join(DIST, page), "w", encoding="utf-8").write(html)
 
 shutil.copy(os.path.join(SITE, "robots.txt"), os.path.join(DIST, "robots.txt"))
+shutil.copy(os.path.join(SITE, "favicon.ico"), os.path.join(DIST, "favicon.ico"))
 
 print(f"dist/: {len(pages)} pages, CSS from the plugin, assets copied")
