@@ -250,6 +250,42 @@
 		}).observe(player, { childList: true });
 	}
 
+	// ---- Home hero version D2: the six character squares play their Lottie loops ----
+	// Loaded only when the squares come into view, paused off screen, one button pauses them all.
+	// Stills stay when motion is reduced or the player can't load.
+	var tiles = document.querySelector('.mliwl-tiles');
+	if (tiles && !reduceMotion && 'IntersectionObserver' in window) {
+		var tileToggle = document.querySelector('.mliwl-tiles-toggle');
+		var tileAnims = [], tilesPaused = false, tilesVisible = false, tilesStarted = false;
+		function setTileToggle() {
+			tileToggle.setAttribute('aria-label', (tilesPaused ? 'Play' : 'Pause') + ' the character animations');
+			tileToggle.querySelector('use').setAttribute('href', tilesPaused ? '#i-play' : '#i-pause');
+		}
+		function runTiles() { tileAnims.forEach(function (a) { if (tilesVisible && !tilesPaused) a.play(); else a.pause(); }); }
+		function startTiles() {
+			var boxes = tiles.querySelectorAll('.mliwl-tile-lottie'), ready = 0;
+			boxes.forEach(function (box) {
+				var anim = window.lottie.loadAnimation({ container: box, renderer: 'svg', loop: true, autoplay: false, path: box.getAttribute('data-lottie') });
+				anim.addEventListener('DOMLoaded', function () {
+					anim.goToAndStop(parseInt(box.getAttribute('data-offset'), 10) || 0, true);  // out of step, so they don't all breathe together
+					tileAnims.push(anim);
+					if (++ready === boxes.length) { tiles.classList.add('is-animated'); tileToggle.hidden = false; setTileToggle(); }
+					runTiles();
+				});
+			});
+		}
+		tileToggle.addEventListener('click', function () { tilesPaused = !tilesPaused; setTileToggle(); runTiles(); });
+		new IntersectionObserver(function (entries) {
+			tilesVisible = entries[0].isIntersecting;
+			if (tilesVisible && !tilesStarted) {
+				tilesStarted = true;
+				if (window.lottie) startTiles();
+				else { var s = document.createElement('script'); s.src = 'assets/vendor/lottie_light.min.js'; s.onload = startTiles; document.head.appendChild(s); }
+			}
+			runTiles();
+		}, { rootMargin: '200px' }).observe(tiles);
+	}
+
 	// ---- Bio dialog (Meet the team, News & media, Story). Focus returns to the button that opened it. ----
 	var bio = document.getElementById('bio-dialog');
 	if (bio && bio.showModal) {

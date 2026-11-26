@@ -559,3 +559,74 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 .mliwl-meet-toggle[hidden] { display: none; }
 .mliwl-meet-toggle svg { width: 20px; height: 20px; }
 @container (max-width: 480px) { .mliwl-meet-text .text-eyebrow { display: none; } }
+
+/* ---------- Home hero: Meet the eight (canvas Option A2) ---------------------
+   One-line title, the 8 characters as tiles in their story colour (each tile is a link
+   to the story), the buttons under the tiles and the awards on one line at the bottom. */
+.mliwl-hero-cast { padding: var(--space-56) var(--layout-gutter) var(--space-32); }
+.mliwl-hero-cast-inner { max-width: var(--layout-container-max); margin-inline: auto; display: flex; flex-direction: column; gap: var(--space-32); }
+.mliwl-hero-cast-head { display: flex; flex-direction: column; gap: 14px; }
+.mliwl-hero-cast h1 { font-size: clamp(40px, 4.2vw, 60px); line-height: 1; }
+@media (min-width: 1024px) { .mliwl-hero-cast h1 { white-space: nowrap; } }
+.mliwl-cast { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--space-12); }
+.mliwl-cast-tile { position: relative; height: 250px; border-radius: var(--radius-xl); overflow: hidden; background: var(--story-color, var(--color-dante-700)); }
+.mliwl-cast [data-character="dante"] { background: var(--color-dante-700); } /* Dante's purple is the hero's: one step darker so the tile shows */
+.mliwl-cast-img { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 215px; object-fit: cover; object-position: top center; transition: transform .25s ease; }
+.mliwl-cast-link { position: absolute; inset: 0; display: flex; align-items: flex-end; padding: 10px; border-radius: inherit; text-decoration: none; color: var(--color-text-primary); }
+.mliwl-cast-chip { display: flex; flex-direction: column; gap: 2px; width: 100%; padding: 10px 12px; border-radius: var(--radius-md); background: var(--color-bg-surface); color: var(--color-text-primary); }
+.mliwl-cast-name { font-weight: var(--font-weight-black, 900); font-size: 17px; line-height: 1.2; text-transform: uppercase; }
+.mliwl-cast-topic { font-size: 12px; font-weight: 600; line-height: 1.3; color: var(--color-text-secondary); }
+.mliwl-cast-tile:hover .mliwl-cast-img, .mliwl-tile:hover .mliwl-tile-art { transform: scale(1.04); }
+.mliwl-cast-link:hover .mliwl-cast-chip { background: var(--color-gold-500, #cfac38); }
+.mliwl-cast-link:focus-visible { outline: 3px solid var(--color-gold-500, #cfac38); outline-offset: -3px; }
+.mliwl-hero-cast .mliwl-awards-line { max-width: none; margin: 0; padding: var(--space-32) 0 0; border-top: 1px solid rgb(253 252 250 / .25); justify-content: space-between; }
+.mliwl-hero-cast .mliwl-awards-line ul { flex: none; gap: var(--space-24); }
+.mliwl-hero-cast .mliwl-awards-line img { width: 108px; height: 72px; }
+.mliwl-hero-cast .mliwl-awards-line .text-eyebrow { max-width: none; }
+@media (max-width: 1199px) { .mliwl-cast { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 1023px) { .mliwl-hero-cast .mliwl-awards-line { flex-direction: column; align-items: flex-start; } .mliwl-hero-cast .mliwl-awards-line ul { flex: none; max-width: 100%; } }
+@media (max-width: 639px) {
+	.mliwl-hero-cast { padding-top: var(--space-40); }
+	.mliwl-cast { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 150px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; margin-inline: calc(var(--layout-gutter) * -1); padding-inline: var(--layout-gutter); scroll-padding-inline: var(--layout-gutter); }
+	.mliwl-cast-tile { height: 220px; scroll-snap-align: start; }
+	.mliwl-cast-img { height: 185px; }
+	.mliwl-hero-cast .mliwl-actions { flex-direction: column; }
+	.mliwl-hero-cast .mliwl-actions > * { width: 100%; }
+}
+
+/* ---------- Home hero, version D2: a square per character (home-d2.html) ------
+   Copy on a light ground on the left; on the right 6 squares in the characters' colours,
+   each with the character's Lottie breathing loop (stills when motion is reduced). */
+.mliwl-hero-tiles { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 50%); background: var(--color-bg-muted); }
+.mliwl-hero-tiles-copy { display: flex; flex-direction: column; justify-content: center; gap: var(--space-24); padding: var(--space-56) var(--space-64) var(--space-56) max(var(--layout-gutter), calc((100vw - var(--layout-container-max)) / 2)); }
+.mliwl-hero-tiles-copy .mliwl-btn-primary:is(.mliwl-btn) { background: var(--color-bg-hero); }
+.mliwl-hero-tiles-copy .mliwl-btn-primary:is(.mliwl-btn):hover { background: var(--color-dante-700); }
+.mliwl-tiles-wrap { position: relative; }
+.mliwl-tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 220px; }
+.mliwl-tile { position: relative; overflow: hidden; background: var(--story-color); }
+.mliwl-tile-art { position: absolute; left: 50%; top: 6px; height: 310px; translate: -50% 0; transition: transform .25s ease; }
+.mliwl-tile-still { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block; }
+.mliwl-tile-lottie { position: absolute; inset: 0; }
+.mliwl-tile-lottie svg { display: block; }
+.mliwl-tiles.is-animated .mliwl-tile-still { visibility: hidden; }
+.mliwl-tile .mliwl-cast-link { padding: 16px; }
+.mliwl-tile .mliwl-cast-chip { width: auto; padding: 8px 14px; }
+.mliwl-tile .mliwl-cast-name { font-size: 16px; }
+.mliwl-tiles-toggle { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: var(--radius-full); background: var(--color-bg-surface); color: var(--color-text-primary); box-shadow: var(--shadow-tag); cursor: pointer; z-index: 1; }
+.mliwl-tiles-toggle[hidden] { display: none; }
+.mliwl-tiles-toggle svg { width: 20px; height: 20px; }
+@media (max-width: 1023px) {
+	.mliwl-hero-tiles { grid-template-columns: minmax(0, 1fr); }
+	.mliwl-hero-tiles-copy { padding: var(--space-40) var(--layout-gutter); }
+	.mliwl-tiles { grid-auto-rows: 200px; }
+	.mliwl-tile-art { height: 280px; }
+}
+@media (max-width: 639px) {
+	.mliwl-tiles { grid-auto-rows: 170px; }
+	.mliwl-tile-art { height: 230px; }
+	.mliwl-tile .mliwl-cast-link { padding: 10px; }
+	.mliwl-hero-tiles-copy .mliwl-actions { flex-direction: column; }
+	.mliwl-hero-tiles-copy .mliwl-actions > * { width: 100%; }
+}
+.mliwl-hero-tiles-copy :where(p, h1) { margin: 0; }
+.mliwl-hero-tiles-copy .mliwl-eyebrow { color: var(--color-bg-hero); }
