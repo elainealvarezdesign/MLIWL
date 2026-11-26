@@ -632,8 +632,8 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 .mliwl-hero-tiles-copy .mliwl-eyebrow { color: var(--color-bg-hero); }
 
 /* ---------- New story banner on tablet and phone: a compact card --------------
-   Tablet: picture beside the text. Phone: the character stands in a short band on top
-   (head and shoulders), with the text and buttons under it and tighter padding. */
+   Tablet: picture beside the text. Phone: text and buttons first, then the character
+   standing on the card's bottom edge, with tighter padding. */
 @media (max-width: 1023px) {
 	.mliwl-featured { grid-template-columns: 240px minmax(0, 1fr); }
 	.mliwl-featured-media { order: 0; padding: var(--space-24) var(--space-16) 0; }
@@ -642,7 +642,7 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 }
 @media (max-width: 767px) {
 	.mliwl-featured { grid-template-columns: minmax(0, 1fr); border-radius: var(--radius-xl); }
-	.mliwl-featured-media { height: 220px; padding: var(--space-16) 0 0; }
+	.mliwl-featured-media { order: 2; height: 210px; padding: 0; }  /* picture under the buttons, standing on the bottom edge */
 	.mliwl-featured-body .text-body-large { font-size: var(--font-size-body, 17px); line-height: 1.5; }
 	.mliwl-featured-body .mliwl-btn { min-height: 48px; }
 	.mliwl-featured-media img { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; }
