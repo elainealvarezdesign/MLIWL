@@ -21,7 +21,7 @@
 			desc: 'Asked to be a groomsman, Vince can’t stand people looking at him. His brother’s support is crucial.' },
 		{ name: 'Raquelle', slug: 'raquelle', title: 'Are You OK?', watch: 'Watch “Are You OK?”', lesson: 'Classroom activities (PDF)',
 			topic: 'Bullying', tags: ['bullying'], meta: 'Award-winning short film · classroom activities', note: 'bullying',
-			desc: '[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]' }
+			desc: 'An award-winning short film about bullying, and how much one simple question — “Are you OK?” — can mean to someone who is struggling.' }
 	];
 
 	var grid = document.getElementById('story-grid');
@@ -48,19 +48,25 @@
 	}
 
 	// ---- Resource cards: parent playbooks and lesson plans. Figma: Lesson Card. ----
+	// Class activities PDFs from the client (size, pages); stories without one keep a placeholder link.
+	var classPdfs = { amie: ['1.1 MB', 8], kyle: ['617 KB', 8], dante: ['644 KB', 8], danny: ['640 KB', 8], emily: ['630 KB', 8], kaia: ['819 KB', 4], vince: ['969 KB', 4] };
 	function resourceCards(el, o) {
 		el.innerHTML = stories.map(function (s) {
 			var slug = s.slug || s.name.toLowerCase();
 			var title = s.title || (s.name + '’s story');
 			var file = (s.slug && o.altFile) || o.file;
+			var pdf = o.pdfs && o.pdfs[slug];
+			var href = pdf ? 'assets/pdf/' + slug + '-class-activities.pdf' : '#';
+			var meta = pdf ? o.pdfMeta.replace('{size}', pdf[0]).replace('{pages}', pdf[1]) : ((s.slug && o.altMeta) || o.meta);
+			var desc = pdf ? o.pdfDesc : o.desc;
 			return '<li data-tags="' + s.tags.join(' ') + '" data-grades="6-8 9-12"><article class="mliwl-playbook-card">' +
 				'<div class="media"><img src="assets/img/story-' + slug + '.webp" width="576" height="432" alt="" loading="lazy"></div>' +
 				'<div class="body"><span class="mliwl-tag">' + s.topic + '</span>' +
 				'<h3 class="text-heading-h4">' + title + '</h3>' +
-				'<p class="text-body-small desc">' + o.desc + '</p>' +
-				'<p class="text-caption meta">' + ((s.slug && o.altMeta) || o.meta) + '</p>' +
+				'<p class="text-body-small desc">' + desc + '</p>' +
+				'<p class="text-caption meta">' + meta + '</p>' +
 				'<div class="mliwl-actions">' +
-				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>' + o.download + '<span class="screen-reader-text"> ' + file + ' for ' + title + ' (PDF)</span></a>' +
+				'<a class="mliwl-btn mliwl-btn-primary mliwl-btn-sm" href="' + href + '" download><svg aria-hidden="true"><use href="#i-download"/></svg>' + o.download + '<span class="screen-reader-text"> ' + file + ' for ' + title + ' (PDF)</span></a>' +
 				'<a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="story-' + slug + '.html"><svg aria-hidden="true"><use href="#i-play"/></svg>' + o.watch + '<span class="screen-reader-text"> ' + title + '</span></a>' +
 				'</div></div></article></li>';
 		}).join('');
@@ -72,7 +78,9 @@
 	var lessons = document.getElementById('lesson-grid');
 	if (lessons) resourceCards(lessons, { download: 'Download', watch: 'Watch story', file: 'lesson plan', altFile: 'classroom activities',
 		desc: '[Client copy: what students learn in this lesson, in one or two lines.]',
-		meta: 'Lesson plan · Grades 7–12 · 45 min · PDF', altMeta: 'Classroom activities · Grades 6–12 · PDF' });
+		meta: 'Lesson plan · Grades 6–12 · PDF', altMeta: 'Classroom activities · Grades 6–12 · PDF',
+		pdfs: classPdfs, pdfDesc: 'Thought questions, a journal prompt and a group activity for each episode.',
+		pdfMeta: 'Class activities · Grades 6–12 · {pages} pages · PDF · {size}' });
 
 	// ---- Filter chips: topic (data-topic) and grade (data-grade), combined ----
 	var count = document.getElementById('story-count');
