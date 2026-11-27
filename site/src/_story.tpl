@@ -43,7 +43,7 @@
           <p class="text-body-small mliwl-muted-text">{{summary_line}}</p>
           <div class="mliwl-content-note mliwl-story-note"><p class="text-body-strong">Content note</p><p class="text-body-small">Includes: {{note}}. Watch with a trusted adult if you need to. Need to talk? Call or text 988.</p></div>
           <div class="mliwl-actions">
-            <a class="mliwl-btn mliwl-btn-primary" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download {{lesson}}</a>
+            <a class="mliwl-btn mliwl-btn-primary" href="{{lesson_href}}" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download {{lesson}}</a>
             <a class="mliwl-btn mliwl-btn-outline" href="#" lang="es"><svg aria-hidden="true"><use href="#i-globe"/></svg>Ver en español</a>
           </div>
         </div>
@@ -68,7 +68,7 @@
       <p class="text-body-large mliwl-muted-text">Free resources to use in class or at home. No sign-up needed.</p>
     </div>
     <ul class="mliwl-card-grid">
-      <li class="mliwl-resource"><span class="mliwl-icon-badge mliwl-icon-badge-gold mliwl-icon-badge-sm" aria-hidden="true"><svg><use href="#i-book"/></svg></span><h3 class="text-heading-h4">{{lesson_title}}</h3><p class="text-body-small mliwl-muted-text">A 45-minute class plan with goals, activities and discussion prompts.</p><p class="text-caption mliwl-muted-text">PDF · [size] · Grades 7–12</p><a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download<span class="screen-reader-text"> {{lesson}}</span></a></li>
+      <li class="mliwl-resource"><span class="mliwl-icon-badge mliwl-icon-badge-gold mliwl-icon-badge-sm" aria-hidden="true"><svg><use href="#i-book"/></svg></span><h3 class="text-heading-h4">{{lesson_title}}</h3><p class="text-body-small mliwl-muted-text">{{lesson_desc}}</p><p class="text-caption mliwl-muted-text">{{lesson_meta}}</p><a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="{{lesson_href}}" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download<span class="screen-reader-text"> {{lesson}}</span></a></li>
       <li class="mliwl-resource"><span class="mliwl-icon-badge mliwl-icon-badge-gold mliwl-icon-badge-sm" aria-hidden="true"><svg><use href="#i-message"/></svg></span><h3 class="text-heading-h4">Discussion guide</h3><p class="text-body-small mliwl-muted-text">Questions to talk through after each episode, in a group or one-on-one.</p><p class="text-caption mliwl-muted-text">PDF · [size]</p><a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download<span class="screen-reader-text"> discussion guide</span></a></li>
       <li class="mliwl-resource"><span class="mliwl-icon-badge mliwl-icon-badge-gold mliwl-icon-badge-sm" aria-hidden="true"><svg><use href="#i-book"/></svg></span><h3 class="text-heading-h4">Parent playbook</h3><p class="text-body-small mliwl-muted-text">How to start the conversation at home and what to say if your teen opens up.</p><p class="text-caption mliwl-muted-text">PDF · [size]</p><a class="mliwl-btn mliwl-btn-outline mliwl-btn-sm" href="#" download><svg aria-hidden="true"><use href="#i-download"/></svg>Download<span class="screen-reader-text"> parent playbook</span></a></li>
     </ul>

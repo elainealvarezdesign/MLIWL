@@ -52,6 +52,29 @@ ABOUT = {
  ]
 }
 
+# Video lengths, read from the channel's YouTube page (screenshot from the client, Nov 2026). "?" = to confirm.
+DURATION = {
+ "HOvFQKGUfhE": "3:41", "-emjHyVSuwg": "5:28", "lJeRqYpjiRs": "4:21", "kPp-ABkfYgI": "4:36",
+ "BVI7TgdnLRo": "1:18", "rx3X1VJqEq4": "5:05", "zqM-XCifn0o": "5:29", "X16x2TxAgmQ": "4:30", "HA3HBeDBUME": "5:11",
+ "63b8BqdvpVc": "3:58", "eH3O9Snp5UI": "5:43", "C6IQDQFvf8o": "4:50", "HixhTwoEShg": "4:49", "n-8R8t-uUM4": "4:28",
+ "qPROOH2vxxc": "1:00", "oR9LztZi_Yc": "6:04", "ukA7G-Xegsg": "5:36", "NNzdFqGC3M8": "4:42", "b0YYGUzc0gk": "5:11",
+ "e7Zw3wF7a-8": "1:00", "8AdBvbjgFBo": "4:41", "6JmPWTu9kNs": "5:41", "_KzgMJhcmXo": "5:36", "igoYAbfphOE": "4:41",
+ "HCY9eeS5IL4": "0:56", "gctypUcTLyg": "5:15", "rqZvp0gnsrM": "5:22",
+ "eCPYIYrYwmw": "0:38", "CwLyLMSx81M": "4:03", "GzACs2yieGo": "5:46",
+}
+TOTAL_MIN = {"amie": 19}  # Amie episode 3 is not readable in the screenshot: total from her "complete story" video (18:57)
+
+# Class activities PDFs from the client (Nov 2026), in assets/pdf/<slug>-class-activities.pdf
+PDF_PAGES = {"amie": 8, "kyle": 8, "dante": 8, "danny": 8, "emily": 8, "kaia": 4, "vince": 4}
+def pdf_info(slug):
+    path = os.path.join(HERE, "assets", "pdf", f"{slug}-class-activities.pdf")
+    if not os.path.isfile(path):
+        return None
+    mb = os.path.getsize(path) / 1_000_000
+    return f"assets/pdf/{slug}-class-activities.pdf", (f"{mb:.1f} MB" if mb >= 1 else f"{round(mb * 1000)} KB")
+
+def secs(d): m, s = d.split(":"); return int(m) * 60 + int(s)
+
 STORIES = [
     dict(slug="amie", topic="Suicide survivor", name="Amie", alt="Amie, a teen with red braids and glasses, in a green cardigan", trailer=("HOvFQKGUfhE", "Amie Struggles With Depression and Perfectionism"), title="Amie’s story", count=4, note="suicide attempt", lesson="lesson plan",
          desc="When negative thoughts keep haunting a teenage suicide survivor, the support of her family and boyfriend helps her find purpose.",
@@ -99,7 +122,7 @@ STORIES = [
          videos=[("CwLyLMSx81M", "Muscle Isolation"),
                  ("GzACs2yieGo", "Quest for Rest")]),
     dict(slug="raquelle", topic="Bullying", name="Raquelle", alt="Raquelle, a teen with curly hair and a gray hoodie, looking worried", title="Are You OK?", count=1, film=True, note="bullying", lesson="classroom activities",
-         desc="[CLIENT TO PROVIDE: one-sentence summary of Raquelle’s story]",
+         desc="An award-winning short film about bullying, and how much one simple question — “Are you OK?” — can mean to someone who is struggling.",
          # One award-winning short film, not a series (from the client, Nov 24 2026)
          videos=[("tJsGGsPNakw", "Are You OK?")]),
 ]
@@ -120,7 +143,7 @@ def build_stories():
             return (f'          <li><button class="mliwl-episode" type="button" data-episode="{i}"{data}{current if i == 1 else ""}>'
                     f'<span class="mliwl-episode-thumb" aria-hidden="true"{thumb}><svg><use href="#i-play"/></svg></span>'
                     f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">{label if film else label + " " + str(i)}<span class="mliwl-now"> · Now playing</span></span>'
-                    f'<span class="text-body-strong">{title}</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>')
+                    f'<span class="text-body-strong">{title}</span><span class="text-caption mliwl-muted-text">{DURATION.get(vid, "[mm:ss]")}</span></span></button></li>')
         rows = "\n".join(ep(i) for i in range(1, n + 1))
         if st.get("trailer"):  # trailer first in the list; the player still starts on episode 1
             tvid, ttitle = st["trailer"]
@@ -128,22 +151,34 @@ def build_stories():
             rows = (f'          <li><button class="mliwl-episode mliwl-episode-trailer" type="button" data-episode="trailer" data-video="{tvid}" data-title="{ttitle}">'
                     f'<span class="mliwl-episode-thumb" aria-hidden="true" style="background-image:url(https://i.ytimg.com/vi/{tvid}/mqdefault.jpg)"><svg><use href="#i-play"/></svg></span>'
                     f'<span class="mliwl-episode-text"><span class="mliwl-caps-link">Trailer<span class="mliwl-now"> · Now playing</span></span>'
-                    f'<span class="text-body-strong">{ttitle}</span><span class="text-caption mliwl-muted-text">[mm:ss]</span></span></button></li>\n') + rows
+                    f'<span class="text-body-strong">{ttitle}</span><span class="text-caption mliwl-muted-text">{DURATION.get(tvid, "[mm:ss]")}</span></span></button></li>\n') + rows
         first = videos[0][0] if videos else ""
         play_href = f"https://www.youtube.com/watch?v={first}" if first else "#"
+        eps = [DURATION.get(v) for v, _ in videos]
+        total = TOTAL_MIN.get(st["slug"]) or (round(sum(secs(d) for d in eps) / 60) if eps and all(eps) else None)
+        total_txt = f"{total} min" if total else "[total min]"
         if st.get("film"):
             looks = dict(episode_tag="Short film", summary_line="Award-winning short film · [mm:ss]",
                          list_heading="Watch", list_line="Award-winning short film")
         else:
-            looks = dict(episode_tag=f"Episode 1 of {st['count']}", summary_line=f"{st['count']} episodes · [total min] · Animated short",
-                         list_heading="Episodes", list_line=f"{st['count']} episodes · [total min]")
+            looks = dict(episode_tag=f"Episode 1 of {st['count']}", summary_line=f"{st['count']} episodes · {total_txt} · Animated short",
+                         list_heading="Episodes", list_line=f"{st['count']} episodes · {total_txt}")
         with open(os.path.join(HERE, "assets", "lottie", st["slug"] + ".json"), encoding="utf-8") as lf:
             lj = json.load(lf)
         scene = st["trailer"][0] if st.get("trailer") else first   # the trailer still sets the scene
         watch_label = "Watch the film" if film else f"Watch {st['name']}’s story"
         about = ABOUT.get(st['slug'])
         about_html = ''.join(f'\n          <p class="text-body-small mliwl-muted-text">{html.escape(t, quote=False)}</p>' for t in about) if about else '\n          <p class="text-body-small mliwl-muted-text">[Client copy: 2–3 sentences about the story — not on the current site.]</p>'
-        fields = dict(st, **looks, about_html=about_html, art_w=lj["w"], art_h=lj["h"], scene=scene, watch_label=watch_label, name_len=len(st["name"]), episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
+        pdf = pdf_info(st["slug"])
+        if pdf:
+            lesson_href, lesson_size = pdf[0], pdf[1]
+            lesson_desc = "Thought questions, a journal prompt and a group activity for each episode."
+            lesson_meta = f"PDF · {lesson_size} · {PDF_PAGES.get(st['slug'], '?')} pages · Grades 6–12"
+        else:
+            lesson_href, lesson_size = "#", "[size]"
+            lesson_desc = "A 45-minute class plan with goals, activities and discussion prompts."
+            lesson_meta = "PDF · [size] · Grades 6–12"
+        fields = dict(st, **looks, lesson_href=lesson_href, lesson_desc=lesson_desc, lesson_meta=lesson_meta, about_html=about_html, art_w=lj["w"], art_h=lj["h"], scene=scene, watch_label=watch_label, name_len=len(st["name"]), episodes=f"{st['count']} episodes", episode_rows=rows, video=first, play_href=play_href,
                       lesson_title=st["lesson"][0].upper() + st["lesson"][1:])
         out = re.sub(r"\{\{(\w+)\}\}", lambda m: str(fields.get(m.group(1), m.group(0))), tpl)
         tmp = f"_tmp_story_{st['slug']}.html"
