@@ -649,3 +649,5 @@ button.mliwl-caps-link:hover { text-decoration: underline; text-underline-offset
 	.mliwl-featured-body { padding: var(--space-20); }
 	.mliwl-featured-body .mliwl-actions { gap: var(--space-8); padding-top: var(--space-4); }
 }
+.mliwl-coming-next p a { color: inherit; text-underline-offset: 3px; }
+.mliwl-coming-next p a:hover { color: var(--color-bg-hero); }
